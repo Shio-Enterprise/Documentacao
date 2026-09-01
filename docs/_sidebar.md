@@ -7,3 +7,5 @@
 * [Reunião de validação de protótipo](reuniao-validacao-prototipo.md)
 * [Modelagem de dados](modelagem-dados.md)
 * [Reunião de validação final do MVP](reuniao-validacao-final-mvp.md)
+* [Backlog da Sprint](backlog-da-sprint.md)
+* [Evidências](evidencias.md)
