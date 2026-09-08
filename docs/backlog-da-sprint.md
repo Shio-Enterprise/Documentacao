@@ -1,7 +1,5 @@
 # Backlog da Sprint
 
-EXEMPLO:
-
 | Trio/Dupla | Atividades |
 |------------|------------|
-| Arthur, Ian | X tarefa (link para evidencia que está na outra aba)|
+| Ian, Arthur, Danilo | Login Tradicional e Correções de Segurança. [Ver Evidências](evidencias.md#login-tradicional-e-segurança-de-auth) |
