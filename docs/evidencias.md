@@ -1,7 +1,5 @@
 # Evidências
 
-Colocar evidências do que foi feito, podendo ser prints de tela, código...
-
 ## Login Tradicional e Segurança de Auth
 **Trio:** Ian, Arthur, Danilo
 
@@ -12,11 +10,11 @@ Implementamos a autenticação tradicional (E-mail e Senha) para acabar com a de
 - [Frontend PR #2](https://github.com/Shio-Enterprise/frontend/pull/2)
 - [Backend PR #2](https://github.com/Shio-Enterprise/backend/pull/2)
 
-## O9: Promessas comerciais sem suporte no backend
-**Trio:** Arthur, Ian, Danilo
+## Promessas comerciais sem suporte no backend
+**Trio:** Ian, Arthur e Danilo
 
 **Por que a melhoria foi relevante?**
-Seis promessas da UI não tinham suporte real no backend (levantado na [issue #18](https://github.com/Shio-Enterprise/Documentacao/issues/18), decisão do cliente na [issue #19](https://github.com/Shio-Enterprise/Documentacao/issues/19#issuecomment-5618776911)). Implementamos o desconto automático de boas-vindas (10% na primeira compra), a newsletter real com consentimento LGPD, corrigimos os selos de pagamento para refletir o gateway real (InfinitePay: Pix, Cartão, Boleto) e removemos promessas falsas: links de termos/privacidade quebrados, estrelas de avaliação fixas (mockadas) e a promessa de e-mail de confirmação que nunca era enviado. Spec completa em [`spec-o9-promessas-comerciais.md`](spec-o9-promessas-comerciais.md).
+Seis promessas da UI não tinham suporte real no backend (levantado na [issue #18](https://github.com/Shio-Enterprise/Documentacao/issues/18), decisão do cliente na [issue #19](https://github.com/Shio-Enterprise/Documentacao/issues/19#issuecomment-5618776911)). Implementamos o desconto automático de boas-vindas (10% na primeira compra), a newsletter real com consentimento LGPD, corrigimos os selos de pagamento para refletir o gateway real (InfinitePay: Pix, Cartão, Boleto) e removemos promessas falsas: links de termos/privacidade quebrados, estrelas de avaliação fixas (mockadas) e a promessa de e-mail de confirmação que nunca era enviado.
 
 **Evidências (Pull Requests):**
 - [Frontend PR #4](https://github.com/Shio-Enterprise/frontend/pull/4)
