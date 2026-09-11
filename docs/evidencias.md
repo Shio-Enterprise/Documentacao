@@ -10,6 +10,27 @@ Implementamos a autenticação tradicional (E-mail e Senha) para acabar com a de
 - [Frontend PR #2](https://github.com/Shio-Enterprise/frontend/pull/2)
 - [Backend PR #2](https://github.com/Shio-Enterprise/backend/pull/2)
 
+### Correção complementar de acesso ao painel administrativo
+
+**Responsável:** Matheus de Alcântara
+
+**Origem:** [Issue #20 — Corrigir acesso ao painel administrativo](https://github.com/Shio-Enterprise/Documentacao/issues/20)
+
+**Problema corrigido:**
+O frontend reconhecia o perfil administrativo de forma incompleta, priorizando apenas `is_staff`. Isso podia impedir o acesso de uma conta administrativa válida quando a API a identificava por `is_admin` ou `is_superuser`. Além disso, o redirecionamento do dashboard para o login não preservava o motivo da falha.
+
+**Resultado:**
+- A sessão armazenada e novas autenticações passaram a reconhecer `is_admin`, `is_staff` e `is_superuser`.
+- O login com Google passou a aplicar a mesma regra antes de liberar o painel.
+- Respostas `401` limpam a sessão e informam que ela expirou.
+- Respostas `403` informam que a conta não possui permissão administrativa.
+- A tela de login administrativo exibe a mensagem recebida pelo redirecionamento.
+
+**Evidências:**
+- [Frontend PR #1](https://github.com/Shio-Enterprise/frontend/pull/1)
+- Commit `fb6a47b` — `fix(painel-admin): mapeia validação de administrador`
+- Validação registrada na PR: `npm run build` concluído com sucesso.
+
 ## Promessas comerciais sem suporte no backend
 **Trio:** Ian, Arthur e Danilo
 
