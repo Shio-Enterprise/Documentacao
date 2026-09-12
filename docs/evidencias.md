@@ -31,6 +31,26 @@ O frontend reconhecia o perfil administrativo de forma incompleta, priorizando a
 - Commit `fb6a47b` — `fix(painel-admin): mapeia validação de administrador`
 - Validação registrada na PR: `npm run build` concluído com sucesso.
 
+**Evidências das alterações no código:**
+
+Capturas do [diff da PR #1](https://github.com/Shio-Enterprise/frontend/pull/1/files), referente ao commit `fb6a47b`. Linhas vermelhas mostram o código removido; linhas verdes mostram o código adicionado.
+
+`AuthContext.jsx`: reconhecimento de `is_admin`, `is_staff` e `is_superuser` ao restaurar a sessão.
+
+![Diff do reconhecimento de perfil administrativo](assets/evidencias-admin/01-perfil-administrativo.png)
+
+`useGoogleAuth.js`: validação dos três indicadores administrativos antes de aceitar o login.
+
+![Diff da validação administrativa no login Google](assets/evidencias-admin/02-validacao-google.png)
+
+`AdminLoginPage/index.jsx`: leitura da mensagem recebida pelo redirecionamento em `location.state.error`.
+
+![Diff do recebimento da mensagem no login](assets/evidencias-admin/03-mensagem-login.png)
+
+`DashboardPage/index.jsx`: envio de mensagens distintas para respostas `401` (sessão expirada) e `403` (acesso negado).
+
+![Diff do tratamento dos erros do dashboard](assets/evidencias-admin/04-erros-dashboard.png)
+
 ## Promessas comerciais sem suporte no backend
 **Trio:** Ian, Arthur e Danilo
 
