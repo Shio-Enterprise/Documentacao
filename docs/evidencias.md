@@ -31,18 +31,6 @@ O frontend reconhecia o perfil administrativo de forma incompleta, priorizando a
 - Commit `fb6a47b` — `fix(painel-admin): mapeia validação de administrador`
 - Validação registrada na PR: `npm run build` concluído com sucesso.
 
-**Evidências (prints):**
-
-Capturas da PR #1 do frontend, realizadas em 12/09/2026. Estas imagens documentam a entrega e a validação registrada na PR; não são capturas de um teste funcional do painel.
-
-PR integrada à `main`, com o objetivo da correção e a aprovação do revisor:
-
-![PR #1 integrada: correção de acesso administrativo](assets/evidencias-admin/01-pr-integrada.png)
-
-Registro do build de produção concluído com sucesso, commit da correção e vínculo com a issue #20:
-
-![Validação do build e rastreabilidade da correção administrativa](assets/evidencias-admin/02-validacao-build.png)
-
 ## Promessas comerciais sem suporte no backend
 **Trio:** Ian, Arthur e Danilo
 
