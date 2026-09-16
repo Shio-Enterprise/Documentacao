@@ -6,10 +6,10 @@
  
 | Trio/Dupla de Desenvolvedores | Qtd. de Tarefas | Tarefas | Assunto das Tarefas |
 |---|---:|---|---|
-| Ian / Arthur / Danilo | 4 | #2, #3, #18, #19 | Login Tradicional (O4) e Promessas Comerciais (O9) |
-| Matheus de Alcântara | 1 | #20 | Correção complementar de acesso ao painel administrativo |
-| Matheus de Alcântara / Vilmar Fagundes | 4 | #6, #7, #10, #11 | Disponibilidade dos drops (O3) e Métricas do dashboard e CRM (O7) |
-| Amanda / Felipe / Cauã | 1 | #25 | Catálogo, busca e paginação server-side (O5) |
+| Ian / Arthur / Danilo | 4 | [#2](https://github.com/Shio-Enterprise/Documentacao/issues/2), [#3](https://github.com/Shio-Enterprise/Documentacao/issues/3), [#18](https://github.com/Shio-Enterprise/Documentacao/issues/18), [#19](https://github.com/Shio-Enterprise/Documentacao/issues/19) | Login Tradicional (O4) e Promessas Comerciais (O9) |
+| Matheus de Alcântara | 1 | [#20](https://github.com/Shio-Enterprise/Documentacao/issues/20) | Correção complementar de acesso ao painel administrativo |
+| Matheus de Alcântara / Vilmar Fagundes | 4 | [#6](https://github.com/Shio-Enterprise/Documentacao/issues/6), [#7](https://github.com/Shio-Enterprise/Documentacao/issues/7), [#10](https://github.com/Shio-Enterprise/Documentacao/issues/10), [#11](https://github.com/Shio-Enterprise/Documentacao/issues/11) | Disponibilidade dos drops (O3) e Métricas do dashboard e CRM (O7) |
+| Amanda / Felipe / Cauã | 1 | [#25](https://github.com/Shio-Enterprise/Documentacao/issues/25) | Catálogo, busca e paginação server-side (O5) |
  
 ---
  
