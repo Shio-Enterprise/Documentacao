@@ -19,15 +19,15 @@
 
 Nova interface de Login e Cadastro utilizando e-mail e senha:
 
-![Formulário de Login Tradicional](assets/evidencias-o4/01-login-tradicional.png)
+![Formulário de Login Tradicional](assets/evidencias-04/01-login-tradicional.jpg)
 
 Diff do backend evidenciando a invalidação do JWT antigo e rotação do Refresh Token na renovação:
 
-![Blacklist de Refresh Token JWT](assets/evidencias-o4/02-jwt-blacklist.png)
+![Blacklist de Refresh Token JWT](assets/evidencias-04/02-jwt-blacklist.png)
 
 Diff do frontend (`AuthContext`) exibindo a checagem rigorosa de privilégios administrativos:
 
-![Validação Administrativa Reforçada](assets/evidencias-o4/03-auth-context-admin.png)
+![Validação Administrativa Reforçada](assets/evidencias-04/03-auth-context-admin.png)
 
 ### Correção complementar de acesso ao painel administrativo
 
