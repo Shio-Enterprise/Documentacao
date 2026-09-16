@@ -10,6 +10,47 @@ Implementamos a autenticação tradicional (E-mail e Senha) para acabar com a de
 - [Frontend PR #2](https://github.com/Shio-Enterprise/frontend/pull/2)
 - [Backend PR #2](https://github.com/Shio-Enterprise/backend/pull/2)
 
+### Correção complementar de acesso ao painel administrativo
+
+**Responsável:** Matheus de Alcântara
+
+**Origem:** [Issue #20 — Corrigir acesso ao painel administrativo](https://github.com/Shio-Enterprise/Documentacao/issues/20)
+
+**Problema corrigido:**
+O frontend reconhecia o perfil administrativo de forma incompleta, priorizando apenas `is_staff`. Isso podia impedir o acesso de uma conta administrativa válida quando a API a identificava por `is_admin` ou `is_superuser`. Além disso, o redirecionamento do dashboard para o login não preservava o motivo da falha.
+
+**Resultado:**
+- A sessão armazenada e novas autenticações passaram a reconhecer `is_admin`, `is_staff` e `is_superuser`.
+- O login com Google passou a aplicar a mesma regra antes de liberar o painel.
+- Respostas `401` limpam a sessão e informam que ela expirou.
+- Respostas `403` informam que a conta não possui permissão administrativa.
+- A tela de login administrativo exibe a mensagem recebida pelo redirecionamento.
+
+**Evidências:**
+- [Frontend PR #1](https://github.com/Shio-Enterprise/frontend/pull/1)
+- Commit `fb6a47b` — `fix(painel-admin): mapeia validação de administrador`
+- Validação registrada na PR: `npm run build` concluído com sucesso.
+
+**Evidências das alterações no código:**
+
+Capturas do [diff da PR #1](https://github.com/Shio-Enterprise/frontend/pull/1/files), referente ao commit `fb6a47b`. Linhas vermelhas mostram o código removido; linhas verdes mostram o código adicionado.
+
+`AuthContext.jsx`: reconhecimento de `is_admin`, `is_staff` e `is_superuser` ao restaurar a sessão.
+
+![Diff do reconhecimento de perfil administrativo](assets/evidencias-admin/01-perfil-administrativo.png)
+
+`useGoogleAuth.js`: validação dos três indicadores administrativos antes de aceitar o login.
+
+![Diff da validação administrativa no login Google](assets/evidencias-admin/02-validacao-google.png)
+
+`AdminLoginPage/index.jsx`: leitura da mensagem recebida pelo redirecionamento em `location.state.error`.
+
+![Diff do recebimento da mensagem no login](assets/evidencias-admin/03-mensagem-login.png)
+
+`DashboardPage/index.jsx`: envio de mensagens distintas para respostas `401` (sessão expirada) e `403` (acesso negado).
+
+![Diff do tratamento dos erros do dashboard](assets/evidencias-admin/04-erros-dashboard.png)
+
 ## Promessas comerciais sem suporte no backend
 **Trio:** Ian, Arthur e Danilo
 
