@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
@@ -67,6 +68,16 @@
     .sidebar ul li.active > a {
       font-weight: 600;
       border-right: 2px solid #ffffff;
+    }
+
+    .sidebar-nav li {
+      color: #ffffff !important;
+    }
+
+    /* ── Setas do menu lateral ───────────────────────────── */
+    .sidebar-nav ul:not(.app-sub-sidebar) > li:not(.file)::before {
+      border-right-color: #ffffff !important;
+      border-bottom-color: #ffffff !important;
     }
 
     /* ── Conteúdo principal ────────────────────────────────── */
@@ -260,5 +271,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@
  
 ---
  
-## Resumo
+## Resumo <!-- {docsify-ignore} -->
  
 - **Líder da Apresentação**: Felipe ou Ian
 - **Total de Tarefas concluídas:** 10
