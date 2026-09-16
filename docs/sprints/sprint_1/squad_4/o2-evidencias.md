@@ -1,4 +1,4 @@
-## Expiração automática de reserva de estoque no checkout — O2
+## O2: Expiração automática de reserva de estoque no checkout
 **Responsável:** João Gabriel e Pedro Augusto
 
 **Origem:**
@@ -26,13 +26,13 @@ O checkout debitava o estoque sem proteção contra concorrência e sem nunca de
 ### Evidências dos trechos de código do backend
 
 **Campo de expiração no pedido — `orders/models.py`.** `CustomerOrder` recebe `reservation_expires_at`, opcional, usado como prazo da reserva de estoque.
-![Campo de expiração no pedido](../../assets/evidencias-02/01-model-reservation-expires-at.png)
+![Campo de expiração no pedido](../../../assets/evidencias-02/01-model-reservation-expires-at.png)
 
 **Verificação lazy de expiração — `orders/services.py`.** `release_if_expired` cancela o pedido vencido reaproveitando `update_status`, sem duplicar a lógica de reversão de estoque da O6.
-![Verificação lazy de expiração](../../assets/evidencias-02/02-release-if-expired.png)
+![Verificação lazy de expiração](../../../assets/evidencias-02/02-release-if-expired.png)
 
 **Prazo gravado no checkout — `orders/views.py`.** `reservation_expires_at` é definido na criação do pedido, usando o TTL configurável em `STOCK_RESERVATION_TTL_MINUTES`.
-![Prazo gravado no checkout](../../assets/evidencias-02/03-checkout-ttl.png)
+![Prazo gravado no checkout](../../../assets/evidencias-02/03-checkout-ttl.png)
 
 **Teste de expiração e devolução de estoque — `orders/tests.py`.** Um pedido com prazo vencido, ao ser consultado, é cancelado e o estoque debitado na venda é devolvido via `StockMovement` de `DEVOLUCAO`.
-![Teste de expiração e devolução de estoque](../../assets/evidencias-02/04-teste-expiracao.png)
+![Teste de expiração e devolução de estoque](../../../assets/evidencias-02/04-teste-expiracao.png)

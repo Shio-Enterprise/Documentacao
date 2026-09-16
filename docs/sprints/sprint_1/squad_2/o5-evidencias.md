@@ -16,20 +16,20 @@ Conforme identificado na [issue #25](https://github.com/Shio-Enterprise/Document
 
 Rota de categoria carregando os produtos correspondentes:
 
-![Rota de categoria](../../assets/evidencias-o5/01-rota-categoria.png)
+![Rota de categoria](../../../assets/evidencias-o5/01-rota-categoria.png)
 
 Paginação server-side com a página 2 selecionada:
 
-![Paginação server-side](../../assets/evidencias-o5/02-paginacao.png)
+![Paginação server-side](../../../assets/evidencias-o5/02-paginacao.png)
 
 Filtros, busca, ordenação e página enviados na consulta da API:
 
-![Consulta server-side](../../assets/evidencias-o5/03-consulta-server-side.png)
+![Consulta server-side](../../../assets/evidencias-o5/03-consulta-server-side.png)
 
 Recomendações carregadas pelo endpoint específico do produto:
 
-![Recomendações por produto](../../assets/evidencias-o5/04-mais-vendidos.png)
+![Recomendações por produto](../../../assets/evidencias-o5/04-mais-vendidos.png)
 
 Catálogo ordenado pelo ranking de mais vendidos:
 
-![Mais vendidos](../../assets/evidencias-o5/05-recomendacoes.png)
+![Mais vendidos](../../../assets/evidencias-o5/05-recomendacoes.png)

@@ -1,41 +1,4 @@
-## O3: Definir política e experiência de disponibilidade dos drops
-**Responsável:** Matheus de Alcântara ([@matheusdealcantara](https://github.com/matheusdealcantara)) e Vilmar José Fagundes ([@VilmarFagundes](https://github.com/VilmarFagundes))
-
-**Por que a melhoria foi relevante?**
-Antes desta melhoria, a disponibilidade de um drop (campanha limitada de produtos) e a visibilidade dele no catálogo estavam misturadas na mesma flag (`is_active`), o que causava um bug de UX: um drop em Rascunho, Programado, Encerrado ou Esgotado simplesmente sumia da loja, mesmo quando o produto ainda deveria aparecer para o cliente (só sem poder ser comprado). Implementamos uma política única e centralizada que separa dois conceitos — **visível** (aparece no catálogo, depende só de `is_public`) e **vendável** (pode ser comprado, depende de `is_active`, da janela de datas e do limite de unidades `max_quantity`) — e a aplicamos de ponta a ponta: no catálogo, no carrinho e no checkout, com revalidação atômica no momento da compra para impedir concorrência (overselling) entre dois checkouts simultâneos disputando a última unidade de um drop.
-
-**Evidências (Pull Requests):**
-- [Backend PR #7](https://github.com/Shio-Enterprise/backend/pull/7)
-- [Frontend PR #8](https://github.com/Shio-Enterprise/frontend/pull/8)
-
-**Resultado:**
-- Nova política única de disponibilidade (`products/availability.py`) com três níveis: `is_visible` (só depende de `is_public`), `is_open_for_sale` (ativo e dentro da janela de datas) e `is_sellable` (soma o limite `max_quantity`, contado pelas unidades já vendidas em pedidos não cancelados).
-- Endpoints de catálogo (`DropCampaign` e `Product`) passaram a expor `is_visible`/`is_sellable`, para o frontend não precisar reimplementar a lógica de datas/limite em JavaScript.
-- Um drop Rascunho, Programado, Encerrado ou Esgotado continua aparecendo no catálogo — só o botão de compra fica desabilitado. Apenas `is_public=False` (Privado) oculta o drop de verdade.
-- Carrinho e checkout revalidam a disponibilidade no momento da ação (não confiam no estado carregado anteriormente pelo cliente), bloqueando com mensagem clara quando um item deixou de estar disponível entre a montagem do carrinho e a finalização da compra.
-- Checkout trava (`select_for_update`) produtos, variações e drops envolvidos antes de checar o limite `max_quantity`, evitando que dois checkouts concorrentes ultrapassem o limite do drop — coberto por teste de concorrência real com threads.
-- Admin: formulários de criação/edição de drop ganharam os campos `is_public`, `end_date`, `max_quantity` e `banner`, com validação (ex: `end_date` precisa ser posterior a `launch_date`; `max_quantity` precisa ser um inteiro positivo ou nulo).
-- Área pública (catálogo, página de produto, carrinho, pagamento): itens indisponíveis aparecem com indicação visual e o botão de compra/checkout fica bloqueado até o cliente removê-los.
-
-**Evidências (prints):**
-
-Catálogo mostrando produto de um drop em Rascunho (visível, mas com compra desabilitada):
-
-![Produto de drop Rascunho visível no catálogo](../../assets/evidencias-03/01-catalogo-drop-rascunho.png)
-
-Página do produto com o botão desabilitado:
-
-![Produto desabilitado](../../assets/evidencias-03/produto_indisponivel.png)
-
-Admin: formulário de criação de drop com os novos campos (visibilidade, data de encerramento, limite de unidades, banner):
-
-![Formulário de criação de drop](../../assets/evidencias-03/02-admin-novo-drop.png)
-
-Admin: lista de drops com os status calculados (Rascunho, Programado, Ativo, Encerrado, Esgotado):
-
-![Lista de drops com status](../../assets/evidencias-03/03-admin-status-drops.png)
-
-## Consolidação das métricas do dashboard e CRM — O7
+## O7: Consolidação das métricas do dashboard e CRM
 
 **Responsáveis:** Matheus de Alcântara e Vilmar Fagundes
 
@@ -85,39 +48,39 @@ Capturas reais da aba [Files changed do PR #8](https://github.com/Shio-Enterpris
 
 **Regra de venda válida, timezone e período padrão — `orders/metrics.py`.** O predicado exige pedido entregue e pagamento confirmado; reembolsos são identificados separadamente. O período padrão passa a ser mensal, com 30 dias.
 
-![Código da venda válida, timezone e períodos](../../assets/evidencias-o7/04-backend-vendas-periodos.png)
+![Código da venda válida, timezone e períodos](../../../assets/evidencias-o7/04-backend-vendas-periodos.png)
 
 **Consulta compartilhada e receita líquida — `orders/metrics.py`.** O intervalo filtra `payment__paid_at`; vendas e reembolsos passam pelos mesmos filtros. `revenue_value` retorna o total negativo para reembolsos.
 
-![Código da consulta-base e tratamento de reembolsos](../../assets/evidencias-o7/05-backend-receita-liquida.png)
+![Código da consulta-base e tratamento de reembolsos](../../../assets/evidencias-o7/05-backend-receita-liquida.png)
 
 **Primeira confirmação do pagamento — `orders/models.py`.** O método `save` preenche `paid_at` somente se ainda estiver vazio, inclusive quando a atualização usa `update_fields`.
 
-![Código da persistência de paid_at](../../assets/evidencias-o7/06-backend-paid-at.png)
+![Código da persistência de paid_at](../../../assets/evidencias-o7/06-backend-paid-at.png)
 
 **Compatibilidade com pagamentos existentes — `orders/migrations/0003_payment_paid_at.py`.** A migration adiciona o campo indexado e usa `updated_at` como referência para registros antigos pagos ou reembolsados.
 
-![Código da migration e backfill de paid_at](../../assets/evidencias-o7/07-backend-migration.png)
+![Código da migration e backfill de paid_at](../../../assets/evidencias-o7/07-backend-migration.png)
 
 **Agregação do dashboard — `orders/views.py`.** A implementação anterior é substituída pela consulta consolidada, separando receita de vendas válidas e valor reembolsado antes de calcular a receita líquida.
 
-![Diff da agregação de receita do dashboard](../../assets/evidencias-o7/08-backend-agregacao.png)
+![Diff da agregação de receita do dashboard](../../../assets/evidencias-o7/08-backend-agregacao.png)
 
 **Drill-down paginado — `orders/views.py`.** O detalhamento reutiliza `metric_orders`, ordena por `-payment__paid_at` e pagina a resposta com `PageNumberPagination`.
 
-![Código do drill-down paginado e ordenado](../../assets/evidencias-o7/09-backend-drilldown.png)
+![Código do drill-down paginado e ordenado](../../../assets/evidencias-o7/09-backend-drilldown.png)
 
 **Métricas comerciais do CRM — `authentication/views.py`.** A quantidade usa vendas válidas, o total gasto subtrai reembolsos e a última compra utiliza a maior data de confirmação do pagamento.
 
-![Diff das métricas comerciais do CRM](../../assets/evidencias-o7/10-backend-crm.png)
+![Diff das métricas comerciais do CRM](../../../assets/evidencias-o7/10-backend-crm.png)
 
 **Teste da receita por drop — `orders/test_o7_metrics.py`.** Um pedido com itens de R$ 60,00 e R$ 40,00, frete de R$ 20,00 e desconto de R$ 10,00 deve gerar R$ 110,00 no dashboard, preservando R$ 60,00 e R$ 40,00 para os respectivos drops.
 
-![Asserções da receita por drop sem rateio de frete ou desconto](../../assets/evidencias-o7/11-backend-teste-drops.png)
+![Asserções da receita por drop sem rateio de frete ou desconto](../../../assets/evidencias-o7/11-backend-teste-drops.png)
 
 **Teste de reembolso no dashboard e CRM — `orders/test_o7_metrics.py`.** Uma venda de R$ 100,00 e um reembolso de R$ 30,00 devem resultar em R$ 70,00 no total, na série temporal e no gasto do cliente, mantendo apenas uma venda positiva na contagem.
 
-![Asserções de reembolso na receita, série e CRM](../../assets/evidencias-o7/12-backend-teste-reembolso.png)
+![Asserções de reembolso na receita, série e CRM](../../../assets/evidencias-o7/12-backend-teste-reembolso.png)
 
 ### Evidências visuais do dashboard
 
@@ -127,12 +90,56 @@ As novas capturas foram feitas com o backend da O7 em funcionamento. Elas mostra
 
 **Mensal:** estado inicial com pesquisa única, ausência de filtro de status, card **Clientes cadastrados** e série diária populada.
 
-![Dashboard mensal com pesquisa única e Clientes cadastrados](../../assets/evidencias-o7/01-dashboard-mensal.png)
+![Dashboard mensal com pesquisa única e Clientes cadastrados](../../../assets/evidencias-o7/01-dashboard-mensal.png)
 
 **Anual:** opção Anual selecionada, período de 365 dias, agregação mensal e série populada.
 
-![Dashboard com período Anual selecionado](../../assets/evidencias-o7/02-dashboard-anual.png)
+![Dashboard com período Anual selecionado](../../../assets/evidencias-o7/02-dashboard-anual.png)
 
 **Pesquisa textual:** campo único preenchido com “Ana”, com cards, gráfico e pedidos recentes refletindo o resultado filtrado.
 
-![Dashboard com campo de pesquisa preenchido](../../assets/evidencias-o7/03-dashboard-pesquisa.png)
+![Dashboard com campo de pesquisa preenchido](../../../assets/evidencias-o7/03-dashboard-pesquisa.png)
+
+
+-------- Corrigir
+
+### Correção complementar de acesso ao painel administrativo
+
+**Responsável:** Matheus de Alcântara
+
+**Origem:** [Issue #20 — Corrigir acesso ao painel administrativo](https://github.com/Shio-Enterprise/Documentacao/issues/20)
+
+**Problema corrigido:**
+O frontend reconhecia o perfil administrativo de forma incompleta, priorizando apenas `is_staff`. Isso podia impedir o acesso de uma conta administrativa válida quando a API a identificava por `is_admin` ou `is_superuser`. Além disso, o redirecionamento do dashboard para o login não preservava o motivo da falha.
+
+**Resultado:**
+- A sessão armazenada e novas autenticações passaram a reconhecer `is_admin`, `is_staff` e `is_superuser`.
+- O login com Google passou a aplicar a mesma regra antes de liberar o painel.
+- Respostas `401` limpam a sessão e informam que ela expirou.
+- Respostas `403` informam que a conta não possui permissão administrativa.
+- A tela de login administrativo exibe a mensagem recebida pelo redirecionamento.
+
+**Evidências:**
+- [Frontend PR #1](https://github.com/Shio-Enterprise/frontend/pull/1)
+- Commit `fb6a47b` — `fix(painel-admin): mapeia validação de administrador`
+- Validação registrada na PR: `npm run build` concluído com sucesso.
+
+**Evidências das alterações no código:**
+
+Capturas do [diff da PR #1](https://github.com/Shio-Enterprise/frontend/pull/1/files), referente ao commit `fb6a47b`. Linhas vermelhas mostram o código removido; linhas verdes mostram o código adicionado.
+
+`AuthContext.jsx`: reconhecimento de `is_admin`, `is_staff` e `is_superuser` ao restaurar a sessão.
+
+![Diff do reconhecimento de perfil administrativo](../../../assets/evidencias-admin/01-perfil-administrativo.png)
+
+`useGoogleAuth.js`: validação dos três indicadores administrativos antes de aceitar o login.
+
+![Diff da validação administrativa no login Google](../../../assets/evidencias-admin/02-validacao-google.png)
+
+`AdminLoginPage/index.jsx`: leitura da mensagem recebida pelo redirecionamento em `location.state.error`.
+
+![Diff do recebimento da mensagem no login](../../../assets/evidencias-admin/03-mensagem-login.png)
+
+`DashboardPage/index.jsx`: envio de mensagens distintas para respostas `401` (sessão expirada) e `403` (acesso negado).
+
+![Diff do tratamento dos erros do dashboard](../../../assets/evidencias-admin/04-erros-dashboard.png)
