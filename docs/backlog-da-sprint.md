@@ -10,7 +10,7 @@
 | Matheus de Alcântara | 1 | [#20](https://github.com/Shio-Enterprise/Documentacao/issues/20) | Correção complementar de acesso ao painel administrativo |
 | Matheus de Alcântara / Vilmar Fagundes | 4 | [#6](https://github.com/Shio-Enterprise/Documentacao/issues/6), [#7](https://github.com/Shio-Enterprise/Documentacao/issues/7), [#10](https://github.com/Shio-Enterprise/Documentacao/issues/10), [#11](https://github.com/Shio-Enterprise/Documentacao/issues/11) | Disponibilidade dos drops (O3) e Métricas do dashboard e CRM (O7) |
 | Amanda / Felipe / Cauã | 1 | [#25](https://github.com/Shio-Enterprise/Documentacao/issues/25) | Catálogo, busca e paginação server-side (O5) |
-| João Gabriel e Pedro Augusto | O2 — Expiração automática de reserva de estoque no checkout. [Ver Evidências](evidencias.md#expiração-automática-de-reserva-de-estoque-no-checkout-o2) |
+| João Gabriel / Pedro Augusto / João Lucas| 2 | [#26](https://github.com/Shio-Enterprise/Documentacao/issues/26) | Expiração automática de reserva de estoque no checkout (O2). / Criação da pipeline CI/CD |
  
 ---
  
