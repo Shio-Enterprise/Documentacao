@@ -123,8 +123,6 @@ Antes desta melhoria, a disponibilidade de um drop (campanha limitada de produto
 
 **Evidências (prints):**
 
-*A inserir em `assets/evidencias-o3/` — capturas ainda pendentes.*
-
 Catálogo mostrando produto de um drop em Rascunho (visível, mas com compra desabilitada):
 
 ![Produto de drop Rascunho visível no catálogo](assets/evidencias-03/01-catalogo-drop-rascunho.png)
