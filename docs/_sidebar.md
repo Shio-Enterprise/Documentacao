@@ -26,5 +26,6 @@
         - Squad 3
             - [O4 — Evidências](sprints/sprint_1/squad_3/o4-evidencias.md)
             - [O9 — Evidências](sprints/sprint_1/squad_3/o9-evidencias.md)
+            - [O8 — Evidências](sprints/sprint_1/squad_3/o8-evidencias.md)
         - Squad 4
             - [O2 — Evidências](sprints/sprint_1/squad_4/o2-evidencias.md)
