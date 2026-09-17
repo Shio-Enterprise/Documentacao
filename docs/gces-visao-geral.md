@@ -4,16 +4,17 @@
 
 | Nome | Matrícula |
 | --- | --- |
-| Amanda Cruz Lima |  |
-| Felipe de Oliveira Motta |  |
-| Danilo Naves |  |
-| Arthur da Silveira Sousa |  |
-| Cauã Araujo dos Santos |  |
-| Ian Costa Guimarães |  |
-| João Lucas Ramos dos Reis |  |
-| João Gabriel Milhomem de Brito |  |
-| Matheus de Alcântara |  |
-| Vilmar José Fagundes dos Passos Júnior |  |
+| Amanda Cruz Lima | 231027023 |
+| Arthur da Silveira Sousa | 221022462 |
+| Cauã Araujo dos Santos | 221022490 |
+| Danilo Naves | 221022515 |
+| Felipe de Oliveira Motta | 221031158 |
+| Ian Costa Guimarães | 222014859 |
+| João Gabriel Milhomem de Brito | 221022005 |
+| João Lucas Ramos dos Reis | 211061930 |
+| Matheus de Alcântara | 231026509 |
+| Pedro Augusto | 190094320 |
+| Vilmar José Fagundes dos Passos Júnior | 231026590 |
 
 ## Objetivo de GCES — Gerência de Configuração e Evolução de Software
 
