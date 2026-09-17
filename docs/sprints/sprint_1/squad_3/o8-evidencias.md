@@ -1,4 +1,4 @@
-## Modelo de Custos, Promoções e Rastreabilidade de Estoque
+## Modelo de Custos, Promoções e duplicação SKU
 
 **Responsável:** Danilo Naves
 
