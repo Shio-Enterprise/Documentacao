@@ -29,3 +29,4 @@
             - [O8 — Evidências](sprints/sprint_1/squad_3/o8-evidencias.md)
         - Squad 4
             - [O2 — Evidências](sprints/sprint_1/squad_4/o2-evidencias.md)
+            - [CI — Evidências](sprints/sprint_1/squad_4/ci-evidencias.md)
