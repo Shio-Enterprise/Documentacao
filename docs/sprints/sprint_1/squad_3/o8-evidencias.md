@@ -15,11 +15,17 @@ A implementação passou a distinguir **preço base**, **preço promocional** e 
 
 
 **Cadastro e integridade das variações:**
-O fluxo de criação de produtos e variações foi revisado para garantir maior consistência entre tamanho, cor, SKU e estoque inicial.
+O fluxo de criação de produtos e variações foi revisado para garantir maior consistência entre tamanho, cor e SKU.
 
 A duplicação de produtos passou a preservar os atributos das variações, como tamanho e cor, permitindo ao usuário informar novos SKUs para o produto duplicado. Dessa forma, a duplicação não reutiliza inadvertidamente identificadores já existentes e mantém as características do produto original.
 
 Também foram adicionadas validações para impedir combinações duplicadas de tamanho e cor dentro de um mesmo produto.
+
+![Nova tela de seleção de preço](../../../assets/evidencias-o8/ev8.png)
+
+![Nova tela de seleção de preço](../../../assets/evidencias-o8/ev9.png)
+
+![Nova tela de seleção de preço](../../../assets/evidencias-o8/ev10.png)
 
 **Experiência no painel administrativo:**
 
