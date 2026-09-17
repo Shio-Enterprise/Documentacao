@@ -10,7 +10,7 @@
 | Matheus de Alcântara | 1 | [#20](https://github.com/Shio-Enterprise/Documentacao/issues/20) | Correção complementar de acesso ao painel administrativo |
 | Matheus de Alcântara / Vilmar Fagundes | 4 | [#6](https://github.com/Shio-Enterprise/Documentacao/issues/6), [#7](https://github.com/Shio-Enterprise/Documentacao/issues/7), [#10](https://github.com/Shio-Enterprise/Documentacao/issues/10), [#11](https://github.com/Shio-Enterprise/Documentacao/issues/11) | Disponibilidade dos drops (O3) e Métricas do dashboard e CRM (O7) |
 | Amanda Cruz / Felipe Motta / Cauã Araujo | 3 | [#25](https://github.com/Shio-Enterprise/Documentacao/issues/25), [#22](https://github.com/Shio-Enterprise/Documentacao/issues/22), [23](https://github.com/Shio-Enterprise/Documentacao/issues/23) | Catálogo, busca e paginação server-side (O5), Tornar o backend a fonte única do valor da compra (O1), Completar e restringir o ciclo operacional dos pedidos (O6) |
-| João Gabriel / Pedro Augusto / João Lucas| 2 | [#26](https://github.com/Shio-Enterprise/Documentacao/issues/26) | Expiração automática de reserva de estoque no checkout (O2). / Criação da pipeline CI/CD |
+| João Gabriel / Pedro Augusto / João Lucas| 2 | [#26](https://github.com/Shio-Enterprise/Documentacao/issues/26), [#32](https://github.com/Shio-Enterprise/Documentacao/issues/32) | Expiração automática de reserva de estoque no checkout (O2) e Criação da pipeline CI/CD |
 
 ### Evidências
 
@@ -25,6 +25,7 @@
 | [O7 - Evidência](./squad_1/o7-evidencias.md)
 | [O8 - Evidência](./squad_3/o8-evidencias.md)
 | [O9 - Evidência](./squad_3/o9-evidencias.md)
+| [CI - Evidência](./squad_4/ci-evidencias.md)
  
 ---
  
