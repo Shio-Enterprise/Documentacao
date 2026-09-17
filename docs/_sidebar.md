@@ -1,6 +1,6 @@
 - TPPE
 
-* [Início](/)
+* [Início](inicio.md)
 * [Documento de Abertura](documento-abertura.md)
 * [Especificação de Requisitos](especificacao-requisitos.md)
 * [Backlog do Produto](backlog.md)
