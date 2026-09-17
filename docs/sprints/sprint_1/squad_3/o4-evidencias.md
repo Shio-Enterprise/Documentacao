@@ -13,6 +13,10 @@
 
 **Evidências (Prints):**
 
+Interface antiga de login:
+
+![Login antigo apenas pelo google](../../../assets/evidencias-04/login_original.png)
+
 Nova interface de Login e Cadastro utilizando e-mail e senha:
 
 ![Formulário de Login Tradicional](../../../assets/evidencias-04/01-login-tradicional.jpg)
