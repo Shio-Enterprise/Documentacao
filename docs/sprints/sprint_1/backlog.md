@@ -9,13 +9,13 @@ Este documento consolida os itens presentes no quadro Kanban do projeto **Shio**
 ## O1 — Tornar o backend a fonte única do valor da compra
 
 **Issue:** [#22 — O1: [Bug] Tornar o backend a fonte única do valor da compra](https://github.com/Shio-Enterprise/Documentacao/issues/22)  
-**Responsáveis:** [Cauã Araujo](https://github.com/caua08), [Felipe Motta](https://github.com/M0tt1nh4), [Amanda Cruz](https://github.com/mandicrz) 
-**Sprint:** Sprint 1
-**Tipo:** Bug
-**Prioridade:** Alta
-**Escopo:** Frontend e Backend
-**Estimativa:** 3
-**Status no quadro:** Done
+**Responsáveis:** [Cauã Araujo](https://github.com/caua08), [Felipe Motta](https://github.com/M0tt1nh4), [Amanda Cruz](https://github.com/mandicrz)  
+**Sprint:** Sprint 1  
+**Tipo:** Bug  
+**Prioridade:** Alta  
+**Escopo:** Frontend e Backend  
+**Estimativa:** 3  
+**Status no quadro:** Done  
 
 ### Descrição
 
