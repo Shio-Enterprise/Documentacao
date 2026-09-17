@@ -1,5 +1,5 @@
 <a id="o5-catalogo-busca-e-paginacao-server-side"></a>
-## Catálogo, busca e paginação server-side
+## O2: Catálogo, busca e paginação server-side
 
 **Trio:** Amanda, Felipe e Cauã
 

@@ -15,6 +15,7 @@
 - [Visão Geral](gces-visao-geral.md)
 - [Sprints](sprints/)
     - [Sprint 1](sprints/sprint_1/)
+        - [Backlog](sprints/sprint_1/backlog.md)
         - Squad 1
             - [O3 — Evidências](sprints/sprint_1/squad_1/o3-evidencias.md)
             - [O7 — Evidências](sprints/sprint_1/squad_1/o7-evidencias.md)

@@ -1,4 +1,4 @@
-## Checkout seguro com cálculo autoritativo, cotação persistida e idempotência
+## O1: Checkout seguro com cálculo autoritativo, cotação persistida e idempotência
 **Trio:** Amanda, Felipe e Cauã
 
 **Por que a melhoria foi relevante?**

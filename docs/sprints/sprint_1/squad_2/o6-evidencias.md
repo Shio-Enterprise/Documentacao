@@ -1,4 +1,4 @@
-## Ciclo operacional seguro de pedidos — O6
+## O6: Ciclo operacional seguro de pedidos — O6
 **Trio:** Amanda, Felipe e Cauã
 
 **Por que a melhoria foi relevante?**
