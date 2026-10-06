@@ -13,6 +13,8 @@
 - <span class="sidebar-title">GCES</span>
 
 - [Visão Geral](gces-visao-geral.md)
+- [Favoritos — Issue #37](favoritos.md)
+    - [Validação e pendências](favoritos-pendencias.md)
 - [Sprints](sprints/)
     - [Sprint 1](sprints/sprint_1/)
         - [Backlog](sprints/sprint_1/backlog.md)
