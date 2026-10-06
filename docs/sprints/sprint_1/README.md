@@ -1,6 +1,8 @@
 # Sprint 1
  
 **Período:** 01/09/2026 a 16/09/2026
+
+**Apresentação:** [Slides da Sprint 1](https://canva.link/s6f0kfyrdf8a9pq)
  
 ## Entregas da Sprint
  
