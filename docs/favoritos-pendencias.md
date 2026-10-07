@@ -1,5 +1,7 @@
 # Favoritos — validação e pendências da implementação
 
+> **Registro histórico:** este parecer corresponde à revisão de 5 de outubro de 2026, anterior à implementação final. Consulte as [evidências visuais de 7 de outubro](favoritos-evidencias.md), capturadas com API real e PostgreSQL. Os apontamentos abaixo não foram todos reavaliados nesta etapa de documentação e não devem ser tratados automaticamente como pendências atuais.
+
 **Data:** 5 de outubro de 2026  
 **Referência:** [Issue #37 — Favoritos de produtos com lista em Minha conta](https://github.com/Shio-Enterprise/Documentacao/issues/37)  
 **Escopo:** código local de backend e frontend, testes, build e documentação.

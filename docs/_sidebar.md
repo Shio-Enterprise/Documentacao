@@ -14,6 +14,7 @@
 
 - [Visão Geral](gces-visao-geral.md)
 - [Favoritos — Issue #37](favoritos.md)
+    - [Evidências visuais](favoritos-evidencias.md)
     - [Validação e pendências](favoritos-pendencias.md)
 - [Sprints](sprints/)
     - [Sprint 1](sprints/sprint_1/)

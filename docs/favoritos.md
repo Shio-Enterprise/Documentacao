@@ -43,13 +43,17 @@ Logout, expiração e troca de conta invalidam o estado local. Operações assí
 
 ## Validação
 
-O parecer, os comandos executados e as pendências estão no [relatório de validação](favoritos-pendencias.md). Foi confirmado um defeito de sincronização entre a listagem e o cache de IDs. Os cenários de sessão e respostas atrasadas ainda precisam de cobertura automatizada específica.
+As [evidências visuais de 7 de outubro de 2026](favoritos-evidencias.md) registram nove cenários executados no navegador com API real e PostgreSQL local: catálogo, autenticação, favoritos marcados, conta desktop e mobile, persistência, paginação, recuperação de erro e lista vazia após remoção.
+
+O [relatório de validação de 5 de outubro](favoritos-pendencias.md) preserva o parecer e os comandos da revisão anterior. Seus apontamentos não representam, por si só, pendências da implementação atual. As suítes completas não foram reexecutadas durante a produção das imagens.
 
 ## Limites da entrega
 
 Não inclui favoritos anônimos, listas múltiplas ou compartilhadas, alertas, e-mails, administração de favoritos nem botão adicional no bloco principal do detalhe do produto. Os cards de recomendações estão incluídos.
 
-## Validação da implementação
+## Histórico de validação — 5 de outubro de 2026
+
+Resultados da revisão anterior, mantidos para rastreabilidade. A integração visual com API real e PostgreSQL foi executada posteriormente, conforme as evidências acima.
 
 - Backend: 13 testes de favoritos aprovados em ambiente temporário Python 3.12 com SQLite. Django system check, conferência de migrations, Ruff e formatação dos arquivos da feature passaram.
 - Frontend: 9 testes focados de contexto, página e card aprovados; `npm run build` aprovado.
