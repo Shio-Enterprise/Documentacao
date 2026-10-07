@@ -274,3 +274,46 @@ O acesso ao painel administrativo utiliza um fluxo separado da autenticação pr
 - Usuário comum não acessa diretamente uma rota administrativa e não autenticado é redirecionado ao login.
 - Endpoints administrativos rejeitam requisições sem autorização.
 - Navegação entre loja e painel mantém a mesma sessão.
+
+## Dashboard administrativo detalhado com métricas comerciais e operacionais
+
+**Issue:** [#52 — Adicionar dashboard administrativo detalhado com métricas comerciais e operacionais](https://github.com/Shio-Enterprise/Documentacao/issues/52)
+
+**Responsáveis:** [Cauã Araujo](https://github.com/caua08), [Felipe Motta](https://github.com/M0tt1nh4), [Amanda Cruz](https://github.com/mandicrz)
+
+**Sprint:** Sprint 2
+**Tipo:** Nova funcionalidade, UX e dados
+**Prioridade:** P2
+**Escopo:** Frontend e Backend
+**Status no quadro:** DoD
+
+### Descrição
+
+O dashboard atual continua como visão rápida da loja e passa a oferecer acesso a uma página administrativa de análise detalhada. A nova página reúne indicadores financeiros, vendas ao longo do tempo, rankings de produtos, receita por drop e categoria, distribuição de pedidos, clientes e estoque. As agregações são calculadas no backend com as regras comerciais já utilizadas pelo painel.
+
+### Regras
+
+- As rotas do frontend e os endpoints da API são restritos a administradores.
+- Venda válida exige pedido entregue e pagamento confirmado; reembolsos são subtraídos da receita bruta para formar a receita líquida.
+- Períodos de 30 dias e 365 dias, além de datas personalizadas, usam o horário de São Paulo. A série pode ser vista em barras ou lista, com ordenação dos períodos.
+- Rankings e receita por drop/categoria vêm dos itens de vendas válidas. A receita de itens soma quantidade × preço unitário, sem rateio de frete ou desconto.
+- Pedidos por status usam a data de criação e incluem pedidos sem pagamento; indicadores financeiros e de pagamento usam a data do pagamento.
+- Filtros de drop e categoria combinados correspondem ao mesmo item do pedido; totais de cadastro e estoque seguem seus critérios próprios.
+- O detalhamento dos pedidos associados a métricas e agrupamentos é paginado. A página trata carregamento, ausência de dados e erro.
+
+### Critérios de Aceitação
+
+- Preservar o dashboard resumido e oferecer acesso à análise detalhada protegida.
+- Exibir receita bruta, reembolsos, receita líquida, ticket médio, vendas válidas e sua evolução temporal.
+- Exibir rankings de produtos por unidades e receita, receita por drop/categoria, pedidos por status e vendas por método de pagamento.
+- Exibir clientes cadastrados, novos clientes, recorrentes, variações com estoque baixo e esgotadas.
+- Aplicar filtros de período, drop e categoria de forma consistente nos indicadores aos quais se aplicam.
+- Permitir abrir os pedidos relacionados aos indicadores cabíveis, sem usar dados de navegação dos usuários.
+- Documentar os cálculos e parâmetros na API; manter a interface responsiva e os estados de carregamento, vazio e erro.
+
+#### Testes
+
+- Validar receitas, reembolsos, ticket médio, vendas válidas e série temporal, incluindo períodos sem dados.
+- Validar rankings, receita por drop/categoria, status, pagamento, clientes e estoque.
+- Cobrir filtros isolados e combinados, pedidos inválidos ou reembolsados, permissão administrativa e correspondência entre agregados e pedidos detalhados.
+- No frontend, validar navegação entre resumo e detalhe, filtros, visualizações, detalhamento, estados de carregamento/vazio/erro e ausência de regressão no resumo.
