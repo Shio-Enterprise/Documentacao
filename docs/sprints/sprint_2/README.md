@@ -10,7 +10,7 @@
 | :---------------------------: | :--------------:| :------:| :-----------------: |
 | Ian Costa / Arthur Sousa / Danilo Naves | 4 | [#33](https://github.com/Shio-Enterprise/Documentacao/issues/33), [#34](https://github.com/Shio-Enterprise/Documentacao/issues/34), [#35](https://github.com/Shio-Enterprise/Documentacao/issues/35), [#39](https://github.com/Shio-Enterprise/Documentacao/issues/39), [#40](https://github.com/Shio-Enterprise/Documentacao/issues/40) | Avaliações de produto com compra verificada, Envio de e-mails transacionais e Recuperação de senha por e-mail |
 | Matheus de Alcântara / Vilmar Fagundes | 3 | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15), [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) | Segurança das integrações externas (O10) e Métricas de comportamento dos usuários no site |
-| Amanda Cruz / Felipe Motta / Cauã Araujo | 1 | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41) | Unificar autenticação e acesso ao painel administrativo |
+| Amanda Cruz / Felipe Motta / Cauã Araujo | 2 | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41), [#52](https://github.com/Shio-Enterprise/Documentacao/issues/52) | Unificar autenticação e acesso ao painel administrativo; dashboard administrativo detalhado |
 
 ### Evidências
 
@@ -22,6 +22,7 @@
 | [O10 - Evidência](./squad_1/o10-evidencias.md) | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15) |
 | [Métricas de comportamento - Evidência](./squad_1/metricas-comportamento-evidencias.md) | [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) |
 | [Login unificado - Evidência](./squad_2/login-unificado-evidencias.md) | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41) |
+| [Dashboard detalhado - Evidência](./squad_2/dashboard-detalhado-evidencias.md) | [#52](https://github.com/Shio-Enterprise/Documentacao/issues/52) |
 | [Squad 4 - Evidência](./squad_4/evidencias.md) | - |
  
 ---
