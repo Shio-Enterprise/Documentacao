@@ -13,19 +13,22 @@
   <link href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/logo.png">
 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3.2.0/dist/style.min.css" title="docsify-darklight-theme" type="text/css">
 
   <style>
     /* ── Variáveis ─────────────────────────────────────────── */
+    /* Cores claro/escuro vêm do plugin docsify-darklight-theme (window.$docsify.darklightTheme) */
     :root {
-      --color-bg:       #f5f5f5;
-      --color-surface:  #ffffff;
+      --color-bg:       var(--pageBackground, #f5f5f5);
+      --color-surface:  var(--background, #ffffff);
       --color-sidebar:  #2d2d2d;
-      --color-border:   #e0e0e0;
-      --color-text:     #1a1a1a;
-      --color-muted:    #666666;
-      --color-accent:   #000000;
-      --color-code-bg:  #efefef;
+      --color-border:   var(--tableBorder, #e0e0e0);
+      --color-text:     var(--textColor, #1a1a1a);
+      --color-muted:    var(--mutedColor, #666666);
+      --color-accent:   var(--accent, #000000);
+      --color-code-bg:  var(--codeBackgroundColor, #efefef);
+      --color-stripe:   var(--stripeColor, #f9f9f9);
+      --color-head-bg:  var(--tableHeadBackground, #000000);
       --font-body:      'Inter', sans-serif;
       --font-mono:      'JetBrains Mono', monospace;
     }
@@ -143,22 +146,22 @@
     }
 
     .markdown-section thead tr {
-      background: var(--color-accent);
+      background: var(--color-head-bg);
     }
 
     .markdown-section thead th {
       color: #ffffff;
-      border: 1px solid var(--color-accent);
+      border: 1px solid var(--color-head-bg);
       padding: 10px 14px;
       font-weight: 600;
     }
 
     .markdown-section tbody tr:nth-child(odd) {
-      background: #ffffff;
+      background: var(--color-surface);
     }
 
     .markdown-section tbody tr:nth-child(even) {
-      background: #f9f9f9;
+      background: var(--color-stripe);
     }
 
     .markdown-section tbody td {
@@ -194,7 +197,7 @@
 
     /* ── Blockquote ────────────────────────────────────────── */
     .markdown-section blockquote {
-      background: #f9f9f9;
+      background: var(--color-stripe);
       border-left: 4px solid var(--color-accent);
       color: var(--color-muted);
       margin: 1.2em 0;
@@ -234,6 +237,61 @@
       color: #ffffff !important;
     }
 
+    /* A busca fica na sidebar (sempre escura): cores fixas, independentes do tema */
+    .sidebar .search .matching-post {
+      border-bottom-color: #4a4a4a !important;
+    }
+
+    .sidebar .search .matching-post h2,
+    .sidebar .search .matching-post a {
+      color: #ffffff !important;
+    }
+
+    .sidebar .search .matching-post p,
+    .sidebar .search .empty {
+      color: #aaaaaa !important;
+    }
+
+    .sidebar .search .search-keyword {
+      color: #ffffff !important;
+      font-weight: 700;
+    }
+
+    .sidebar .search a:hover h2 {
+      opacity: 0.7;
+    }
+
+    .sidebar .search .clear-button svg circle {
+      fill: #6a6a6a;
+    }
+
+    /* ── Paginação ────────────────────────────────────────── */
+    .docsify-pagination-container {
+      max-width: 860px;
+      margin: 1.5rem auto 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .docsify-pagination-container .pagination-item-label,
+    .docsify-pagination-container .pagination-item-subtitle {
+      color: var(--color-muted);
+    }
+
+    .docsify-pagination-container .pagination-item-title {
+      color: var(--color-text);
+    }
+
+    /* ── Última atualização ───────────────────────────────── */
+    .last-updated {
+      margin-top: 2.5rem;
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    .last-updated:empty {
+      display: none;
+    }
+
     /* ── Scrollbar ─────────────────────────────────────────── */
     ::-webkit-scrollbar {
       width: 6px;
@@ -271,7 +329,88 @@
         depth: 6
       },
       nameLink: '/',
-      formatUpdated: '{DD}/{MM} {HH}:{mm}',
+      pagination: {
+        previousText: 'Anterior',
+        nextText: 'Próxima',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      darklightTheme: {
+        defaultTheme: 'light',
+        siteFont: 'Inter',
+        codeFontFamily: "'JetBrains Mono', monospace",
+        bodyFontSize: '15px',
+        light: {
+          accent: '#000000',
+          toogleBackground: '#2d2d2d',
+          background: '#ffffff',
+          pageBackground: '#f5f5f5',
+          textColor: '#1a1a1a',
+          mutedColor: '#666666',
+          codeTextColor: '#1a1a1a',
+          codeBackgroundColor: '#efefef',
+          borderColor: 'rgba(0, 0, 0, 0.07)',
+          tableBorder: '#e0e0e0',
+          stripeColor: '#f9f9f9',
+          tableHeadBackground: '#000000',
+          sidebarSublink: '#aaaaaa',
+          codeTypeColor: '#1a1a1a',
+        },
+        dark: {
+          accent: '#ffffff',
+          toogleBackground: '#ffffff',
+          background: '#1e1e1e',
+          pageBackground: '#121212',
+          textColor: '#d4d4d4',
+          mutedColor: '#9a9a9a',
+          codeTextColor: '#e6e6e6',
+          codeBackgroundColor: '#2a2a2a',
+          borderColor: '#333333',
+          tableBorder: '#3a3a3a',
+          stripeColor: '#252525',
+          tableHeadBackground: '#2d2d2d',
+          sidebarSublink: '#aaaaaa',
+          codeTypeColor: '#e6e6e6',
+        },
+      },
+      plugins: [
+        // Última atualização: data do último commit do .md da página, via API do GitHub.
+        // Páginas ainda não commitadas (ou se a API falhar) simplesmente não mostram a data.
+        function lastUpdated(hook, vm) {
+          const repo = 'Shio-Enterprise/Documentacao';
+          const cache = {};
+
+          hook.afterEach(function (html, next) {
+            next(html + '<p class="last-updated"></p>');
+          });
+
+          hook.doneEach(function () {
+            const file = vm.route.file;
+            const el = document.querySelector('.last-updated');
+            if (!file || !el) return;
+
+            const show = function (iso) {
+              if (!iso) return;
+              const date = new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+              el.textContent = 'Última atualização: ' + date;
+              // Fica acima dos links Anterior/Próxima do docsify-pagination
+              const pagination = document.querySelector('.docsify-pagination-container');
+              if (pagination) pagination.parentNode.insertBefore(el, pagination);
+            };
+
+            if (file in cache) return show(cache[file]);
+
+            const url = 'https://api.github.com/repos/' + repo + '/commits?per_page=1&path=docs/' + encodeURIComponent(file);
+            fetch(url)
+              .then(function (r) { return r.ok ? r.json() : []; })
+              .then(function (commits) {
+                cache[file] = commits.length ? commits[0].commit.committer.date : null;
+                show(cache[file]);
+              })
+              .catch(function () {});
+          });
+        },
+      ],
     }
   </script>
 
@@ -280,5 +419,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3.2.0/dist/index.min.js" type="text/javascript"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2.10.1/dist/docsify-pagination.min.js"></script>
 </body>
 </html>
