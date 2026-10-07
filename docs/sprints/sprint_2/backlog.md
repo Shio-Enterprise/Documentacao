@@ -367,3 +367,123 @@ O dashboard atual continua como visão rápida da loja e passa a oferecer acesso
 - Validar rankings, receita por drop/categoria, status, pagamento, clientes e estoque.
 - Cobrir filtros isolados e combinados, pedidos inválidos ou reembolsados, permissão administrativa e correspondência entre agregados e pedidos detalhados.
 - No frontend, validar navegação entre resumo e detalhe, filtros, visualizações, detalhamento, estados de carregamento/vazio/erro e ausência de regressão no resumo.
+
+---
+
+## Expiração automática da reserva de estoque
+
+**Issue:** [#43 — [Feature] Automatizar a expiração da reserva de estoque do checkout](https://github.com/Shio-Enterprise/Documentacao/issues/43)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Sprint:** Sprint 2  
+**Tipo:** Funcionalidade, estoque e concorrência  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+### Descrição
+
+Ao finalizar a compra, o estoque é reservado por 30 minutos enquanto o pagamento não é confirmado. A reserva vencida só era liberada quando alguém abria o detalhe do pedido; sem isso, o estoque ficava preso e o produto podia sumir do catálogo. A atividade libera reservas vencidas automaticamente, disparando a liberação nas próprias requisições de carrinho, checkout e catálogo, já que o projeto não usa filas de tarefas. Depende de o webhook da InfinitePay (O1, etapas 5 e 6) ser o único caminho de confirmação de pagamento.
+
+### Critérios de Aceitação
+
+- Liberação de reserva segura contra concorrência e idempotente, sem devolver o estoque duas vezes.
+- Reservas vencidas liberadas antes de validar estoque no carrinho, na cotação e no checkout.
+- Varredura periódica limitada nas rotas de catálogo e carrinho, sem cron.
+- Pedido com pagamento confirmado ou dentro do prazo nunca é cancelado.
+- Falha na liberação não quebra a requisição que a disparou.
+- Comando `expire_stale_orders` disponível para agendamento opcional.
+
+#### Testes
+
+- Reserva vencida não bloqueia nova compra do mesmo item.
+- Produto volta ao catálogo sem ninguém abrir o pedido antigo.
+- Concorrência entre liberação e confirmação de pagamento via webhook.
+
+---
+
+## Cupons de desconto
+
+### Cupons — visão geral
+
+**Responsáveis:** [João Gabriel](https://github.com/JoaoComTil), [João Lucas Ramos](https://github.com/Joaolramos)  
+**Sprint:** Sprint 2  
+**Tipo:** Nova funcionalidade  
+**Escopo:** Frontend e Backend  
+
+### Descrição
+
+Hoje só o cupom BEMVINDO10 funciona, aplicado automaticamente na primeira compra e com a regra fixa no código. A atividade permite que o cliente digite qualquer cupom no checkout e que a equipe da Shio crie e gerencie cupons pelo painel, com limite de usos total e por cliente, valor mínimo do pedido e restrição a drops ou categorias. A integração com a Méliuz depende de contato comercial e fica fora desta entrega; o campo de parceiro do cupom já permite cupons exclusivos de parceiros e influenciadores.
+
+### Regras
+
+- Um cupom por pedido; o código digitado substitui o desconto automático.
+- O cupom vale também para itens em promoção.
+- O valor mínimo é comparado com o subtotal, sem frete.
+- O desconto incide só sobre os itens do escopo do cupom; o desconto fixo nunca passa do valor desses itens.
+- Cupom inválido recusa a cotação com a mensagem do motivo, em vez de cotar sem desconto.
+- Um uso conta apenas para pedidos não cancelados: quando o pedido é cancelado, inclusive por reserva vencida, o uso volta.
+- Cupom já usado não pode ter o código alterado nem ser apagado, só desativado.
+
+### Linha de desconto na InfinitePay
+
+**Issue:** [#45 — [Bug] Corrigir a linha de desconto enviada à InfinitePay](https://github.com/Shio-Enterprise/Documentacao/issues/45)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- A linha de desconto na InfinitePay passa a mostrar o código do cupom aplicado.
+- Verificação em sandbox de que a InfinitePay aceita a linha de desconto no cartão e no PIX.
+- Implementada junto com a entrada do cupom no checkout, depois da confirmação de pagamento via webhook (O1, etapas 5 e 6).
+
+### Modelo de cupom e contagem de usos
+
+**Issue:** [#46 — [Backend] Modelo de cupom com limites, escopo e contagem de usos](https://github.com/Shio-Enterprise/Documentacao/issues/46)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- Novos campos do cupom: período de validade, limites de uso, valor mínimo, teto do desconto, primeira compra, aplicação automática, drops, categorias e parceiro.
+- Código sem diferenciar maiúsculas e minúsculas.
+- BEMVINDO10 migrado para os novos campos, sem mudar o comportamento.
+- Contagem de usos derivada dos pedidos não cancelados.
+- Pedido cancelado deixa de tirar o desconto de primeira compra do cliente.
+- Cupom usado em pedido não pode ser apagado.
+
+### Cupom na cotação e no checkout
+
+**Issue:** [#47 — [Backend] Validar cupom digitado e aplicá-lo na cotação e no checkout](https://github.com/Shio-Enterprise/Documentacao/issues/47)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- Validação do cupom em nove verificações, cada uma com mensagem e código de erro próprios.
+- Código enviado na cotação, gravado nela e revalidado com trava no checkout.
+- Erro específico quando o cupom deixa de valer entre a cotação e o pagamento.
+- Compras simultâneas não ultrapassam o limite de usos.
+
+### Campo de cupom no checkout
+
+**Issue:** [#48 — [Frontend] Campo de cupom de desconto no checkout](https://github.com/Shio-Enterprise/Documentacao/issues/48)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Frontend  
+**Status no quadro:** Todo  
+
+- Campo para aplicar e remover o cupom no resumo da compra.
+- Mensagem de erro embaixo do campo quando o cupom não vale.
+- Linha do desconto com o código do cupom aplicado.
+
+### CRUD de cupons no painel administrativo
+
+**Issue:** [#49 — [Backend] CRUD de cupons no painel administrativo](https://github.com/Shio-Enterprise/Documentacao/issues/49)  
+**Responsável:** [João Lucas Ramos](https://github.com/Joaolramos)  
+**Prioridade:** P2  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- Criar, listar, editar e desativar cupons, restrito a administradores.
+- Listagem com usos, usos restantes, desconto concedido e receita de cada cupom.
+- Filtros por situação, busca e parceiro.
