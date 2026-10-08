@@ -43,11 +43,8 @@ Antes desta entrega, o sistema diferenciava apenas contas comuns e contas admini
 
 **Evidências (Pull Requests):**
 
-- [Frontend PR #20](https://github.com/Shio-Enterprise/frontend/pull/20)
-- [Backend PR #21](https://github.com/Shio-Enterprise/backend/pull/21)
+_A adicionar._
 
 **Evidências (prints):**
 
-O painel administrativo permite visualizar e gerenciar as permissões atribuídas a cada administrador da aplicação. As permissões são organizadas por área funcional, permitindo controlar individualmente o acesso ao Dashboard, Produtos e Estoque, Drops, Pedidos, Clientes e ao próprio gerenciamento de permissões:
-
-![Painel de Permissões Administrativas](../../../assets/evidencias-permissoes-admin/painel-permissoes.png)
+_A adicionar._
