@@ -20,4 +20,5 @@ A plataforma não tinha forma de recuperar a senha: um cliente que a esquecesse 
 
 **Evidências (prints):**
 
-_A adicionar._
+![E-mail de Recuperação Enviado](../../../assets/evidencias-senha/email-recuperacao-enviado.png)
+![Interface de Nova Senha](../../../assets/evidencias-senha/interface-cadastro-nova-senha.png)

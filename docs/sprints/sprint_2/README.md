@@ -11,6 +11,7 @@
 | Ian Costa / Arthur Sousa / Danilo Naves | 4 | [#33](https://github.com/Shio-Enterprise/Documentacao/issues/33), [#34](https://github.com/Shio-Enterprise/Documentacao/issues/34), [#35](https://github.com/Shio-Enterprise/Documentacao/issues/35), [#39](https://github.com/Shio-Enterprise/Documentacao/issues/39), [#40](https://github.com/Shio-Enterprise/Documentacao/issues/40) | Avaliações de produto com compra verificada, Envio de e-mails transacionais e Recuperação de senha por e-mail |
 | Matheus de Alcântara / Vilmar Fagundes | 4 | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15), [#37](https://github.com/Shio-Enterprise/Documentacao/issues/37), [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) | Segurança das integrações externas (O10), Favoritos de produtos e Métricas de comportamento dos usuários no site |
 | Amanda Cruz / Felipe Motta / Cauã Araujo | 3 | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41), [#52](https://github.com/Shio-Enterprise/Documentacao/issues/52), [#54](https://github.com/Shio-Enterprise/Documentacao/issues/54) | Unificar autenticação e acesso ao painel administrativo; dashboard administrativo detalhado; gerenciamento de permissões administrativas |
+| João Gabriel / João Reis | 6 | [#43](https://github.com/Shio-Enterprise/Documentacao/issues/43), [#45](https://github.com/Shio-Enterprise/Documentacao/issues/45), [#46](https://github.com/Shio-Enterprise/Documentacao/issues/46), [#47](https://github.com/Shio-Enterprise/Documentacao/issues/47), [#48](https://github.com/Shio-Enterprise/Documentacao/issues/48), [#49](https://github.com/Shio-Enterprise/Documentacao/issues/49) | Expiração automática da reserva de estoque e Checkout com cupom |
 
 ### Evidências
 
@@ -25,7 +26,9 @@
 | [Login unificado - Evidência](./squad_2/login-unificado-evidencias.md) | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41) |
 | [Dashboard detalhado - Evidência](./squad_2/dashboard-detalhado-evidencias.md) | [#52](https://github.com/Shio-Enterprise/Documentacao/issues/52) |
 | [Permissões administrativas - Evidência](./squad_2/permissoes-admin-evidencias.md) | [#54](https://github.com/Shio-Enterprise/Documentacao/issues/54) |
-| [Squad 4 - Evidência](./squad_4/evidencias.md) | - |
+| [Checkout com cupom - Evidência](./squad_4/checkout-cupom-evidencias.md) | [#45](https://github.com/Shio-Enterprise/Documentacao/issues/45), [#46](https://github.com/Shio-Enterprise/Documentacao/issues/46), [#47](https://github.com/Shio-Enterprise/Documentacao/issues/47), [#48](https://github.com/Shio-Enterprise/Documentacao/issues/48), [#49](https://github.com/Shio-Enterprise/Documentacao/issues/49) |
+| [Expiração da reserva - Evidência](./squad_4/expiracao-reserva-evidencias.md) | [#43](https://github.com/Shio-Enterprise/Documentacao/issues/43) |
+| [CRUD de cupons - Evidência](./squad_4/crud-cupons-evidencias.md) | [#49](https://github.com/Shio-Enterprise/Documentacao/issues/49), [#59](https://github.com/Shio-Enterprise/Documentacao/issues/59), [#60](https://github.com/Shio-Enterprise/Documentacao/issues/60) |
  
 ---
  
