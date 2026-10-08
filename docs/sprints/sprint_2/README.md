@@ -9,7 +9,7 @@
 | Trio/Dupla de Desenvolvedores | Qtd. de Tarefas | Tarefas | Assunto das Tarefas |
 | :---------------------------: | :--------------:| :------:| :-----------------: |
 | Ian Costa / Arthur Sousa / Danilo Naves | 4 | [#33](https://github.com/Shio-Enterprise/Documentacao/issues/33), [#34](https://github.com/Shio-Enterprise/Documentacao/issues/34), [#35](https://github.com/Shio-Enterprise/Documentacao/issues/35), [#39](https://github.com/Shio-Enterprise/Documentacao/issues/39), [#40](https://github.com/Shio-Enterprise/Documentacao/issues/40) | Avaliações de produto com compra verificada, Envio de e-mails transacionais e Recuperação de senha por e-mail |
-| Matheus de Alcântara / Vilmar Fagundes | 3 | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15), [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) | Segurança das integrações externas (O10) e Métricas de comportamento dos usuários no site |
+| Matheus de Alcântara / Vilmar Fagundes | 4 | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15), [#37](https://github.com/Shio-Enterprise/Documentacao/issues/37), [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) | Segurança das integrações externas (O10), Favoritos de produtos e Métricas de comportamento dos usuários no site |
 | Amanda Cruz / Felipe Motta / Cauã Araujo | 3 | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41), [#52](https://github.com/Shio-Enterprise/Documentacao/issues/52), [#54](https://github.com/Shio-Enterprise/Documentacao/issues/54) | Unificar autenticação e acesso ao painel administrativo; dashboard administrativo detalhado; gerenciamento de permissões administrativas |
 
 ### Evidências
@@ -20,6 +20,7 @@
 | [Envio de e-mails - Evidência](./squad_3/envio-emails-evidencias.md) | [#35](https://github.com/Shio-Enterprise/Documentacao/issues/35) |
 | [Recuperação de senha - Evidência](./squad_3/recuperacao-senha-evidencias.md) | [#34](https://github.com/Shio-Enterprise/Documentacao/issues/34), [#39](https://github.com/Shio-Enterprise/Documentacao/issues/39), [#40](https://github.com/Shio-Enterprise/Documentacao/issues/40) |
 | [O10 - Evidência](./squad_1/o10-evidencias.md) | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15) |
+| [Favoritos de produtos - Evidência](./squad_1/favoritos-evidencias.md) | [#37](https://github.com/Shio-Enterprise/Documentacao/issues/37) |
 | [Métricas de comportamento - Evidência](./squad_1/metricas-comportamento-evidencias.md) | [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) |
 | [Login unificado - Evidência](./squad_2/login-unificado-evidencias.md) | [#41](https://github.com/Shio-Enterprise/Documentacao/issues/41) |
 | [Dashboard detalhado - Evidência](./squad_2/dashboard-detalhado-evidencias.md) | [#52](https://github.com/Shio-Enterprise/Documentacao/issues/52) |

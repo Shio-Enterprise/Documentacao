@@ -200,6 +200,57 @@ Implementação das decisões registradas na #14: proteção administrativa do i
 
 ---
 
+## Favoritos de produtos com lista em Minha conta
+
+**Issue:** [#37 — Favoritos de produtos com lista em Minha conta](https://github.com/Shio-Enterprise/Documentacao/issues/37)
+
+**Responsáveis:** [Matheus de Alcântara](https://github.com/matheusdealcantara), [Vilmar Fagundes](https://github.com/VilmarFagundes)
+
+**Sprint:** Sprint 2
+
+**Tipo:** Nova funcionalidade
+
+**Prioridade:** P2
+
+**Escopo:** Frontend e Backend
+
+**Status no quadro:** Done
+
+### Descrição
+
+A loja não permitia salvar produtos para consultar depois. A funcionalidade permite que clientes autenticados marquem produtos pelo coração dos cards e os reencontrem em uma lista privada na área Minha conta, preservada entre sessões.
+
+### Regras
+
+- Cada favorito vincula um usuário autenticado a um produto, sem reservar estoque nem fixar preço, tamanho ou cor.
+- A inclusão e a remoção são idempotentes e afetam apenas a lista do usuário autenticado.
+- Visitantes que acionam o coração são encaminhados ao login e retornam à página de origem.
+- Produtos sem estoque permanecem na lista com indicação de indisponibilidade.
+- Produtos inativos ou associados a drops privados deixam de ser exibidos, sem apagar o vínculo salvo.
+- A lista usa os dados atuais do produto e oferece paginação, remoção, recuperação de erro e estado vazio.
+
+### Critérios de Aceitação
+
+- Exibir um coração nos cards de produto para adicionar ou remover favoritos.
+- Exigir autenticação e manter os favoritos vinculados à conta após logout e novo login.
+- Disponibilizar a página Meus favoritos na navegação de Minha conta em desktop e mobile.
+- Listar os produtos favoritos com paginação e permitir sua remoção pela interface.
+- Informar quando um produto favorito estiver indisponível, sem removê-lo automaticamente.
+- Apresentar estados de carregamento, erro com nova tentativa e lista vazia.
+- Impedir que dados ou respostas assíncronas de uma sessão anterior apareçam para outra conta.
+
+#### Testes
+
+- Validar unicidade e isolamento dos favoritos entre usuários.
+- Cobrir inclusão, repetição da inclusão, remoção e repetição da remoção.
+- Verificar autenticação, visibilidade dos produtos e persistência entre sessões.
+- Testar o estado compartilhado dos corações, a paginação e os estados de erro e lista vazia.
+- Validar o fluxo integrado no navegador com API real e PostgreSQL.
+
+**Documentação e evidências:** [registro técnico](./squad_1/favoritos.md) e [evidências visuais](./squad_1/favoritos-evidencias.md).
+
+---
+
 ## Métricas de comportamento dos usuários no site
 
 **Issue:** [#38 — [Feature] Métricas de comportamento dos usuários no site (visão geral e individual)](https://github.com/Shio-Enterprise/Documentacao/issues/38)  
