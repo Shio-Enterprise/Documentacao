@@ -13,9 +13,6 @@
 - <span class="sidebar-title">GCES</span>
 
 - [Visão Geral](gces-visao-geral.md)
-- [Favoritos — Issue #37](favoritos.md)
-    - [Evidências visuais](favoritos-evidencias.md)
-    - [Validação e pendências](favoritos-pendencias.md)
 - [Sprints](sprints/)
     - [Sprint 1](sprints/sprint_1/)
         - [Backlog](sprints/sprint_1/backlog.md)
@@ -36,6 +33,9 @@
     - [Sprint 2](sprints/sprint_2/)
         - [Backlog](sprints/sprint_2/backlog.md)
         - Squad 1
+            - [Favoritos — Issue #37](sprints/sprint_2/squad_1/favoritos.md)
+                - [Evidências visuais](sprints/sprint_2/squad_1/favoritos-evidencias.md)
+                - [Validação e pendências](sprints/sprint_2/squad_1/favoritos-pendencias.md)
             - [O10 — Evidências](sprints/sprint_2/squad_1/o10-evidencias.md)
             - [Métricas de comportamento — Evidências](sprints/sprint_2/squad_1/metricas-comportamento-evidencias.md)
         - Squad 2
