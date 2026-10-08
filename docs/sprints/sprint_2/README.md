@@ -27,6 +27,7 @@
 | [Permissões administrativas - Evidência](./squad_2/permissoes-admin-evidencias.md) | [#54](https://github.com/Shio-Enterprise/Documentacao/issues/54) |
 | [Checkout com cupom - Evidência](./squad_4/checkout-cupom-evidencias.md) | [#45](https://github.com/Shio-Enterprise/Documentacao/issues/45), [#46](https://github.com/Shio-Enterprise/Documentacao/issues/46), [#47](https://github.com/Shio-Enterprise/Documentacao/issues/47), [#48](https://github.com/Shio-Enterprise/Documentacao/issues/48), [#49](https://github.com/Shio-Enterprise/Documentacao/issues/49) |
 | [Expiração da reserva - Evidência](./squad_4/expiracao-reserva-evidencias.md) | [#43](https://github.com/Shio-Enterprise/Documentacao/issues/43) |
+| [CRUD de cupons - Evidência](./squad_4/crud-cupons-evidencias.md) | [#49](https://github.com/Shio-Enterprise/Documentacao/issues/49), [#59](https://github.com/Shio-Enterprise/Documentacao/issues/59), [#60](https://github.com/Shio-Enterprise/Documentacao/issues/60) |
  
 ---
  
