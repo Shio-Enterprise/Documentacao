@@ -29,6 +29,7 @@ Só o cupom BEMVINDO10 funcionava, aplicado automaticamente na primeira compra e
 **Evidências (Pull Requests):**
 - [Backend PR #19](https://github.com/Shio-Enterprise/backend/pull/19) — modelo de cupom, contagem de usos e correção do desconto de primeira compra (#46).
 - [Backend PR #23](https://github.com/Shio-Enterprise/backend/pull/23) — validação e cálculo do cupom, entrada do código na cotação e no checkout e linha de desconto na InfinitePay (#47 e #45).
+- [Frontend PR #21](https://github.com/Shio-Enterprise/frontend/pull/21) — campo de cupom de desconto na tela de pagamento (#48).
 
 **Validações registradas nos PRs:**
 - Testes automatizados em `orders/test_coupons.py` para cada uma das nove verificações do cupom, para o cálculo do desconto (percentual com e sem teto, valor fixo e escopo por drop e categoria) e para o fluxo pela API (cotação com e sem cupom, código inválido, cupom desativado ou esgotado entre a cotação e o checkout).
@@ -37,7 +38,6 @@ Só o cupom BEMVINDO10 funcionava, aplicado automaticamente na primeira compra e
 
 **Pendências:**
 - Validar em sandbox que a InfinitePay aceita a linha de desconto no cartão e no PIX (#45).
-- Campo de cupom na tela de pagamento do frontend (#48).
 - CRUD de cupons no painel administrativo (#49).
 - Integração com a Méliuz depende de contato comercial.
 
@@ -62,3 +62,9 @@ Só o cupom BEMVINDO10 funcionava, aplicado automaticamente na primeira compra e
 
 **Testes do fluxo e da concorrência — `orders/test_coupons.py`.** Testes da cotação, do checkout e da disputa pelo último uso de um cupom, executados em Postgres.
 ![Testes do cupom executados em Postgres](../../../assets/evidencias-cupons/06-testes-cupom.png)
+
+### Evidência do frontend
+
+**Cupom aplicado na tela de pagamento.** O cliente digita um cupom vencido e vê o motivo embaixo do campo; em seguida aplica um cupom válido, que aparece com o código na linha de desconto e reduz o total; ao remover, volta o desconto automático de primeira compra.
+![Aplicando e removendo um cupom na tela de pagamento](../../../assets/evidencias-cupons/07-cupom-no-checkout.gif)
+
