@@ -13,6 +13,9 @@
 - <span class="sidebar-title">GCES</span>
 
 - [Visão Geral](gces-visao-geral.md)
+- [Favoritos — Issue #37](favoritos.md)
+    - [Evidências visuais](favoritos-evidencias.md)
+    - [Validação e pendências](favoritos-pendencias.md)
 - [Sprints](sprints/)
     - [Sprint 1](sprints/sprint_1/)
         - [Backlog](sprints/sprint_1/backlog.md)
@@ -45,5 +48,6 @@
             - [Envio de e-mails — Evidências](sprints/sprint_2/squad_3/envio-emails-evidencias.md)
             - [Recuperação de senha — Evidências](sprints/sprint_2/squad_3/recuperacao-senha-evidencias.md)
         - Squad 4
+            - [Evidências](sprints/sprint_2/squad_4/evidencias.md)
             - [Checkout com cupom — Evidências](sprints/sprint_2/squad_4/checkout-cupom-evidencias.md)
             - [Expiração da reserva — Evidências](sprints/sprint_2/squad_4/expiracao-reserva-evidencias.md)

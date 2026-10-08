@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-07",
+  "backend": "ff3149f",
+  "frontend": "f883938",
+  "api": "Django real + PostgreSQL 15 local",
+  "fixtures": "scripts/seed_wishlist_e2e.py; conta de demonstração exclusiva",
+  "controlledFailure": "Somente captura 08: requisição da listagem interrompida no navegador",
+  "evidence": [
+    {
+      "filename": "01-catalogo-visitante.png",
+      "description": "Catálogo público com coração desmarcado.",
+      "route": "/category/all",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "02-login-obrigatorio.png",
+      "description": "Visitante encaminhado ao login ao tentar favoritar.",
+      "route": "/login",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "03-catalogo-coracoes-marcados.png",
+      "description": "Produtos 01 e 02 favoritados após autenticação.",
+      "route": "/category/all",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "04-minha-conta-desktop.png",
+      "description": "Lista reconciliada com inclusão em outra sessão e produto sem estoque.",
+      "route": "/my-favorites",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "05-minha-conta-mobile.png",
+      "description": "Navegação mobile e favorito indisponível, sem overflow horizontal.",
+      "route": "/my-favorites",
+      "viewport": {
+        "width": 390,
+        "height": 920
+      }
+    },
+    {
+      "filename": "06-persistencia-apos-login.png",
+      "description": "Favoritos preservados depois de recarregar, sair e entrar novamente.",
+      "route": "/my-favorites",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "07-paginacao.png",
+      "description": "Treze favoritos: segundo conjunto contém o item mais antigo.",
+      "route": "/my-favorites",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "08-erro-e-nova-tentativa.png",
+      "description": "Falha de rede controlada na listagem com opção de tentar novamente.",
+      "route": "/my-favorites",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "filename": "09-lista-vazia.png",
+      "description": "Lista vazia após remoções pela interface, com retorno ao catálogo.",
+      "route": "/my-favorites",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    }
+  ]
+}
