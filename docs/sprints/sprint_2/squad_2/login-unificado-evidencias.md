@@ -26,8 +26,11 @@ O painel administrativo utilizava um fluxo de autenticação separado da loja, o
 
 **Evidências (Pull Requests):**
 
-_A adicionar._
+- [Frontend PR #20](https://github.com/Shio-Enterprise/frontend/pull/20)
+- [Backend PR #21](https://github.com/Shio-Enterprise/backend/pull/21)
 
 **Evidências (prints):**
 
-_A adicionar._
+Após a autenticação, contas com privilégios administrativos passam a visualizar uma opção de acesso ao painel diretamente pela interface principal da aplicação. Usuários comuns não possuem esse acesso, mantendo a separação das funcionalidades conforme o perfil autenticado:
+
+![Acesso ao Painel Administrativo](../../../assets/evidencias-permissoes-admin/acesso-painel-admin.png)
