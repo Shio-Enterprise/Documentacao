@@ -41,9 +41,13 @@
         - Squad 2
             - [Login unificado — Evidências](sprints/sprint_2/squad_2/login-unificado-evidencias.md)
             - [O1 — Etapas 5 e 6 — Evidências](sprints/sprint_2/squad_2/o1-etapas-5-e-6-evidencias.md)
+            - [Dashboard detalhado — Evidências](sprints/sprint_2/squad_2/dashboard-detalhado-evidencias.md)
+            - [Permissões administrativas — Evidências](sprints/sprint_2/squad_2/permissoes-admin-evidencias.md)
         - Squad 3
             - [Avaliações de produto — Evidências](sprints/sprint_2/squad_3/avaliacoes-evidencias.md)
             - [Envio de e-mails — Evidências](sprints/sprint_2/squad_3/envio-emails-evidencias.md)
             - [Recuperação de senha — Evidências](sprints/sprint_2/squad_3/recuperacao-senha-evidencias.md)
         - Squad 4
             - [Evidências](sprints/sprint_2/squad_4/evidencias.md)
+            - [Checkout com cupom — Evidências](sprints/sprint_2/squad_4/checkout-cupom-evidencias.md)
+            - [Expiração da reserva — Evidências](sprints/sprint_2/squad_4/expiracao-reserva-evidencias.md)

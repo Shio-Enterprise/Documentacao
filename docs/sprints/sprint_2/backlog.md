@@ -252,7 +252,7 @@ Como administrador, acompanhar o comportamento dos usuários no site, em visão 
 **Tipo:** Funcionalidade, UX e arquitetura  
 **Prioridade:** P1  
 **Escopo:** Frontend e Backend  
-**Status no quadro:** Todo  
+**Status no quadro:** Done
 
 ### Descrição
 
@@ -274,3 +274,216 @@ O acesso ao painel administrativo utiliza um fluxo separado da autenticação pr
 - Usuário comum não acessa diretamente uma rota administrativa e não autenticado é redirecionado ao login.
 - Endpoints administrativos rejeitam requisições sem autorização.
 - Navegação entre loja e painel mantém a mesma sessão.
+
+---
+
+## Gerenciamento de permissões administrativas
+
+**Issue:** [#54 — Gerenciamento de permissões administrativas](https://github.com/Shio-Enterprise/Documentacao/issues/54)
+
+**Responsáveis:** [Cauã Araujo](https://github.com/caua08), [Felipe Motta](https://github.com/M0tt1nh4), [Amanda Cruz](https://github.com/mandicrz)
+
+**Sprint:** Sprint 2
+**Tipo:** Funcionalidade, segurança e arquitetura
+**Prioridade:** P1
+**Escopo:** Frontend e Backend
+**Status no quadro:** Done
+
+### Descrição
+
+O painel administrativo diferenciava apenas usuários comuns e administradores, sem controlar quais áreas cada administrador poderia utilizar. A atividade adiciona permissões por domínio funcional, uma interface própria para gerenciá-las e validação efetiva dessas permissões tanto no frontend quanto no backend.
+
+### Critérios de Aceitação
+
+- Criar uma seção administrativa para listar e gerenciar contas com privilégios de administrador.
+- Permitir visualizar e alterar as permissões administrativas de uma conta.
+- Disponibilizar permissões separadas para Dashboard, Produtos e Estoque, Drops, Pedidos, Clientes e Gerenciamento de Permissões.
+- Retornar as permissões administrativas da conta autenticada nas respostas de autenticação e consulta de perfil.
+- Exibir na navegação administrativa somente as áreas para as quais a conta possui permissão.
+- Impedir pelo backend o acesso a endpoints administrativos quando a conta não possuir a permissão correspondente.
+- Manter superusuários com acesso irrestrito às funcionalidades administrativas.
+- Impedir a alteração das permissões de superusuários pela interface de gerenciamento.
+- Impedir que um administrador remova de si próprio a permissão necessária para gerenciar permissões administrativas.
+- Garantir que administradores já existentes mantenham acesso às funcionalidades após a criação do novo modelo de permissões.
+- Conceder inicialmente todas as permissões administrativas quando uma nova conta for promovida a administrador, permitindo restrições posteriores.
+- Retornar `403` quando um administrador autenticado tentar acessar uma funcionalidade para a qual não possui permissão.
+
+#### Testes
+
+- Confirmar que apenas administradores com permissão de gerenciamento conseguem acessar a seção de permissões.
+- Testar a listagem de contas administrativas.
+- Testar a consulta das permissões de um administrador.
+- Testar a alteração das permissões de um administrador.
+- Confirmar que as permissões retornadas no login correspondem às permissões atribuídas à conta.
+- Confirmar que uma área sem permissão não aparece na navegação administrativa.
+- Confirmar que um administrador sem permissão recebe `403` ao acessar diretamente o endpoint correspondente.
+- Confirmar que um administrador com a permissão correspondente consegue acessar a funcionalidade normalmente.
+- Confirmar que superusuários possuem acesso a todas as áreas.
+- Confirmar que as permissões de um superusuário não podem ser alteradas pelo gerenciamento administrativo.
+- Confirmar que um administrador não consegue remover de si próprio a permissão de gerenciamento de permissões.
+- Confirmar que administradores existentes recebem as permissões necessárias após a migration.
+
+---
+
+## Dashboard administrativo detalhado com métricas comerciais e operacionais
+
+**Issue:** [#52 — Adicionar dashboard administrativo detalhado com métricas comerciais e operacionais](https://github.com/Shio-Enterprise/Documentacao/issues/52)
+
+**Responsáveis:** [Cauã Araujo](https://github.com/caua08), [Felipe Motta](https://github.com/M0tt1nh4), [Amanda Cruz](https://github.com/mandicrz)
+
+**Sprint:** Sprint 2
+**Tipo:** Nova funcionalidade, UX e dados
+**Prioridade:** P2
+**Escopo:** Frontend e Backend
+**Status no quadro:** DoD
+
+### Descrição
+
+O dashboard atual continua como visão rápida da loja e passa a oferecer acesso a uma página administrativa de análise detalhada. A nova página reúne indicadores financeiros, vendas ao longo do tempo, rankings de produtos, receita por drop e categoria, distribuição de pedidos, clientes e estoque. As agregações são calculadas no backend com as regras comerciais já utilizadas pelo painel.
+
+### Regras
+
+- As rotas do frontend e os endpoints da API são restritos a administradores.
+- Venda válida exige pedido entregue e pagamento confirmado; reembolsos são subtraídos da receita bruta para formar a receita líquida.
+- Períodos de 30 dias e 365 dias, além de datas personalizadas, usam o horário de São Paulo. A série pode ser vista em barras ou lista, com ordenação dos períodos.
+- Rankings e receita por drop/categoria vêm dos itens de vendas válidas. A receita de itens soma quantidade × preço unitário, sem rateio de frete ou desconto.
+- Pedidos por status usam a data de criação e incluem pedidos sem pagamento; indicadores financeiros e de pagamento usam a data do pagamento.
+- Filtros de drop e categoria combinados correspondem ao mesmo item do pedido; totais de cadastro e estoque seguem seus critérios próprios.
+- O detalhamento dos pedidos associados a métricas e agrupamentos é paginado. A página trata carregamento, ausência de dados e erro.
+
+### Critérios de Aceitação
+
+- Preservar o dashboard resumido e oferecer acesso à análise detalhada protegida.
+- Exibir receita bruta, reembolsos, receita líquida, ticket médio, vendas válidas e sua evolução temporal.
+- Exibir rankings de produtos por unidades e receita, receita por drop/categoria, pedidos por status e vendas por método de pagamento.
+- Exibir clientes cadastrados, novos clientes, recorrentes, variações com estoque baixo e esgotadas.
+- Aplicar filtros de período, drop e categoria de forma consistente nos indicadores aos quais se aplicam.
+- Permitir abrir os pedidos relacionados aos indicadores cabíveis, sem usar dados de navegação dos usuários.
+- Documentar os cálculos e parâmetros na API; manter a interface responsiva e os estados de carregamento, vazio e erro.
+
+#### Testes
+
+- Validar receitas, reembolsos, ticket médio, vendas válidas e série temporal, incluindo períodos sem dados.
+- Validar rankings, receita por drop/categoria, status, pagamento, clientes e estoque.
+- Cobrir filtros isolados e combinados, pedidos inválidos ou reembolsados, permissão administrativa e correspondência entre agregados e pedidos detalhados.
+- No frontend, validar navegação entre resumo e detalhe, filtros, visualizações, detalhamento, estados de carregamento/vazio/erro e ausência de regressão no resumo.
+
+---
+
+## Expiração automática da reserva de estoque
+
+**Issue:** [#43 — [Feature] Automatizar a expiração da reserva de estoque do checkout](https://github.com/Shio-Enterprise/Documentacao/issues/43)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Sprint:** Sprint 2  
+**Tipo:** Funcionalidade, estoque e concorrência  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+### Descrição
+
+Ao finalizar a compra, o estoque é reservado por 30 minutos enquanto o pagamento não é confirmado. A reserva vencida só era liberada quando alguém abria o detalhe do pedido; sem isso, o estoque ficava preso e o produto podia sumir do catálogo. A atividade libera reservas vencidas automaticamente, disparando a liberação nas próprias requisições de carrinho, checkout e catálogo, já que o projeto não usa filas de tarefas. Depende de o webhook da InfinitePay (O1, etapas 5 e 6) ser o único caminho de confirmação de pagamento.
+
+### Critérios de Aceitação
+
+- Liberação de reserva segura contra concorrência e idempotente, sem devolver o estoque duas vezes.
+- Reservas vencidas liberadas antes de validar estoque no carrinho, na cotação e no checkout.
+- Varredura periódica limitada nas rotas de catálogo e carrinho, sem cron.
+- Pedido com pagamento confirmado ou dentro do prazo nunca é cancelado.
+- Falha na liberação não quebra a requisição que a disparou.
+- Comando `expire_stale_orders` disponível para agendamento opcional.
+
+#### Testes
+
+- Reserva vencida não bloqueia nova compra do mesmo item.
+- Produto volta ao catálogo sem ninguém abrir o pedido antigo.
+- Concorrência entre liberação e confirmação de pagamento via webhook.
+
+---
+
+## Cupons de desconto
+
+### Cupons — visão geral
+
+**Responsáveis:** [João Gabriel](https://github.com/JoaoComTil), [João Lucas Ramos](https://github.com/Joaolramos)  
+**Sprint:** Sprint 2  
+**Tipo:** Nova funcionalidade  
+**Escopo:** Frontend e Backend  
+
+### Descrição
+
+Hoje só o cupom BEMVINDO10 funciona, aplicado automaticamente na primeira compra e com a regra fixa no código. A atividade permite que o cliente digite qualquer cupom no checkout e que a equipe da Shio crie e gerencie cupons pelo painel, com limite de usos total e por cliente, valor mínimo do pedido e restrição a drops ou categorias. A integração com a Méliuz depende de contato comercial e fica fora desta entrega; o campo de parceiro do cupom já permite cupons exclusivos de parceiros e influenciadores.
+
+### Regras
+
+- Um cupom por pedido; o código digitado substitui o desconto automático.
+- O cupom vale também para itens em promoção.
+- O valor mínimo é comparado com o subtotal, sem frete.
+- O desconto incide só sobre os itens do escopo do cupom; o desconto fixo nunca passa do valor desses itens.
+- Cupom inválido recusa a cotação com a mensagem do motivo, em vez de cotar sem desconto.
+- Um uso conta apenas para pedidos não cancelados: quando o pedido é cancelado, inclusive por reserva vencida, o uso volta.
+- Cupom já usado não pode ter o código alterado nem ser apagado, só desativado.
+
+### Linha de desconto na InfinitePay
+
+**Issue:** [#45 — [Bug] Corrigir a linha de desconto enviada à InfinitePay](https://github.com/Shio-Enterprise/Documentacao/issues/45)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- A linha de desconto na InfinitePay passa a mostrar o código do cupom aplicado.
+- Verificação em sandbox de que a InfinitePay aceita a linha de desconto no cartão e no PIX.
+- Implementada junto com a entrada do cupom no checkout, depois da confirmação de pagamento via webhook (O1, etapas 5 e 6).
+
+### Modelo de cupom e contagem de usos
+
+**Issue:** [#46 — [Backend] Modelo de cupom com limites, escopo e contagem de usos](https://github.com/Shio-Enterprise/Documentacao/issues/46)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- Novos campos do cupom: período de validade, limites de uso, valor mínimo, teto do desconto, primeira compra, aplicação automática, drops, categorias e parceiro.
+- Código sem diferenciar maiúsculas e minúsculas.
+- BEMVINDO10 migrado para os novos campos, sem mudar o comportamento.
+- Contagem de usos derivada dos pedidos não cancelados.
+- Pedido cancelado deixa de tirar o desconto de primeira compra do cliente.
+- Cupom usado em pedido não pode ser apagado.
+
+### Cupom na cotação e no checkout
+
+**Issue:** [#47 — [Backend] Validar cupom digitado e aplicá-lo na cotação e no checkout](https://github.com/Shio-Enterprise/Documentacao/issues/47)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- Validação do cupom em nove verificações, cada uma com mensagem e código de erro próprios.
+- Código enviado na cotação, gravado nela e revalidado com trava no checkout.
+- Erro específico quando o cupom deixa de valer entre a cotação e o pagamento.
+- Compras simultâneas não ultrapassam o limite de usos.
+
+### Campo de cupom no checkout
+
+**Issue:** [#48 — [Frontend] Campo de cupom de desconto no checkout](https://github.com/Shio-Enterprise/Documentacao/issues/48)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Prioridade:** P1  
+**Escopo:** Frontend  
+**Status no quadro:** Todo  
+
+- Campo para aplicar e remover o cupom no resumo da compra.
+- Mensagem de erro embaixo do campo quando o cupom não vale.
+- Linha do desconto com o código do cupom aplicado.
+
+### CRUD de cupons no painel administrativo
+
+**Issue:** [#49 — [Backend] CRUD de cupons no painel administrativo](https://github.com/Shio-Enterprise/Documentacao/issues/49)  
+**Responsável:** [João Lucas Ramos](https://github.com/Joaolramos)  
+**Prioridade:** P2  
+**Escopo:** Backend  
+**Status no quadro:** Todo  
+
+- Criar, listar, editar e desativar cupons, restrito a administradores.
+- Listagem com usos, usos restantes, desconto concedido e receita de cada cupom.
+- Filtros por situação, busca e parceiro.
