@@ -139,6 +139,10 @@ A plataforma permite cadastro e login com e-mail e senha, mas não existia forma
 
 - Tela para o usuário informar seu e-mail.
 - Tela para informar a nova senha.
+
+**Evidências (prints):**
+![E-mail de Recuperação Enviado](../../assets/evidencias-senha/email-recuperacao-enviado.png)
+![Interface de Nova Senha](../../assets/evidencias-senha/interface-cadastro-nova-senha.png)
 - Integração com os novos endpoints do backend.
 
 ---
