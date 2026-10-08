@@ -252,7 +252,7 @@ Como administrador, acompanhar o comportamento dos usuários no site, em visão 
 **Tipo:** Funcionalidade, UX e arquitetura  
 **Prioridade:** P1  
 **Escopo:** Frontend e Backend  
-**Status no quadro:** Todo  
+**Status no quadro:** Done
 
 ### Descrição
 
@@ -274,6 +274,56 @@ O acesso ao painel administrativo utiliza um fluxo separado da autenticação pr
 - Usuário comum não acessa diretamente uma rota administrativa e não autenticado é redirecionado ao login.
 - Endpoints administrativos rejeitam requisições sem autorização.
 - Navegação entre loja e painel mantém a mesma sessão.
+
+---
+
+## Gerenciamento de permissões administrativas
+
+**Issue:** [#54 — Gerenciamento de permissões administrativas](https://github.com/Shio-Enterprise/Documentacao/issues/54)
+
+**Responsáveis:** [Cauã Araujo](https://github.com/caua08), [Felipe Motta](https://github.com/M0tt1nh4), [Amanda Cruz](https://github.com/mandicrz)
+
+**Sprint:** Sprint 2
+**Tipo:** Funcionalidade, segurança e arquitetura
+**Prioridade:** P1
+**Escopo:** Frontend e Backend
+**Status no quadro:** Done
+
+### Descrição
+
+O painel administrativo diferenciava apenas usuários comuns e administradores, sem controlar quais áreas cada administrador poderia utilizar. A atividade adiciona permissões por domínio funcional, uma interface própria para gerenciá-las e validação efetiva dessas permissões tanto no frontend quanto no backend.
+
+### Critérios de Aceitação
+
+- Criar uma seção administrativa para listar e gerenciar contas com privilégios de administrador.
+- Permitir visualizar e alterar as permissões administrativas de uma conta.
+- Disponibilizar permissões separadas para Dashboard, Produtos e Estoque, Drops, Pedidos, Clientes e Gerenciamento de Permissões.
+- Retornar as permissões administrativas da conta autenticada nas respostas de autenticação e consulta de perfil.
+- Exibir na navegação administrativa somente as áreas para as quais a conta possui permissão.
+- Impedir pelo backend o acesso a endpoints administrativos quando a conta não possuir a permissão correspondente.
+- Manter superusuários com acesso irrestrito às funcionalidades administrativas.
+- Impedir a alteração das permissões de superusuários pela interface de gerenciamento.
+- Impedir que um administrador remova de si próprio a permissão necessária para gerenciar permissões administrativas.
+- Garantir que administradores já existentes mantenham acesso às funcionalidades após a criação do novo modelo de permissões.
+- Conceder inicialmente todas as permissões administrativas quando uma nova conta for promovida a administrador, permitindo restrições posteriores.
+- Retornar `403` quando um administrador autenticado tentar acessar uma funcionalidade para a qual não possui permissão.
+
+#### Testes
+
+- Confirmar que apenas administradores com permissão de gerenciamento conseguem acessar a seção de permissões.
+- Testar a listagem de contas administrativas.
+- Testar a consulta das permissões de um administrador.
+- Testar a alteração das permissões de um administrador.
+- Confirmar que as permissões retornadas no login correspondem às permissões atribuídas à conta.
+- Confirmar que uma área sem permissão não aparece na navegação administrativa.
+- Confirmar que um administrador sem permissão recebe `403` ao acessar diretamente o endpoint correspondente.
+- Confirmar que um administrador com a permissão correspondente consegue acessar a funcionalidade normalmente.
+- Confirmar que superusuários possuem acesso a todas as áreas.
+- Confirmar que as permissões de um superusuário não podem ser alteradas pelo gerenciamento administrativo.
+- Confirmar que um administrador não consegue remover de si próprio a permissão de gerenciamento de permissões.
+- Confirmar que administradores existentes recebem as permissões necessárias após a migration.
+
+---
 
 ## Dashboard administrativo detalhado com métricas comerciais e operacionais
 
