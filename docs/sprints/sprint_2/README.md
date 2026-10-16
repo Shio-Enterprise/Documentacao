@@ -34,7 +34,7 @@
  
 ## Resumo <!-- {docsify-ignore} -->
  
-- **Líder da Apresentação**: A definir
-- **Total de Tarefas concluídas:** 1
+- **Líder da Apresentação**: Felipe Motta
+- **Total de Tarefas concluídas:** 18
 - **Início da Sprint:** 21/09/2026
 - **Fim da Sprint:** 06/10/2026
