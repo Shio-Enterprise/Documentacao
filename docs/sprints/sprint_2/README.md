@@ -20,7 +20,7 @@
 | [Avaliações de produto - Evidência](./squad_3/avaliacoes-evidencias.md) | [#33](https://github.com/Shio-Enterprise/Documentacao/issues/33) |
 | [Envio de e-mails - Evidência](./squad_3/envio-emails-evidencias.md) | [#35](https://github.com/Shio-Enterprise/Documentacao/issues/35) |
 | [Recuperação de senha - Evidência](./squad_3/recuperacao-senha-evidencias.md) | [#34](https://github.com/Shio-Enterprise/Documentacao/issues/34), [#39](https://github.com/Shio-Enterprise/Documentacao/issues/39), [#40](https://github.com/Shio-Enterprise/Documentacao/issues/40) |
-| [Exportação de dados admin - Evidência](./squad_3/exportacao-dados-evidencias.md) | Exportação de dados (CSV e XLSX) |
+| [Exportação de dados admin - Evidência](./squad_3/exportacao-dados-evidencias.md) | [#62](https://github.com/Shio-Enterprise/Documentacao/issues/62) |
 | [O10 - Evidência](./squad_1/o10-evidencias.md) | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15) |
 | [Favoritos de produtos - Evidência](./squad_1/favoritos-evidencias.md) | [#37](https://github.com/Shio-Enterprise/Documentacao/issues/37) |
 | [Métricas de comportamento - Evidência](./squad_1/metricas-comportamento-evidencias.md) | [#38](https://github.com/Shio-Enterprise/Documentacao/issues/38) |
