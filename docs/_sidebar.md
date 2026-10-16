@@ -47,8 +47,11 @@
             - [Avaliações de produto — Evidências](sprints/sprint_2/squad_3/avaliacoes-evidencias.md)
             - [Envio de e-mails — Evidências](sprints/sprint_2/squad_3/envio-emails-evidencias.md)
             - [Recuperação de senha — Evidências](sprints/sprint_2/squad_3/recuperacao-senha-evidencias.md)
-            - [Exportação de dados admin — Evidências](sprints/sprint_2/squad_3/exportacao-dados-evidencias.md)
         - Squad 4
             - [Checkout com cupom — Evidências](sprints/sprint_2/squad_4/checkout-cupom-evidencias.md)
             - [Expiração da reserva — Evidências](sprints/sprint_2/squad_4/expiracao-reserva-evidencias.md)
             - [CRUD de cupons — Evidências](sprints/sprint_2/squad_4/crud-cupons-evidencias.md)
+    - [Sprint 3](sprints/sprint_3/)
+        - [Backlog](sprints/sprint_3/backlog.md)
+        - Squad 3
+            - [Exportação de dados admin — Evidências](sprints/sprint_3/squad_3/exportacao-dados-evidencias.md)
