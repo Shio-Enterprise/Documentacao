@@ -8,13 +8,14 @@
  
 | Trio/Dupla de Desenvolvedores | Qtd. de Tarefas | Tarefas | Assunto das Tarefas |
 | :---------------------------: | :--------------:| :------:| :-----------------: |
-| Ian Costa / Arthur Sousa / Danilo Naves | 1 | [#62](https://github.com/Shio-Enterprise/Documentacao/issues/62) | Exportação de dados do painel administrativo em CSV e Excel |
+| Ian Costa / Arthur Sousa / Danilo Naves | 2 | [#62](https://github.com/Shio-Enterprise/Documentacao/issues/62), [#67](https://github.com/Shio-Enterprise/Documentacao/issues/67) | Exportação de dados do painel administrativo em CSV e Excel; envio de cupom por e-mail para clientes |
 
 ### Evidências
 
 | Evidências | Tarefa |
 | :--------: | :----: |
 | [Exportação de dados admin - Evidência](./squad_3/exportacao-dados-evidencias.md) | [#62](https://github.com/Shio-Enterprise/Documentacao/issues/62) |
+| [Envio de cupom por e-mail - Evidência](./squad_3/envio-cupom-email-evidencias.md) | [#67](https://github.com/Shio-Enterprise/Documentacao/issues/67) |
  
 ---
  
