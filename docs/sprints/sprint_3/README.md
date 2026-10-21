@@ -2,7 +2,7 @@
  
 **Período:** 13/10/2026 a 27/10/2026
 
-**Apresentação:** A definir
+**Apresentação:** [Slides da Sprint 3](https://canva.link/zgakl9pmqvhh2h3)
  
 ## Entregas da Sprint
  
