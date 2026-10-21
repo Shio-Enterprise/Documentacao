@@ -55,7 +55,7 @@ O painel administrativo não permitia exportar dados. Para contabilidade, confer
 **Tipo:** Nova funcionalidade  
 **Prioridade:** P2  
 **Escopo:** Frontend e Backend  
-**Status no quadro:** Em revisão (PRs abertos)  
+**Status no quadro:** DoD  
 
 ### Descrição
 
@@ -85,5 +85,44 @@ O admin já criava cupons, mas o cupom só chegava ao cliente se a loja divulgas
 - Link de descadastro adulterado não altera nada.
 - Usuário sem permissão de admin recebe `403`.
 - Falha no envio para um cliente não interrompe os demais.
+
+---
+
+## "Avise-me quando chegar" para tamanho esgotado
+
+**Issue:** [#66 — [Feature] "Avise-me quando chegar" para tamanho esgotado](https://github.com/Shio-Enterprise/Documentacao/issues/66)  
+**Responsáveis:** [Danilo Naves](https://github.com/DaniloNavesS), [Ian Costa](https://github.com/iancostag), [Arthur Sousa](https://github.com/Tutzs)  
+**Sprint:** Sprint 3  
+**Tipo:** Nova funcionalidade  
+**Prioridade:** P2  
+**Escopo:** Frontend e Backend  
+**Status no quadro:** DoD  
+
+### Descrição
+
+Quando um tamanho esgotava, o cliente não tinha como saber quando ele voltava, e a loja perdia a venda. A atividade adiciona o botão "Avise-me quando chegar" nos tamanhos esgotados: o cliente logado pede o aviso e recebe um e-mail quando o tamanho volta a ser vendido. Os pedidos ficam em "Meus avisos", onde podem ser cancelados.
+
+### Regras
+
+- O aviso vale por variação (tamanho/cor), e só para cliente logado.
+- Dispara quando o estoque passa de 0 para mais de 0 ou quando o produto volta a ser vendável.
+- Produto inativo ou drop fechado não dispara; os pedidos continuam aguardando.
+- Cada pedido recebe um e-mail só; depois de avisado, é encerrado.
+- O e-mail avisa que não há reserva: quem comprar primeiro leva.
+
+### Critérios de Aceitação
+
+- Tamanho esgotado mostra "Avise-me quando chegar" no lugar de "Adicionar ao carrinho".
+- Pedido duplicado para o mesmo tamanho não cria um segundo aviso.
+- Reposição (0 → maior que 0) envia o e-mail para todos os pedidos pendentes daquele tamanho.
+- O mesmo pedido não recebe um segundo e-mail na próxima reposição.
+- "Meus avisos" lista os pedidos, permite cancelar os pendentes e mostra a data do aviso.
+
+#### Testes
+
+- Estoque que vai de 3 para 5 não dispara aviso.
+- Reposição de outro tamanho não avisa quem pediu este.
+- Falha no envio para uma pessoa não impede o envio para as demais.
+- Dois envios simultâneos resultam em um e-mail só por pedido (PostgreSQL).
 
 ---

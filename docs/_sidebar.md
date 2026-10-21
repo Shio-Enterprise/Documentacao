@@ -56,3 +56,4 @@
         - Squad 3
             - [Exportação de dados admin — Evidências](sprints/sprint_3/squad_3/exportacao-dados-evidencias.md)
             - [Envio de cupom por e-mail — Evidências](sprints/sprint_3/squad_3/envio-cupom-email-evidencias.md)
+            - [Avise-me quando chegar — Evidências](sprints/sprint_3/squad_3/avise-me-evidencias.md)
