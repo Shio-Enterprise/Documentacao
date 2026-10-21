@@ -1,11 +1,11 @@
 # Sprint 1
- 
+
 **Período:** 01/09/2026 a 16/09/2026
 
 **Apresentação:** [Slides da Sprint 1](https://canva.link/s6f0kfyrdf8a9pq)
- 
+
 ## Entregas da Sprint
- 
+
 | Trio/Dupla de Desenvolvedores | Qtd. de Tarefas | Tarefas | Assunto das Tarefas |
 | :---------------------------: | :--------------:| :------:| :-----------------: |
 | Ian Costa / Arthur Sousa / Danilo Naves | 4 | [#2](https://github.com/Shio-Enterprise/Documentacao/issues/2), [#3](https://github.com/Shio-Enterprise/Documentacao/issues/3), [#18](https://github.com/Shio-Enterprise/Documentacao/issues/18), [#19](https://github.com/Shio-Enterprise/Documentacao/issues/19) | Login Tradicional (O4) e Promessas Comerciais (O9) |
@@ -18,21 +18,21 @@
 
 | Evidências | Tarefa |
 | :--------: | :----: |
-| [O1 - Evidência](./squad_2/o1-evidencias.md)
-| [O2 - Evidência](./squad_4/o2-evidencias.md)
-| [O3 - Evidência](./squad_1/o3-evidencias.md)
-| [O4 - Evidência](./squad_3/o4-evidencias.md)
-| [O5 - Evidência](./squad_2/o5-evidencias.md)
-| [O6 - Evidência](./squad_2/o6-evidencias.md)
-| [O7 - Evidência](./squad_1/o7-evidencias.md)
-| [O8 - Evidência](./squad_3/o8-evidencias.md)
-| [O9 - Evidência](./squad_3/o9-evidencias.md)
-| [CI - Evidência](./squad_4/ci-evidencias.md)
- 
+| [O1 - Evidência](sprints/sprint_1/squad_2/o1-evidencias.md)
+| [O2 - Evidência](sprints/sprint_1/squad_4/o2-evidencias.md)
+| [O3 - Evidência](sprints/sprint_1/squad_1/o3-evidencias.md)
+| [O4 - Evidência](sprints/sprint_1/squad_3/o4-evidencias.md)
+| [O5 - Evidência](sprints/sprint_1/squad_2/o5-evidencias.md)
+| [O6 - Evidência](sprints/sprint_1/squad_2/o6-evidencias.md)
+| [O7 - Evidência](sprints/sprint_1/squad_1/o7-evidencias.md)
+| [O8 - Evidência](sprints/sprint_1/squad_3/o8-evidencias.md)
+| [O9 - Evidência](sprints/sprint_1/squad_3/o9-evidencias.md)
+| [CI - Evidência](sprints/sprint_1/squad_4/ci-evidencias.md)
+
 ---
- 
+
 ## Resumo <!-- {docsify-ignore} -->
- 
+
 - **Líder da Apresentação**: Ian Costa
 - **Total de Tarefas concluídas:** 10
 - **Início da Sprint:** 01/09/2026
