@@ -18,6 +18,15 @@
 | [Envio de cupom por e-mail - Evidência](sprints/sprint_3/squad_3/envio-cupom-email-evidencias.md) | [#67](https://github.com/Shio-Enterprise/Documentacao/issues/67) |
 | [Avise-me quando chegar - Evidência](sprints/sprint_3/squad_3/avise-me-evidencias.md) | [#66](https://github.com/Shio-Enterprise/Documentacao/issues/66) |
 
+### Entrega local da O10 — etapa 1
+
+- [Auditoria da O10 no código remoto e análise de sobreposição com o backlog](sprints/sprint_3/squad_1/o10-auditoria-remoto.md)
+- [Validação da fundação logística e Redis Free](sprints/sprint_3/squad_1/o10-validacao-sprint-1.md)
+- [Capturas no Chrome e evidências da O10](sprints/sprint_3/squad_1/o10-evidencias-sprint-1.md)
+- [Comparação de contribuições e preparação da apresentação](sprints/sprint_3/squad_1/o10-comparacao-apresentacao.md)
+
+A entrega corresponde à etapa 1 da O10, vinculada às issues [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14) e [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15). Os controles e a observabilidade ainda pendentes não são declarados concluídos.
+
 ---
 
 ## Resumo <!-- {docsify-ignore} -->

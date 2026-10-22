@@ -1,0 +1,132 @@
+{
+  "browser": "Chrome",
+  "environment": "Local isolado; dados fictícios; provedores externos simulados",
+  "captures": [
+    {
+      "file": "01-frete-parametros-servidor.png",
+      "description": "Endereço fictício e frete calculado pelo backend; transporte Correios simulado localmente.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:00:26.017Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 65541,
+      "sha256": "1bfd598526051f67cc9d52bf64ed0d073b489cc1917f06c55aa50bb41aec791b"
+    },
+    {
+      "file": "02-revisao-confirmacao-obrigatoria.png",
+      "description": "Cotação com total R$ 225,90 e finalização bloqueada antes da confirmação.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:01:36.880Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 54803,
+      "sha256": "27c3c18c2b8fcf7717f4073acabfd04a67a41fd9c7d5991326f5fde4edac5f16"
+    },
+    {
+      "file": "03-cotacao-confirmada.png",
+      "description": "Confirmação marcada habilita a finalização da mesma cotação.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:01:42.079Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 67109,
+      "sha256": "2807a18c746e403e07327eb7b6840bb626c3b26661cb2dfd995cc612560df6a9"
+    },
+    {
+      "file": "04-quantidade-recalculo-confirmacao.png",
+      "description": "Três unidades totalizam R$ 325,90; a confirmação anterior foi invalidada.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:01:51.953Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 49934,
+      "sha256": "c7872177281f21568e2a649b85d19252160a4abfe4ef04e471dc065c28bcff3e"
+    },
+    {
+      "file": "05-calculo-429-retry-after.png",
+      "description": "Resposta 429 simulada no cálculo após troca de endereço; Retry-After de 30 segundos.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:10:57.582Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 69420,
+      "sha256": "9480745f7928cc2e0781cf9c4cf31c07d403493fd1d4749174d09b2d3f002b52"
+    },
+    {
+      "file": "06-calculo-503-retry-after.png",
+      "description": "Resposta 503 simulada no recálculo; Retry-After de 30 segundos.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:11:42.333Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 80037,
+      "sha256": "e0ff82fc3bce4df1b66353008f8e784151bdcc16cbc6b41d20eaf311a4a810ec"
+    },
+    {
+      "file": "07-checkout-503-tentativa-preservada.png",
+      "description": "503 simulado no checkout com espera de 30 s; consulta da mesma tentativa bloqueada durante Retry-After.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:06:12.590Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 74571,
+      "sha256": "b6bfd47e76ff3687c5d31e1d853f51e845f99c21e372423c693c9a5b3aa7ead6"
+    },
+    {
+      "file": "08-checkout-uncertain-sem-duplicacao.png",
+      "description": "Falha local do gateway resulta em pedido preservado para conferência; tentativa UNCERTAIN no backend.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T00:06:50.698Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 79993,
+      "sha256": "7b25519b810809fcecca3ba831f071476706cdfe05ade86d2b9fb265b8f7366e"
+    },
+    {
+      "file": "09-inventario-administrativo.png",
+      "description": "Inventário administrativo: oito unidades após uma reserva; produto sem variações retorna zero.",
+      "url": "http://localhost:5173/admin/products",
+      "captured_at": "2026-10-22T00:09:29.205Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 73396,
+      "sha256": "be30f303122aa827fb4c96a0bcd9df81ceb8877e049118374c6cab16dedff607"
+    },
+    {
+      "file": "10-redis-concorrencia-testes.png",
+      "description": "Saída real de 11 testes e 2 subtestes; relatório técnico temporário exibido no Chrome.",
+      "url": "http://localhost:8010/redis-concorrencia.html",
+      "captured_at": "2026-10-22T00:06:25.366Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 211594,
+      "sha256": "c127b3165180cbbc2f24f9043f1e23a0538e10e52b17a42e865ef1cabf3f5047"
+    },
+    {
+      "file": "11-api-inventario-permissoes.png",
+      "description": "Respostas HTTP reais: visitante 401, cliente 403 e administrador 200; produto sem variações com estoque zero.",
+      "url": "http://localhost:8010/api-permissoes.html",
+      "captured_at": "2026-10-22T00:06:31.834Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 72886,
+      "sha256": "53464ed2dea07e839375bf30b590fdd520c80c1c4d80996bd3bc802ebc036ed9"
+    },
+    {
+      "file": "12-api-logistica-snapshot.png",
+      "description": "HTTP 400 para origem/peso/serviço do cliente e snapshot persistido no PostgreSQL; transporte Correios local.",
+      "url": "http://localhost:8010/logistica-snapshot.html",
+      "captured_at": "2026-10-22T00:06:42.293Z",
+      "width": 65536,
+      "height": 4292542531,
+      "bytes": 76971,
+      "sha256": "579a7a7b88f84d27448fb17f4798565ccd7a61bbdc4d10e6679b36ff42896f6f"
+    }
+  ],
+  "source_heads": {
+    "backend": "e0541f8b3cac92da794810383cdcba314eb4688b",
+    "frontend": "ae769fd0ed46d4efd600aa6021f1d29f35808be3",
+    "Documentacao": "da53105789428c6bfd8332192aee10b44d51b7eb"
+  },
+  "uncommitted_changes": true
+}
