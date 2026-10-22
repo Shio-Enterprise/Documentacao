@@ -7,7 +7,7 @@
     "exit_code": 0
   },
   "frontend": {
-    "passed": 267,
+    "passed": 268,
     "files_passed": 50,
     "exit_code": 0
   },
@@ -152,6 +152,7 @@
   },
   "fix_commits": {
     "backend": "f280225b84c08d2f039eed7fba59f722e2f9dbff",
-    "frontend": "65b6c279f637cffb7c1383c1b9576417ca60eb64"
-  }
+    "frontend": "a973fdc13e7f352104bbdf44ec2923838a6a2122"
+  },
+  "restored_checkout_regression": "Tentativa restaurada com carrinho preenchido não indica cálculo ativo; reconsulta mantém payload original."
 }

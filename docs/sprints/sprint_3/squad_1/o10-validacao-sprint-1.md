@@ -19,13 +19,19 @@ Correções registradas em `backend/f280225` (comando de inicialização) e `fro
 | Verificação | Resultado |
 | --- | --- |
 | Backend completo, PostgreSQL e Redis reais | **731 testes e 299 subtestes passaram**, sem testes ignorados. |
-| Frontend completo, dois workers | **267 testes em 50 arquivos passaram**. |
+| Frontend completo, dois workers | **268 testes em 50 arquivos passaram**. |
 | Ruff lint e formatação | Passaram, 163 arquivos. |
 | Django check e migrations | Sem problemas ou alterações pendentes. |
 | Dependências Python, sintaxe do entrypoint e configuração Compose | Passaram. |
 | Frontend lint e build | Sem erros; 18 warnings existentes no lint; build passou. |
 
 Comandos principais: `PYTHONPATH=<configuração temporária>:$PWD TEST_REDIS_URL=redis://127.0.0.1:26379/0 ../.venv/bin/python -m pytest -q --ds=o10_postgres_settings` no backend, e `npm run test -- --run --maxWorkers=2`, `npm run lint`, `npm run build` no frontend. A configuração temporária herda `core.settings.test` e altera a conexão para o PostgreSQL descartável na porta 25432.
+
+### Reabertura com tentativa pendente
+
+Após os testes manuais do cliente, foi identificada outra inconsistência visual: ao recarregar com uma tentativa salva e carrinho preenchido, o cálculo estava corretamente suspenso, mas `freightLoading` ainda indicava “Calculando frete...”. A interface agora informa que o frete está vinculado à tentativa anterior e direciona à consulta. O bloqueio da nova compra permanece para evitar duplicação. Um teste reproduziu a falha antes da correção e confirmou a reutilização do mesmo payload na consulta; a suíte completa passou novamente, com 268 testes. Lint manteve 18 warnings e build passou.
+
+O gateway deste ambiente local permanece propositalmente em falha; uma tentativa UNCERTAIN não é liberada automaticamente pela demonstração. A correção visual está no commit `frontend/a973fdc`.
 
 ### Verificação funcional
 
