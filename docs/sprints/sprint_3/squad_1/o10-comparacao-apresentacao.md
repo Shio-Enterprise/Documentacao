@@ -84,7 +84,7 @@ Essas referências ajudam a comparar qualidade e fechamento, não horas trabalha
 4. **Checkout — 90 s:** mostrar revisão, confirmação, mudança de quantidade e bloqueio por `Retry-After`; usar falhas simuladas e evidências da validação manual, sem enviar pagamento.
 5. **Limites e próximos passos — 60 s:** dizer que o Free perde dados em reinícios, que quota crítica não pode depender apenas disso e que as próximas etapas fecham limites e observabilidade.
 
-Antes de apresentar, anexar os PRs da O10 quando forem criados e selecionar as capturas já documentadas; investigar também a falha de carregamento inicial registrada na validação. Não adicionar outra funcionalidade grande apenas para aumentar a contagem de tarefas; priorizar fechar a evidência da O10 e revisar o PR de métricas pendente.
+Antes de apresentar, anexar os PRs da O10 quando forem criados e selecionar as capturas já documentadas; incluir a correção de carregamento inicial revalidada em 22/10. Não adicionar outra funcionalidade grande apenas para aumentar a contagem de tarefas; priorizar fechar a evidência da O10 e revisar o PR de métricas pendente.
 
 ## Integração com trabalhos em revisão
 

@@ -1,6 +1,52 @@
 # O10 — validação da Sprint 1
 
-**Atualizado:** 21/10/2026. Validação do workspace local sobre `backend/dev` e `frontend/dev`; alterações capturadas antes dos commits locais de 22/10, ainda sem publicação. Os fluxos de navegador foram validados em 20/10 e novamente capturados em 21/10 com PostgreSQL e Redis reais locais.
+**Atualizado:** 22/10/2026. A seção seguinte registra a revalidação e as correções; os registros posteriores preservam a execução de 21/10.
+
+## Revalidação completa — 22/10/2026
+
+O ambiente foi recriado com PostgreSQL 15 e Redis 7 exclusivos, sem tocar nos serviços existentes. Redis limitado a 25 MB, 50 clientes e sem persistência. Chrome acessou Django em `localhost:8000` e Vite em `localhost:5173`; o cliente HTTP dos Correios apontou para um provedor simulado em `127.0.0.1:8011`. O gateway foi substituído por uma falha local, sem cobrança externa.
+
+### Correções confirmadas por regressão
+
+- **Frete preso em carregamento:** respostas canceladas de cálculos antigos alteravam a espera por Retry-After, enquanto a mensagem era descartada. Além disso, a troca do objeto do carrinho ou as ações de endereço/quantidade podiam ocultar/apagar o erro durante o bloqueio. Agora respostas canceladas são ignoradas antes de alterar o estado, e erros recuperáveis permanecem disponíveis até recálculo ou sucesso. O recálculo continua manual após a espera; não há polling automático.
+- **Inicialização:** `wait_for_database` não era reconhecido pelo Django porque `core` não constava em `INSTALLED_APPS`. O registro foi acrescentado. Três testes verificam descoberta do comando, recuperação da conexão e timeout; o comando também retornou `Database ready.` contra o PostgreSQL local.
+- Oito novos casos do frontend cobrem 429/503 com atualização inicial em StrictMode, respostas antigas de outro endereço e mudanças de endereço/quantidade durante a espera. As regressões foram observadas antes das respectivas correções.
+
+Correções registradas em `backend/f280225` (comando de inicialização) e `frontend/65b6c27` (recuperação do frete). Nenhum push ou deploy foi realizado.
+
+### Resultado final
+
+| Verificação | Resultado |
+| --- | --- |
+| Backend completo, PostgreSQL e Redis reais | **731 testes e 299 subtestes passaram**, sem testes ignorados. |
+| Frontend completo, dois workers | **267 testes em 50 arquivos passaram**. |
+| Ruff lint e formatação | Passaram, 163 arquivos. |
+| Django check e migrations | Sem problemas ou alterações pendentes. |
+| Dependências Python, sintaxe do entrypoint e configuração Compose | Passaram. |
+| Frontend lint e build | Sem erros; 18 warnings existentes no lint; build passou. |
+
+Comandos principais: `PYTHONPATH=<configuração temporária>:$PWD TEST_REDIS_URL=redis://127.0.0.1:26379/0 ../.venv/bin/python -m pytest -q --ds=o10_postgres_settings` no backend, e `npm run test -- --run --maxWorkers=2`, `npm run lint`, `npm run build` no frontend. A configuração temporária herda `core.settings.test` e altera a conexão para o PostgreSQL descartável na porta 25432.
+
+### Verificação funcional
+
+- Chrome: 429 no carregamento inicial e 503 no recálculo mantiveram mensagem/referência, bloqueio e recuperação. Trocar endereço e quantidade durante os 30 segundos de espera preservou o erro e a opção de recálculo.
+- Cotação recuperada: quatro unidades totalizaram R$ 425,90; ao voltar para duas, total de R$ 225,90 e confirmação anterior invalidada.
+- Checkout: 429/503 com espera de cinco segundos preservaram a tentativa. Após retirar a falha injetada, o gateway isolado resultou em UNCERTAIN. Reconsulta manteve **um pedido, uma tentativa e estoque oito**, com `last_error_code=gateway_error`.
+- Permissões HTTP: inventário 401 para anônimo, 403 para cliente e 200 para administrador; parâmetro logístico controlado pelo cliente rejeitado com 400. Cliente comum redirecionado ao abrir `/admin/products`; administrador visualizou oito unidades e zero para produto sem variações.
+- Redis real parado: frete retornou 503. Após reiniciar o container sem persistência, voltou a retornar 200, regenerando o token. A suíte também cobriu cache/lock e concorrência entre processos.
+- Snapshot conferido no PostgreSQL: origem 70000000, destino 72000000, serviço 03220, peso 300 g, dimensões 20 cm, valor declarado 200,00 e política 1.
+
+![Erro recuperável após mudar endereço e quantidade](../../../assets/evidencias-o10/13-erro-preservado-apos-alteracao.png)
+
+![Cotação recuperada e confirmação obrigatória](../../../assets/evidencias-o10/14-cotacao-recuperada-22.png)
+
+[Metadados das capturas de 22/10](../../../assets/evidencias-o10/validacao-22-capturas.json). [Resultados HTTP, Redis e checkout](../../../assets/evidencias-o10/validacao-22-resultados.json). Logs completos da execução estão no workspace em `output/o10-validacao-22/`. Os 497 warnings do backend incluem depreciação do Django e diretório de estáticos ausente nos testes; o jsdom também informa navegação externa não implementada.
+
+**Limites:** não houve deploy, teste de carga, TLS de conexão real nem chamada aos provedores comerciais. A validação é funcional local e não comprova capacidade para dez mil usuários simultâneos. Quota, throttling e observabilidade continuam fora desta etapa.
+
+## Histórico da execução de 21/10
+
+ Validação do workspace local sobre `backend/dev` e `frontend/dev`; alterações capturadas antes dos commits locais de 22/10, ainda sem publicação. Os fluxos de navegador foram validados em 20/10 e novamente capturados em 21/10 com PostgreSQL e Redis reais locais.
 
 ## Ambiente e dependências
 
@@ -64,7 +110,7 @@ O snapshot persistido contém origem, destino, serviço, peso, dimensões, valor
 
 ## Pendência observada nas capturas de 21/10
 
-Uma resposta 429 durante o carregamento inicial, seguida da atualização do carrinho, deixou a interface em “Calculando frete” sem exibir o erro. Após carregar normalmente e trocar o endereço, 429/503 exibiram a mensagem e o bloqueio corretamente. A condição de concorrência do carregamento precisa de investigação; não foi corrigida nesta sessão de capturas.
+Uma resposta 429 durante o carregamento inicial, seguida da atualização do carrinho, deixou a interface em “Calculando frete” sem exibir o erro. Após carregar normalmente e trocar o endereço, 429/503 exibiram a mensagem e o bloqueio corretamente. A condição foi corrigida e revalidada em 22/10, conforme o registro acima.
 
 ## Correções encontradas na validação
 

@@ -91,4 +91,4 @@ A API rejeita com 400 a tentativa de enviar origem, peso e serviço pelo cliente
 - [Metadados dos PNGs, URLs e horários](../../../assets/evidencias-o10/capturas.json).
 - [Validação e resultados das suítes](sprints/sprint_3/squad_1/o10-validacao-sprint-1.md).
 - Render, TLS e provedores externos reais não foram validados nesta captura. O ambiente usa dados descartáveis e não comprova capacidade de produção.
-- Na recaptura, uma resposta de erro durante o carregamento inicial, seguida da atualização do carrinho, deixou a interface em “Calculando frete” sem a mensagem. A troca de endereço após o carregamento exibiu o erro corretamente. Essa condição precisa de investigação antes de considerar o tratamento de erros totalmente fechado.
+- Na recaptura, uma resposta de erro durante o carregamento inicial, seguida da atualização do carrinho, deixou a interface em “Calculando frete” sem a mensagem. A troca de endereço após o carregamento exibiu o erro corretamente. Essa condição foi corrigida e recebeu testes de regressão na revalidação de 22/10; veja as novas capturas no [registro de validação](sprints/sprint_3/squad_1/o10-validacao-sprint-1.md).

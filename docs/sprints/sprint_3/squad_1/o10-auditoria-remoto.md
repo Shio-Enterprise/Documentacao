@@ -43,7 +43,7 @@ As alterações desta finalização são locais e ainda não foram publicadas no
 
 Os itens de fundação e integração logística estão implementados no workspace: agregação do inventário em uma consulta, cliente HTTP dos Correios, provedor de token com invalidação segura, resolução imutável dos parâmetros do servidor, snapshot logístico versionado e cooldown do frontend para 429/503. A validação de permissões existente e o checkout por `ShippingQuote` foram preservados. Cache compartilhado e lock Redis foram antecipados para esta entrega, com testes entre processos e orçamento baseado no Free.
 
-O fechamento está pronto para revisão, com testes automatizados e validação manual local concluídos. Permanece sem commit e sem publicação no remoto; integrações comerciais reais não foram acionadas.
+O fechamento está pronto para revisão, com testes automatizados e validação manual local concluídos. Os commits permanecem locais, sem publicação no remoto; integrações comerciais reais não foram acionadas.
 
 ### Critérios de fechamento
 
@@ -115,3 +115,7 @@ Os commits abaixo preservam o código validado em 21/10. A separação não alte
 Aplicar os commits do backend na ordem acima. O commit de logística depende dos cabeçalhos incluídos no diagnóstico; a documentação operacional descreve a configuração resultante. Frontend e backend devem ser revisados juntos pelo contrato de erros e cabeçalhos.
 
 Os metadados das capturas mantêm os HEADs e o indicador de alterações locais do momento da captura, anterior a estes commits. Não foram reexecutadas as suítes nem feita nova captura nesta organização; os resultados de 21/10 permanecem históricos.
+
+### Correções e revalidação após os commits
+
+Em 22/10, a validação funcional completa identificou e corrigiu o registro de `wait_for_database` (`backend/f280225`) e a recuperação de erros do frete durante Retry-After (`frontend/65b6c27`). Resultado final: 731 testes e 299 subtestes no backend; 267 testes no frontend. Ver [registro atualizado, capturas e limites](sprints/sprint_3/squad_1/o10-validacao-sprint-1.md). A organização original acima descreve o estado anterior a essas correções.

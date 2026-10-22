@@ -1,0 +1,31 @@
+{
+  "browser": "Chrome",
+  "environment": "Local; PostgreSQL e Redis reais; Correios HTTP e gateway simulados",
+  "captures": [
+    {
+      "file": "13-erro-preservado-apos-alteracao.png",
+      "description": "Erro 503 e opção de recálculo preservados após trocar endereço e quantidade.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T11:39:45.403Z",
+      "width": 65536,
+      "height": 4292542531,
+      "sha256": "6acd79e12a8dbdcd3ac4f6858590c32a9545be6fd95828e56f676114978282d3",
+      "bytes": 55633
+    },
+    {
+      "file": "14-cotacao-recuperada-22.png",
+      "description": "Cotação recuperada com duas unidades, total 225,90 e nova confirmação obrigatória.",
+      "url": "http://localhost:5173/payment",
+      "captured_at": "2026-10-22T11:41:16.098Z",
+      "width": 65536,
+      "height": 4292542531,
+      "sha256": "bbec1002d74a1939cc8dbc8facee79be701360e8f49364527db2a6e822712164",
+      "bytes": 50019
+    }
+  ],
+  "source_heads": {
+    "backend": "6e30d8b65da51dad07c29704c621c72d53b3d4f8",
+    "frontend": "17ef9142884792141e64fe9be5a8c1d87efc8c92"
+  },
+  "uncommitted_changes": true
+}
