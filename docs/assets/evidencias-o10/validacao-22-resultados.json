@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-22",
+  "environment": "local isolado; PostgreSQL 15 e Redis 7 reais; provedores comerciais simulados",
+  "backend": {
+    "passed": 731,
+    "subtests_passed": 299,
+    "exit_code": 0
+  },
+  "frontend": {
+    "passed": 268,
+    "files_passed": 50,
+    "exit_code": 0
+  },
+  "quality": [
+    {
+      "check": "backend-ruff",
+      "exit_code": 0
+    },
+    {
+      "check": "backend-format",
+      "exit_code": 0
+    },
+    {
+      "check": "django-check",
+      "exit_code": 0
+    },
+    {
+      "check": "migrations",
+      "exit_code": 0
+    },
+    {
+      "check": "python-dependencies",
+      "exit_code": 0
+    },
+    {
+      "check": "entrypoint-syntax",
+      "exit_code": 0
+    },
+    {
+      "check": "compose-config",
+      "exit_code": 0
+    },
+    {
+      "check": "frontend-lint",
+      "exit_code": 0
+    },
+    {
+      "check": "frontend-build",
+      "exit_code": 0
+    }
+  ],
+  "api": [
+    {
+      "scenario": "inventory-anonymous",
+      "status": 401,
+      "body": {
+        "detail": "Authentication credentials were not provided."
+      },
+      "request_id": "b6caf80e-7719-4289-8ffd-b4ed02ac3d2c"
+    },
+    {
+      "scenario": "inventory-403",
+      "status": 403,
+      "body": {
+        "detail": "Acesso negado. A sua conta não possui a permissão administrativa necessária."
+      },
+      "request_id": "871c491e-d1ed-4e3a-ab74-e50f14999743"
+    },
+    {
+      "scenario": "reject-client-shipping-parameters",
+      "status": 400,
+      "body": {
+        "message": "Origem, peso e serviço são definidos pelo servidor."
+      },
+      "request_id": "ce8aad4b-9dde-4c62-9750-cca6abae3880"
+    },
+    {
+      "scenario": "shipping-provider-HTTP-and-Redis",
+      "status": 200,
+      "body": {
+        "prazo_dias": 5,
+        "data_maxima_entrega": "27/10/2026",
+        "entrega_domiciliar": true,
+        "entrega_sabado": false,
+        "preco_final": "25,90",
+        "peso_cobrado": "300"
+      },
+      "request_id": "bc89681f-c1f9-4f9f-843b-7aca597c50f5"
+    },
+    {
+      "scenario": "inventory-200",
+      "status": 200,
+      "body": {
+        "inventory": [
+          {
+            "name": "Boné O10 — Sem variações",
+            "total_stock": 0
+          },
+          {
+            "name": "Camiseta O10 — Validação 22",
+            "total_stock": 10
+          }
+        ]
+      },
+      "request_id": "36d11739-8834-4f42-935c-4391b5dfdf5b"
+    }
+  ],
+  "redis_restart": [
+    {
+      "redis": "stopped",
+      "http_status": 503,
+      "body": {
+        "message": "Serviço de cálculo de frete temporariamente indisponível."
+      }
+    },
+    {
+      "redis": "restarted",
+      "http_status": 200,
+      "body": {
+        "prazo_dias": 5,
+        "data_maxima_entrega": "27/10/2026",
+        "entrega_domiciliar": true,
+        "entrega_sabado": false,
+        "preco_final": "25,90",
+        "peso_cobrado": "300"
+      }
+    }
+  ],
+  "checkout": {
+    "attempts": [
+      {
+        "status": "UNCERTAIN",
+        "last_error_code": "gateway_error",
+        "last_error_at": "2026-10-22 11:42:12.449877+00:00"
+      }
+    ],
+    "orders": 1,
+    "stock": 8,
+    "logistics_snapshot": {
+      "origin": "70000000",
+      "service": "03220",
+      "base_url": "http://127.0.0.1:8011",
+      "width_cm": "20",
+      "height_cm": "20",
+      "length_cm": "20",
+      "destination": "72000000",
+      "mock_enabled": false,
+      "weight_grams": "300",
+      "declared_value": "200.00",
+      "policy_version": "1"
+    }
+  },
+  "fix_commits": {
+    "backend": "f280225b84c08d2f039eed7fba59f722e2f9dbff",
+    "frontend": "a973fdc13e7f352104bbdf44ec2923838a6a2122"
+  },
+  "restored_checkout_regression": "Tentativa restaurada com carrinho preenchido não indica cálculo ativo; reconsulta mantém payload original."
+}

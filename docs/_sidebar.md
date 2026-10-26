@@ -53,6 +53,8 @@
             - [CRUD de cupons — Evidências](sprints/sprint_2/squad_4/crud-cupons-evidencias.md)
     - [Sprint 3](sprints/sprint_3/)
         - [Backlog](sprints/sprint_3/backlog.md)
+        - Squad 1
+            - [O10 — Evidências](sprints/sprint_3/squad_1/o10-evidencias-sprint-1.md)
         - Squad 3
             - [Exportação de dados admin — Evidências](sprints/sprint_3/squad_3/exportacao-dados-evidencias.md)
             - [Envio de cupom por e-mail — Evidências](sprints/sprint_3/squad_3/envio-cupom-email-evidencias.md)
