@@ -55,6 +55,8 @@
         - [Backlog](sprints/sprint_3/backlog.md)
         - Squad 1
             - [O10 — Evidências](sprints/sprint_3/squad_1/o10-evidencias-sprint-1.md)
+        - Squad 2
+            - [Reembolso de compras — Evidências](sprints/sprint_3/squad_2/reembolso-evidencias.md)
         - Squad 3
             - [Exportação de dados admin — Evidências](sprints/sprint_3/squad_3/exportacao-dados-evidencias.md)
             - [Envio de cupom por e-mail — Evidências](sprints/sprint_3/squad_3/envio-cupom-email-evidencias.md)
