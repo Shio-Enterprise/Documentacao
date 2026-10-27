@@ -121,30 +121,18 @@ O CI (GitHub Actions) passou nos dois PRs.
 
 ## Evidências (prints)
 
-<!--
-Adicionar os prints em docs/assets/evidencias-pagina-drop/ e descomentar:
-
 Drop antes do lançamento, com "Em breve" e a contagem regressiva:
 
-![Drop em breve](../../../assets/evidencias-pagina-drop/01-drop-em-breve.png)
+![Drop em breve](../../../assets/evidencias-slug/pagina-lancamento.png)
 
 Drop ao vivo, com "X de Y restantes", contagem até o fim e os produtos:
 
-![Drop ao vivo](../../../assets/evidencias-pagina-drop/02-drop-ao-vivo.png)
-
-Drop esgotado:
-
-![Drop esgotado](../../../assets/evidencias-pagina-drop/03-drop-esgotado.png)
+![Drop ao vivo](../../../assets/evidencias-slug/visualizacao-drop-slug.png)
 
 Drop encerrado, sem contagem:
 
-![Drop encerrado](../../../assets/evidencias-pagina-drop/04-drop-encerrado.png)
-
-Drop privado ou slug inexistente:
-
-![Drop não encontrado](../../../assets/evidencias-pagina-drop/05-drop-nao-encontrado.png)
+![Drop encerrado](../../../assets/evidencias-slug/drop-encerrado.png)
 
 Link "Ver página pública" no admin:
 
-![Link no admin](../../../assets/evidencias-pagina-drop/06-admin-ver-pagina-publica.png)
--->
+![Link no admin](../../../assets/evidencias-slug/visualizardrop_admin.png)
