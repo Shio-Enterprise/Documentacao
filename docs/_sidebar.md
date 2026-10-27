@@ -65,4 +65,6 @@
             - [Avise-me quando chegar — Evidências](sprints/sprint_3/squad_3/avise-me-evidencias.md)
         - Squad 4
             - [Guia de medidas — Evidências](sprints/sprint_3/squad_4/guia-medidas-evidencias.md)
+            - [Dashboard de navegação — Evidências](sprints/sprint_3/squad_4/dashboard-navegacao.md)
             - [Lista de espera: e-mail de abertura — Evidências](sprints/sprint_3/squad_4/lista-espera-email-evidencias.md)
+            - [Lista de espera: interface e modal — Evidências](sprints/sprint_3/squad_4/lista-espera-modal-evidencias.md)

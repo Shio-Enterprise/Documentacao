@@ -33,8 +33,8 @@ Um drop é uma coleção com data de lançamento e estoque limitado, e as peças
 - Suíte completa do backend executada em SQLite e os testes de produtos também em Postgres, sem falhas.
 
 **Pendências:**
-- Entrar e sair da lista pelo site (endpoint e botão na página do drop).
-- Modal de aviso ao abrir a plataforma, com controle próprio de "já visto".
+- Entrar e sair da lista pelo site (endpoint e botão na página do drop) — *implementado no PR do frontend e endpoints do backend (ver [evidências do modal e interface](lista-espera-modal-evidencias.md))*.
+- Modal de aviso ao abrir a plataforma, com controle próprio de "já visto" — *implementado com o campo `seen_at` e `DropOpenedModal` (ver [evidências do modal e interface](lista-espera-modal-evidencias.md))*.
 - Agendar o comando `notify_drop_openings` em produção.
 - O plano grátis do Resend envia até 100 e-mails por dia; listas maiores precisam de um plano maior ou de envio em mais de um dia.
 
