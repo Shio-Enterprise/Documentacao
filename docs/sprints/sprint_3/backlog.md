@@ -198,3 +198,46 @@ Quem se interessava por um drop antes da abertura não tinha como ser avisado e 
 - Varredura respeita o intervalo; comando com e sem `--dry-run`.
 
 ---
+
+## Lista de espera do drop: interface e modal de aviso
+
+**Issue:** sem issue aberta  
+**Responsáveis:** [João Lucas Ramos](https://github.com/Joaolramos), [João Gabriel](https://github.com/JoaoComTil)  
+**Sprint:** Sprint 3  
+**Tipo:** Nova funcionalidade  
+**Escopo:** Frontend e Backend  
+**Status no quadro:** DoD  
+
+### Descrição
+
+Permite que o cliente logado se inscreva e cancele sua participação na lista de espera diretamente pela página pública de um drop futuro (`/drop/:slug`). Além disso, adiciona o controle de visualização do aviso no banco (`seen_at`) e exibe automaticamente um modal de abertura de vendas ao navegar pela loja quando um drop em que o cliente estava inscrito abre.
+
+### Regras
+
+- Botão na página do drop só aparece quando o drop é público, ativo e está antes do `launch_date`.
+- Usuário não logado é redirecionado para a tela de login ao clicar no botão.
+- Inscrição é única por usuário em cada drop; inscrição repetida não gera duplicata.
+- Usuário pode sair da lista a qualquer momento antes ou após a abertura.
+- O modal automático consulta os drops abertos com `seen_at` nulo na navegação pública de usuários autenticados.
+- Ao fechar o modal ou clicar em "Ver o Drop", a data de visualização (`seen_at`) é persistida, não voltando a exibir o aviso.
+- Modal com suporte a fila sequencial para múltiplos drops abertos e suporte a acessibilidade (fechamento por ESC e clique externo).
+
+### Critérios de Aceitação
+
+- Botão "Entrar na lista de espera" visível apenas em drops na fase futura.
+- Feedback imediato "Você está na lista de espera" com opção de sair da lista.
+- Modal abre automaticamente na plataforma para usuário com drop recém-aberto.
+- O modal não reaparece após ser dispensado pelo usuário.
+- Drop inativo, privado ou encerrado recusa novas inscrições via API.
+
+#### Testes
+
+- 401 para requisições sem autenticação nos endpoints de waitlist.
+- Inscrição idempotente (201 no primeiro envio, 200 no repetido).
+- Rejeição de inscrição em drops já abertos, privados ou encerrados (400).
+- Endpoint `/unseen/` filtra estritamente drops abertos com `seen_at__isnull=True`.
+- Marcação de visualização (`/<id>/seen/`) preenche `seen_at` e esvazia o `/unseen/`.
+- Testes de frontend validando renderização condicional do botão e comportamento do modal (acessibilidade, fila e dispatch de visualização).
+
+---
+
