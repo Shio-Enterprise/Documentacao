@@ -126,3 +126,39 @@ Quando um tamanho esgotava, o cliente não tinha como saber quando ele voltava, 
 - Dois envios simultâneos resultam em um e-mail só por pedido (PostgreSQL).
 
 ---
+
+## Guia de medidas por categoria na página do produto
+
+**Issue:** sem issue aberta  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Sprint:** Sprint 3  
+**Tipo:** Nova funcionalidade  
+**Escopo:** Frontend e Backend  
+**Status no quadro:** DoD  
+
+### Descrição
+
+A página do produto mostrava só os nomes dos tamanhos, sem dizer a que medidas cada um corresponde, e o cliente escolhia o tamanho no escuro, o que gera trocas. A atividade adiciona um guia de medidas por categoria de roupa: a página do produto mostra a tabela (P/M/G/GG, de PP a XG) com as medidas do corpo em centímetros e uma calculadora que sugere o tamanho a partir da medida do cliente.
+
+### Regras
+
+- O guia é ligado à categoria; produtos de categoria sem guia não mostram a tabela.
+- Guias padrão "Parte de cima" (tórax, cintura e quadril) e "Parte de baixo" (cintura e quadril), editáveis no admin do Django.
+- Medidas do corpo, em faixas de centímetros; entre dois tamanhos, sugere o maior.
+- No cadastro de produto, os tamanhos são escolhidos numa lista (PP a XG ou Único) e a categoria é escolhida já na criação.
+
+### Critérios de Aceitação
+
+- A página de um produto de categoria com guia mostra a tabela de medidas.
+- O cliente digita uma medida e recebe a sugestão de tamanho; fora da tabela, recebe o tamanho mais próximo.
+- O admin ajusta as medidas e liga categorias a guias sem mudança de código.
+- Produto de categoria sem guia continua com a página como antes.
+
+#### Testes
+
+- Detalhe do produto com e sem guia, sem consulta extra ao banco.
+- Validação recusa faixa invertida, medida faltando e tamanhos fora de ordem.
+- Sugestão de tamanho dentro da faixa, na fronteira, entre faixas e fora da tabela.
+- Lista de tamanhos e categoria enviadas corretamente no cadastro.
+
+---

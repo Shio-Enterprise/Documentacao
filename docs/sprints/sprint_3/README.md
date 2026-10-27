@@ -10,6 +10,7 @@
 | :---------------------------: | :--------------:| :------:| :-----------------: |
 | Ian Costa / Arthur Sousa / Danilo Naves | 3 | [#62](https://github.com/Shio-Enterprise/Documentacao/issues/62), [#67](https://github.com/Shio-Enterprise/Documentacao/issues/67), [#66](https://github.com/Shio-Enterprise/Documentacao/issues/66) | Exportação de dados do painel administrativo em CSV e Excel; envio de cupom por e-mail para clientes; "Avise-me quando chegar" para tamanho esgotado |
 | Matheus de Alcântara / Vilmar Fagundes | 1 | [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15) | O10 — etapa 1: fundação logística, Redis e tratamento de falhas do checkout; entrega parcial em revisão |
+| João Gabriel | 1 | — | Guia de medidas por categoria na página do produto, com calculadora de tamanho |
 | Amanda Cruz / Felipe Motta / Cauã Araujo | 2 | [#71](https://github.com/Shio-Enterprise/Documentacao/issues/71), [#73](https://github.com/Shio-Enterprise/Documentacao/issues/73) | Reembolso de compras pelo cliente, com análise e registro do estorno; troca de itens de pedidos entregues, com reserva e retorno ao estoque |
 
 ### Evidências
@@ -22,6 +23,7 @@
 | [O10 - Evidência](sprints/sprint_3/squad_1/o10-evidencias-sprint-1.md) | [#14](https://github.com/Shio-Enterprise/Documentacao/issues/14), [#15](https://github.com/Shio-Enterprise/Documentacao/issues/15) |
 | [Reembolso de compras - Evidência](sprints/sprint_3/squad_2/reembolso-evidencias.md) | [#71](https://github.com/Shio-Enterprise/Documentacao/issues/71) |
 | [Troca de itens - Evidência](sprints/sprint_3/squad_2/trocas-evidencias.md) | [#73](https://github.com/Shio-Enterprise/Documentacao/issues/73) |
+| [Guia de medidas - Evidência](sprints/sprint_3/squad_4/guia-medidas-evidencias.md) | — |
 
 ---
 
