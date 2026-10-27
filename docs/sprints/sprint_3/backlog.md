@@ -129,7 +129,7 @@ Quando um tamanho esgotava, o cliente não tinha como saber quando ele voltava, 
 
 ## Guia de medidas por categoria na página do produto
 
-**Issue:** sem issue aberta  
+**Issue:** [#74 — [Feature] Guia de medidas por categoria na página do produto](https://github.com/Shio-Enterprise/Documentacao/issues/74)  
 **Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
 **Sprint:** Sprint 3  
 **Tipo:** Nova funcionalidade  

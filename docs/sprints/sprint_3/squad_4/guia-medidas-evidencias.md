@@ -2,7 +2,7 @@
 **Responsável:** João Gabriel
 
 **Origem:**
-- Tarefa da Sprint 3 do Squad 4: guia de medidas por categoria (tabela P/M/G/GG) na página do produto, para ajudar a reduzir trocas.
+- [Issue #74](https://github.com/Shio-Enterprise/Documentacao/issues/74) — guia de medidas por categoria (tabela P/M/G/GG) na página do produto, para ajudar a reduzir trocas.
 
 **Por que a melhoria foi relevante?**
 A página do produto mostrava só os nomes dos tamanhos (P, M, G…), sem dizer a que medidas cada um corresponde. O cliente escolhia o tamanho no escuro, e a peça que não servia virava pedido de troca. A entrega mostra, na própria página do produto, uma tabela de medidas que depende do tipo de roupa (camiseta e moletom usam uma tabela, calça e short outra) e uma calculadora em que o cliente digita a própria medida e recebe a sugestão de tamanho.
