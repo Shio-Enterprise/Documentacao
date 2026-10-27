@@ -32,7 +32,7 @@
 
 ## Resumo <!-- {docsify-ignore} -->
 
-- **Líder da Apresentação**: A definir
-- **Total de Tarefas concluídas:** 0
+- **Líder da Apresentação**: Arthur Sousa
+- **Total de Tarefas concluídas:** 10
 - **Início da Sprint:** 13/10/2026
 - **Fim da Sprint:** 27/10/2026
