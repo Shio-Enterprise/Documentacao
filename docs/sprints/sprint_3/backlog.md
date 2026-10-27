@@ -162,3 +162,39 @@ A página do produto mostrava só os nomes dos tamanhos, sem dizer a que medidas
 - Lista de tamanhos e categoria enviadas corretamente no cadastro.
 
 ---
+
+## Lista de espera do drop: e-mail de abertura
+
+**Issue:** sem issue aberta  
+**Responsáveis:** [João Gabriel](https://github.com/JoaoComTil), [João Lucas Ramos](https://github.com/Joaolramos)  
+**Sprint:** Sprint 3  
+**Tipo:** Nova funcionalidade  
+**Escopo:** Backend  
+**Status no quadro:** In progress  
+
+### Descrição
+
+Quem se interessava por um drop antes da abertura não tinha como ser avisado e precisava voltar ao site na hora do lançamento. A atividade cria a lista de espera do drop (`DropWaitlist`) e envia um e-mail para cada pessoa da lista quando o drop abre, com o link para a página dele. A entrada na lista pelo site e o modal de aviso ao abrir a plataforma fazem parte da mesma tarefa e seguem em andamento sobre esta base.
+
+### Regras
+
+- Só usuários com conta entram na lista; uma entrada por pessoa em cada drop.
+- O e-mail sai quando o drop está público, ativo e dentro da janela `launch_date`/`end_date`.
+- Cada pessoa recebe o e-mail uma única vez; se o envio falhar, ela volta para a fila.
+- Sem fila de tarefas: o envio roda numa varredura nas requisições (no máximo uma por minuto) e no comando `notify_drop_openings`, para cron.
+
+### Critérios de Aceitação
+
+- Quem está na lista recebe o e-mail quando o drop abre, com o link do drop.
+- Nenhum e-mail sai antes do lançamento nem para drop privado, inativo ou encerrado.
+- A mesma pessoa não recebe o e-mail duas vezes.
+- A falha no envio para uma pessoa não impede o envio para as demais.
+
+#### Testes
+
+- E-mail enviado só depois do `launch_date`.
+- Uma pessoa, um e-mail, mesmo com execuções repetidas.
+- Falha num envio não interrompe os outros e devolve a pessoa à fila.
+- Varredura respeita o intervalo; comando com e sem `--dry-run`.
+
+---
