@@ -1,6 +1,6 @@
 # Sprint 4
 
-**Período:** a definir
+**Período:** 03/11/2026 a 19/11/2026
 
 **Apresentação:** a definir
 
@@ -22,5 +22,5 @@
 
 - **Líder da Apresentação**: a definir
 - **Total de Tarefas concluídas:** 1
-- **Início da Sprint:** a definir
-- **Fim da Sprint:** a definir
+- **Início da Sprint:** 03/11/2026
+- **Fim da Sprint:** 19/11/2026
