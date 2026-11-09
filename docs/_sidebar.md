@@ -68,3 +68,7 @@
             - [Dashboard de navegação — Evidências](sprints/sprint_3/squad_4/dashboard-navegacao.md)
             - [Lista de espera: e-mail de abertura — Evidências](sprints/sprint_3/squad_4/lista-espera-email-evidencias.md)
             - [Lista de espera: interface e modal — Evidências](sprints/sprint_3/squad_4/lista-espera-modal-evidencias.md)
+    - [Sprint 4](sprints/sprint_4/)
+        - [Backlog](sprints/sprint_4/backlog.md)
+        - Squad 3
+            - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)
