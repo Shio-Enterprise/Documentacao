@@ -71,4 +71,5 @@
     - [Sprint 4](sprints/sprint_4/)
         - [Backlog](sprints/sprint_4/backlog.md)
         - Squad 3
+            - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)
             - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)

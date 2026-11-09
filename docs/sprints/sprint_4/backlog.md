@@ -6,6 +6,31 @@ Este documento consolida os itens da **Sprint 4** presentes no quadro Kanban do 
 
 ---
 
+## Responsividade e acessibilidade do site (WCAG 2.1 AA)
+
+**Issue:** [#64 — [Melhoria] Responsividade e acessibilidade do site (WCAG 2.1 AA)](https://github.com/Shio-Enterprise/Documentacao/issues/64)  
+**Responsáveis:** [Danilo Naves](https://github.com/DaniloNavesS), [Ian Costa](https://github.com/iancostag), [Arthur Sousa](https://github.com/Tutzs)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Prioridade:** P2  
+**Escopo:** Frontend  
+**Status no quadro:** In progress  
+
+### Descrição
+
+Várias telas não funcionavam bem no celular, e havia problemas de acessibilidade: texto sem contraste, foco do teclado invisível, modais que não fechavam com Esc e carrossel sem pausa. A atividade deixa o site inteiro (loja, área do cliente e painel admin) responsivo e acessível no nível AA da WCAG 2.1, mantendo a identidade visual da Shio.
+
+### Critérios de Aceitação
+
+- Sem rolagem horizontal em 360, 768, 1024 e 1440 px, e zoom de 200% sem cortar conteúdo.
+- Tudo funciona só com o teclado, com foco visível e ordem lógica.
+- Áreas de toque de pelo menos 44 × 44 px no celular.
+- Todo campo tem rótulo, e a mensagem de erro é ligada ao campo.
+- Texto com contraste de pelo menos 4,5:1.
+- Lighthouse de acessibilidade ≥ 90 e testes `vitest-axe` sem violações.
+
+---
+
 ## Galeria de miniaturas da página do produto
 
 **Issue:** [#84 — [Melhoria] Ajustar a galeria de miniaturas da página do produto](https://github.com/Shio-Enterprise/Documentacao/issues/84)  
