@@ -67,3 +67,39 @@ Na página do produto, a coluna de miniaturas ao lado da foto principal não aco
 ### Fora do escopo
 
 - Zoom na foto e visualização em tela cheia.
+
+---
+
+## Validação e padronização de CPF
+
+**Issue:** [#91 — [Bug] CPF aceita número inválido e o mesmo CPF pode entrar em duas contas](https://github.com/Shio-Enterprise/Documentacao/issues/91)  
+**Responsáveis:** [Matheus de Alcântara](https://github.com/matheusdealcantara), [Vilmar Fagundes](https://github.com/VilmarFagundes)  
+**Sprint:** Sprint 4  
+**Tipo:** Correção de bug  
+**Prioridade:** P2  
+**Escopo:** Backend e Frontend  
+**Status no quadro:** In progress  
+
+### Descrição
+
+O perfil aceitava qualquer número com 11 dígitos e permitia cadastrar o mesmo CPF em contas diferentes ao alternar entre o formato com e sem pontuação. A correção valida os dígitos verificadores, padroniza o armazenamento e preserva os registros antigos que precisam de revisão pela equipe.
+
+### Critérios de Aceitação
+
+- Recusar CPF inválido e sequências repetidas, sem salvar os demais campos da requisição.
+- Aceitar CPF válido com ou sem pontuação, gravar somente números e exibir o valor formatado.
+- Recusar o CPF de outra conta, inclusive quando o registro antigo contém pontuação.
+- Manter o CPF opcional no cadastro e permitir apagar o valor do perfil.
+- Associar as mensagens de CPF inválido e CPF já cadastrado ao campo correspondente.
+- Padronizar registros antigos válidos sem conflito e listar os inválidos e duplicados sem perder dados.
+- Manter o envio do CPF aos Correios somente com números.
+
+#### Testes e Evidências
+
+- Testes automatizados de validação, atualização do perfil, duplicidade, migração, payload dos Correios e exibição do campo no frontend.
+- PRs [backend #50](https://github.com/Shio-Enterprise/backend/pull/50) e [frontend #58](https://github.com/Shio-Enterprise/frontend/pull/58), com CI aprovada.
+- [Página de evidências](sprints/sprint_4/squad_1/cpf-evidencias.md), com os resultados automatizados, a validação manual no Chrome e os prints.
+
+### Fora do escopo
+
+- Validação de CNPJ, consulta de titularidade à Receita e máscara automática durante a digitação.
