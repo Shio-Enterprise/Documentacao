@@ -61,11 +61,11 @@ O Selenium teve a fixture de CPF atualizada, mas não foi executado nesta valida
 
 ### Revalidação após atualização das branches
 
-Em **10/11/2026**, as branches da #91 foram atualizadas com a `dev`: backend no commit `e61e25a` e frontend no commit `0769c55`. A integração preservou a validação de CPF e conciliou as migrações paralelas de `authentication` e `products` com duas migrações de merge sem operações adicionais.
+Em **11/11/2026**, as branches da #91 foram atualizadas com a `dev`: backend no commit `4b67785` e frontend no commit `588ff6f`. A integração preservou a validação de CPF e conciliou as migrações paralelas de `authentication` e `products` com três migrações de merge sem operações adicionais.
 
-- **Backend:** 1.047 testes e 426 subcasos aprovados; 20 testes ignorados.
+- **Backend:** 1.061 testes e 426 subcasos aprovados; 20 testes ignorados.
 - **PostgreSQL isolado:** 20 testes e 17 subcasos aprovados, incluindo a migração de CPF, o perfil, as permissões da página inicial e o envio aos Correios.
-- **Frontend:** 754 testes aprovados em 88 arquivos; build aprovado e lint com zero erros e 19 avisos.
+- **Frontend:** 796 testes aprovados em 91 arquivos; build aprovado e lint com zero erros e 19 avisos.
 - **Checagens do backend:** Ruff, formatação, `system check` e `makemigrations --check --dry-run` aprovados.
 
 Os prints abaixo continuam registrando os commits utilizados na validação manual descrita a seguir; esta atualização registra a nova execução dos testes automatizados.
