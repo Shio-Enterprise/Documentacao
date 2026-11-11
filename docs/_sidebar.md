@@ -70,6 +70,8 @@
             - [Lista de espera: interface e modal — Evidências](sprints/sprint_3/squad_4/lista-espera-modal-evidencias.md)
     - [Sprint 4](sprints/sprint_4/)
         - [Backlog](sprints/sprint_4/backlog.md)
+        - Squad 1
+            - [Validação de CPF — Evidências](sprints/sprint_4/squad_1/cpf-evidencias.md)
         - Squad 3
             - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)
             - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)
