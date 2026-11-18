@@ -71,6 +71,7 @@
     - [Sprint 4](sprints/sprint_4/)
         - [Backlog](sprints/sprint_4/backlog.md)
         - Squad 1
+            - [Páginas institucionais e ajuda — Evidências](sprints/sprint_4/squad_1/paginas-institucionais-evidencias.md)
             - [Validação de CPF — Evidências](sprints/sprint_4/squad_1/cpf-evidencias.md)
         - Squad 3
             - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)

@@ -1,0 +1,658 @@
+{
+  "date": "2026-11-18",
+  "frontend": "bb99d33",
+  "backend": "76ed313",
+  "browser": "Chromium headless via Playwright",
+  "mockedApi": false,
+  "provisionalClientContent": true,
+  "results": [
+    {
+      "route": "/sobre-nos",
+      "width": 1440,
+      "screenshot": "sobre-nos-1440.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/nossa-historia",
+      "width": 1440,
+      "screenshot": "nossa-historia-1440.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/contato",
+      "width": 1440,
+      "screenshot": "contato-1440.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/ajuda/suporte",
+      "width": 1440,
+      "screenshot": "suporte-1440.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/ajuda/prazo-de-entrega",
+      "width": 1440,
+      "screenshot": "prazo-entrega-1440.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/ajuda/trocas-e-devolucoes",
+      "width": 1440,
+      "screenshot": "trocas-devolucoes-1440.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/sobre-nos",
+      "width": 390,
+      "screenshot": "sobre-nos-390.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/nossa-historia",
+      "width": 390,
+      "screenshot": "nossa-historia-390.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/contato",
+      "width": 390,
+      "screenshot": "contato-390.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/ajuda/suporte",
+      "width": 390,
+      "screenshot": "suporte-390.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/ajuda/prazo-de-entrega",
+      "width": 390,
+      "screenshot": "prazo-entrega-390.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "route": "/ajuda/trocas-e-devolucoes",
+      "width": 390,
+      "screenshot": "trocas-devolucoes-390.png",
+      "overflow": false,
+      "provisionalNotice": true,
+      "footerLinks": [
+        {
+          "label": "Sobre nós",
+          "href": "/sobre-nos"
+        },
+        {
+          "label": "Nossa história",
+          "href": "/nossa-historia"
+        },
+        {
+          "label": "Drops",
+          "href": "/category/all"
+        },
+        {
+          "label": "Contato",
+          "href": "/contato"
+        },
+        {
+          "label": "Suporte ao cliente",
+          "href": "/ajuda/suporte"
+        },
+        {
+          "label": "Prazo de entrega",
+          "href": "/ajuda/prazo-de-entrega"
+        },
+        {
+          "label": "Trocas e devoluções",
+          "href": "/ajuda/trocas-e-devolucoes"
+        },
+        {
+          "label": "Meus dados",
+          "href": "/my-account"
+        },
+        {
+          "label": "Meus pedidos",
+          "href": "/my-orders"
+        },
+        {
+          "label": "Endereços",
+          "href": "/addresses"
+        },
+        {
+          "label": "Cadastre-se",
+          "href": "/signup"
+        }
+      ],
+      "pageErrors": []
+    }
+  ]
+}
