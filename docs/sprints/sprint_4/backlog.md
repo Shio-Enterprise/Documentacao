@@ -118,3 +118,105 @@ O perfil aceitava qualquer número com 11 dígitos e permitia cadastrar o mesmo 
 O [PR #61 do frontend](https://github.com/Shio-Enterprise/frontend/pull/61) foi integrado à `dev`. As seis páginas estão disponíveis com textos de exemplo identificados como provisórios e imagens de campanha reutilizadas. O conteúdo aprovado, os contatos e os perfis sociais ainda dependem da Shio; a issue não é considerada concluída.
 
 As [evidências locais de 18/11/2026](sprints/sprint_4/squad_1/paginas-institucionais-evidencias.md) registram as páginas em desktop e celular, a navegação do rodapé, os testes focados e as pendências de aceite.
+
+---
+
+## Criar novos administradores pelo painel
+
+**Issue:** [#81 — [Feature] Criar novos administradores pelo painel](https://github.com/Shio-Enterprise/Documentacao/issues/81)  
+**Responsáveis:** [Amanda Cruz](https://github.com/mandicrz), [Felipe Motta](https://github.com/M0tt1nh4), [Cauã Araujo](https://github.com/caua08)  
+**Sprint:** Sprint 4  
+**Tipo:** Feature  
+**Escopo:** Backend e Frontend  
+**Status no quadro:** Done  
+
+### Descrição
+
+A tela **Permissões** do painel deixava alterar o que cada administrador acessa, mas não deixava criar um administrador novo. Isso só era possível pelo admin do Django ou por comando no servidor, dependendo de um desenvolvedor. A atividade permite promover um cliente existente ou cadastrar uma conta nova já como administrador, escolhendo as permissões na criação, e remover o acesso de outro administrador.
+
+### Critérios de Aceitação
+
+- Admin com permissão promove um cliente existente a administrador.
+- Admin com permissão cadastra uma conta nova de administrador; a pessoa recebe o e-mail para definir a senha.
+- As permissões escolhidas na criação já valem no primeiro login.
+- Admin com permissão remove o acesso de outro administrador.
+- Admin sem permissão não vê a opção e recebe erro se tentar pela API.
+
+#### Testes e Evidências
+
+- Sem login `401`; sem permissão `403`; e-mail que já é admin recusado; não é possível remover o próprio acesso nem alterar superusuário; conta nova recebe o e-mail de definição de senha.
+- PRs [backend #48](https://github.com/Shio-Enterprise/backend/pull/48) e [frontend #56](https://github.com/Shio-Enterprise/frontend/pull/56).
+- [Página de evidências](sprints/sprint_4/squad_2/cadastro-administradores-evidencias.md).
+
+### Fora do escopo
+
+- Criar ou alterar superusuários pelo painel.
+
+---
+
+## Esconder a quantidade em estoque na página do produto
+
+**Issue:** [#85 — [Melhoria] Esconder a quantidade em estoque na página do produto](https://github.com/Shio-Enterprise/Documentacao/issues/85)  
+**Responsáveis:** [Amanda Cruz](https://github.com/mandicrz), [Felipe Motta](https://github.com/M0tt1nh4), [Cauã Araujo](https://github.com/caua08)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Escopo:** Backend e Frontend  
+**Status no quadro:** Done  
+
+### Descrição
+
+A página pública do produto mostrava quantas unidades existiam de cada tamanho. A pedido do cliente, essa quantidade passa a aparecer só para administradores, no painel. A API pública deixa de enviar o número exato e envia só se o tamanho está disponível, para que ele não fique visível nem inspecionando a página.
+
+### Critérios de Aceitação
+
+- Página do produto não mostra quantidade em estoque.
+- Tamanho esgotado continua marcado como esgotado e com o "Avise-me".
+- A resposta pública da API do produto não traz a quantidade exata.
+- Painel admin continua mostrando as quantidades.
+- Carrinho e checkout continuam impedindo comprar mais do que o estoque.
+
+#### Testes e Evidências
+
+- API pública do produto sem quantidade; API do admin com quantidade; tamanho com estoque 0 aparece como esgotado; adicionar ao carrinho mais que o estoque continua recusado.
+- PRs [backend #49](https://github.com/Shio-Enterprise/backend/pull/49) e [frontend #57](https://github.com/Shio-Enterprise/frontend/pull/57).
+- [Página de evidências](sprints/sprint_4/squad_2/estoque-oculto-evidencias.md).
+
+### Fora do escopo
+
+- Aviso de "últimas unidades".
+
+---
+
+## Máscaras de telefone e CPF
+
+**Issue:** [#111 — [Melhoria] Máscaras de telefone e CPF](https://github.com/Shio-Enterprise/Documentacao/issues/111)  
+**Responsáveis:** [Amanda Cruz](https://github.com/mandicrz), [Felipe Motta](https://github.com/M0tt1nh4), [Cauã Araujo](https://github.com/caua08)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Escopo:** Backend e Frontend  
+**Status no quadro:** Done  
+
+### Descrição
+
+Telefone e CPF eram digitados em Meus Dados sem formato definido, e o telefone seguia como veio até o pagamento na InfinitePay. A atividade mostra a máscara dos dois enquanto a pessoa digita, valida o telefone brasileiro no backend, grava só os dígitos, padroniza os telefones antigos por migração e envia o telefone à InfinitePay no formato `+55`.
+
+### Critérios de Aceitação
+
+- Telefone e CPF mostram a máscara enquanto a pessoa digita em Meus Dados.
+- Telefone com `+55`, com ou sem pontuação, é aceito e gravado só com dígitos.
+- Telefone inválido é recusado pela API com mensagem; celular sem o 9 tem mensagem própria.
+- Telefones antigos válidos foram normalizados; os fora do padrão foram preservados.
+- Salvar só o nome não apaga nem trava por telefone ou CPF antigo.
+- Checkout fica bloqueado com telefone ausente ou inválido, e orienta a corrigir.
+- O pagamento envia o telefone com `+55`.
+
+#### Testes e Evidências
+
+- Máscaras de telefone (celular, fixo, `+55`) e de CPF; gravação só com dígitos; erro de telefone inválido e de celular sem o 9; migração; bloqueio do pagamento e payload da InfinitePay com `+55`.
+- PRs [backend #53](https://github.com/Shio-Enterprise/backend/pull/53) e [frontend #62](https://github.com/Shio-Enterprise/frontend/pull/62).
+- [Página de evidências](sprints/sprint_4/squad_2/mascaras-telefone-cpf-evidencias.md).
+
+### Fora do escopo
+
+- Validação e normalização do CPF no backend (tratadas na issue #91).
+- Telefones de outros países.
