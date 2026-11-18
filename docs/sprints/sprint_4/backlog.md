@@ -103,3 +103,18 @@ O perfil aceitava qualquer número com 11 dígitos e permitia cadastrar o mesmo 
 ### Fora do escopo
 
 - Validação de CNPJ, consulta de titularidade à Receita e máscara automática durante a digitação.
+
+
+---
+
+## Páginas institucionais e ajuda
+
+**Issue:** [#83 — Completar o rodapé com conteúdo do cliente](https://github.com/Shio-Enterprise/Documentacao/issues/83)
+
+**Escopo:** Frontend
+
+**Status da entrega:** parcial — estrutura integrada, conteúdo oficial pendente.
+
+O [PR #61 do frontend](https://github.com/Shio-Enterprise/frontend/pull/61) foi integrado à `dev`. As seis páginas estão disponíveis com textos de exemplo identificados como provisórios e imagens de campanha reutilizadas. O conteúdo aprovado, os contatos e os perfis sociais ainda dependem da Shio; a issue não é considerada concluída.
+
+As [evidências locais de 18/11/2026](sprints/sprint_4/squad_1/paginas-institucionais-evidencias.md) registram as páginas em desktop e celular, a navegação do rodapé, os testes focados e as pendências de aceite.

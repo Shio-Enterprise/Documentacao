@@ -1,0 +1,7 @@
+Revalidação local em 18/11/2026. Frontend bb99d33.
+Comando: npm run test -- --run src/pages/public/InstitutionalPage/index.test.jsx src/components/layout/shared/Footer.test.jsx src/components/layout/public/Navbar.test.jsx --maxWorkers=2
+
+ Test Files  3 passed (3)
+      Tests  34 passed (34)
+   Start at  09:11:31
+   Duration  3.86s (transform 311ms, setup 239ms, import 1.43s, tests 2.16s, environment 2.07s)
