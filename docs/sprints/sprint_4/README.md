@@ -9,7 +9,7 @@
 | Trio/Dupla de Desenvolvedores | Qtd. de Tarefas | Tarefas | Assunto das Tarefas |
 | :---------------------------: | :--------------:| :------:| :-----------------: |
 | Matheus de Alcântara / Vilmar Fagundes | 2 | [#91](https://github.com/Shio-Enterprise/Documentacao/issues/91), [#83](https://github.com/Shio-Enterprise/Documentacao/issues/83) | Validação e padronização de CPF; páginas institucionais e ajuda integradas, com evidências locais e conteúdo oficial da Shio pendente (#83: entrega parcial) |
-| Ian Costa / Arthur Sousa / Danilo Naves | 3 | [#64](https://github.com/Shio-Enterprise/Documentacao/issues/64), [#65](https://github.com/Shio-Enterprise/Documentacao/issues/65), [#84](https://github.com/Shio-Enterprise/Documentacao/issues/84) | Responsividade e acessibilidade (WCAG 2.1 AA) no sistema inteiro; envio de newsletter pelo painel administrativo; galeria de fotos da página do produto quadrada, alinhada e com setas, em qualquer quantidade de fotos |
+| Ian Costa / Arthur Sousa / Danilo Naves | 4 | [#64](https://github.com/Shio-Enterprise/Documentacao/issues/64), [#65](https://github.com/Shio-Enterprise/Documentacao/issues/65), [#84](https://github.com/Shio-Enterprise/Documentacao/issues/84), [#102](https://github.com/Shio-Enterprise/Documentacao/issues/102) | Responsividade e acessibilidade (WCAG 2.1 AA) no sistema inteiro; envio de newsletter pelo painel administrativo; galeria de fotos da página do produto quadrada, alinhada e com setas, em qualquer quantidade de fotos; e-mail de recuperação para pedidos aguardando pagamento ou cancelados |
 
 ### Evidências
 
@@ -20,6 +20,7 @@
 | [Responsividade e acessibilidade - Evidência](sprints/sprint_4/squad_3/acessibilidade-evidencias.md) | [#64](https://github.com/Shio-Enterprise/Documentacao/issues/64) |
 | [Envio de newsletter - Evidência](sprints/sprint_4/squad_3/envio-newsletter-evidencias.md) | [#65](https://github.com/Shio-Enterprise/Documentacao/issues/65) |
 | [Galeria de fotos do produto - Evidência](sprints/sprint_4/squad_3/galeria-produto-evidencias.md) | [#84](https://github.com/Shio-Enterprise/Documentacao/issues/84) |
+| [E-mail de recuperação de pedido - Evidência](sprints/sprint_4/squad_3/email-recuperacao-pedido-evidencias.md) | [#102](https://github.com/Shio-Enterprise/Documentacao/issues/102) |
 
 ---
 
