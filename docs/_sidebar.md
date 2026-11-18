@@ -75,4 +75,5 @@
             - [Validação de CPF — Evidências](sprints/sprint_4/squad_1/cpf-evidencias.md)
         - Squad 3
             - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)
+            - [Envio de newsletter — Evidências](sprints/sprint_4/squad_3/envio-newsletter-evidencias.md)
             - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)
