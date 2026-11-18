@@ -76,3 +76,4 @@
         - Squad 3
             - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)
             - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)
+            - [E-mail de recuperação de pedido — Evidências](sprints/sprint_4/squad_3/email-recuperacao-pedido-evidencias.md)
