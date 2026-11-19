@@ -118,49 +118,16 @@ Capturas em ambiente local. Os arquivos ficam em `docs/assets/evidencias-editar-
 
 ### Página de edição
 
-<!-- ![Página Editar produto com os campos preenchidos](../../../assets/evidencias-editar-produto/01-pagina-editar-produto.jpg) -->
-
-<!-- ![Página Editar produto no celular](../../../assets/evidencias-editar-produto/02-pagina-editar-produto-celular.jpg) -->
-
-### Imagens
-
-<!-- ![Imagem nova marcada como Nova e definida como principal](../../../assets/evidencias-editar-produto/03-imagem-nova-principal.jpg) -->
-
-<!-- ![Nova capa do produto na loja](../../../assets/evidencias-editar-produto/04-nova-capa-na-loja.jpg) -->
+![Página Editar produto com os campos preenchidos](../../../assets/evidencias-editar-produto/editar_produto.png) 
 
 ### Tamanhos e estoque
 
-<!-- ![Quantidade final com a diferença calculada, novo tamanho e justificativa](../../../assets/evidencias-editar-produto/05-quantidade-final-e-novo-tamanho.jpg) -->
+![Página Editar produto com os campos preenchidos](../../../assets/evidencias-editar-produto/Screenshot%202026-11-19%20003549_edited.png) 
 
-<!-- ![Histórico de Gerenciar estoque com Ajuste e Estoque inicial](../../../assets/evidencias-editar-produto/06-historico-movimentacoes.jpg) -->
-
-<!-- ![Quantidade negativa bloqueada](../../../assets/evidencias-editar-produto/07-estoque-negativo-bloqueado.jpg) -->
-
-<!-- ![Aviso de estoque alterado durante a edição](../../../assets/evidencias-editar-produto/08-estoque-mudou-aviso.jpg) -->
-
-### Remoção e desativação de tamanho
-
-<!-- ![Tamanho marcado para remoção com aviso de estoque zerado](../../../assets/evidencias-editar-produto/09-remover-tamanho-aviso.jpg) -->
-
-<!-- ![Tamanho inativo na página de edição](../../../assets/evidencias-editar-produto/10-tamanho-inativo-admin.jpg) -->
-
-<!-- ![Loja sem o tamanho inativo](../../../assets/evidencias-editar-produto/11-loja-sem-tamanho-inativo.jpg) -->
-
-<!-- ![Pedido antigo ainda mostrando o tamanho](../../../assets/evidencias-editar-produto/12-pedido-antigo-com-tamanho.jpg) -->
 
 ### Conversão do “Único” e guia de medidas
 
-<!-- ![Conversão do Único em tamanho real](../../../assets/evidencias-editar-produto/13-converter-unico.jpg) -->
-
-<!-- ![Tamanhos após converter o Único e adicionar outro tamanho](../../../assets/evidencias-editar-produto/14-unico-convertido-e-novo-tamanho.jpg) -->
-
-<!-- ![Campo Guia de medidas na página de edição](../../../assets/evidencias-editar-produto/15-guia-de-medidas.jpg) -->
-
-### Revisão e CI
-
-<!-- ![Revisão do PR do frontend com o pedido de conversão do Único e a aprovação](../../../assets/evidencias-editar-produto/16-revisao-pr-frontend.jpg) -->
-
-<!-- ![CI aprovada nos PRs backend #52 e frontend #60](../../../assets/evidencias-editar-produto/17-ci-aprovada.jpg) -->
+![Página Editar produto com os campos preenchidos](../../../assets/evidencias-editar-produto/conversao-tamanho.png) 
 
 ## Fora do Escopo e Pendências
 
