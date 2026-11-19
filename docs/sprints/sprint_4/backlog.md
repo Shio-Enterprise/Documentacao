@@ -160,6 +160,39 @@ As [evidências locais de 18/11/2026](sprints/sprint_4/squad_1/paginas-instituci
 
 ---
 
+## Edição completa do produto no painel admin
+
+**Issue:** [#79 — [Melhoria] Editar produto por completo no painel admin (imagens, tamanhos e estoque)](https://github.com/Shio-Enterprise/Documentacao/issues/79)  
+**Responsáveis:** [Matheus de Alcântara](https://github.com/matheusdealcantara), [Vilmar Fagundes](https://github.com/VilmarFagundes)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Escopo:** Backend e Frontend  
+**Status no quadro:** Done  
+
+### Descrição
+
+A tela de editar produto tinha menos informações que a de criar: não permitia alterar imagens, adicionar ou remover tamanhos nem ajustar o estoque de um tamanho específico. A edição virou uma página completa, no padrão do “Editar Drop”, com os mesmos campos da criação, além de imagens, tamanhos e estoque. Tamanhos com histórico são desativados em vez de apagados, e toda mudança de estoque continua passando pelo registro de movimentações.
+
+### Critérios de Aceitação
+
+- Admin edita as imagens de um produto existente: adiciona, substitui, remove e escolhe a principal.
+- Admin adiciona, remove ou desativa e reativa tamanhos, inclusive convertendo a variação padrão “Único” em um tamanho real.
+- Admin aumenta ou diminui o estoque de um tamanho pela quantidade final.
+- Toda mudança de estoque feita pela edição aparece no histórico como “Ajuste”, com justificativa.
+- Erros aparecem na tela com o motivo, por exemplo estoque negativo ou estoque alterado durante a edição.
+
+#### Testes e Evidências
+
+- Testes automatizados de ordem das imagens, desativação de tamanho, loja, carrinho, checkout, página de edição e envio de imagens, tamanhos e estoque.
+- PRs [backend #52](https://github.com/Shio-Enterprise/backend/pull/52) e [frontend #60](https://github.com/Shio-Enterprise/frontend/pull/60), com CI aprovada e revisão de Matheus de Alcântara.
+- [Página de evidências](sprints/sprint_4/squad_1/editar-produto-evidencias.md), com as regras, os resultados automatizados, a validação manual e os prints.
+
+### Fora do escopo
+
+- Edição de vários produtos de uma vez e mudanças em “Gerenciar estoque”.
+
+---
+
 ## Criar novos administradores pelo painel
 
 **Issue:** [#81 — [Feature] Criar novos administradores pelo painel](https://github.com/Shio-Enterprise/Documentacao/issues/81)  
