@@ -31,6 +31,45 @@ Várias telas não funcionavam bem no celular, e havia problemas de acessibilida
 
 ---
 
+## Editar banners e frase da página inicial pelo painel admin
+
+**Issue:** [#82 — [Feature] Editar banners e frase da página inicial pelo painel admin](https://github.com/Shio-Enterprise/Documentacao/issues/82)
+
+**Responsáveis:** [Danilo Naves](https://github.com/DaniloNavesS), [Ian Costa](https://github.com/iancostag), [Arthur Sousa](https://github.com/Tutzs)
+
+**Sprint:** Sprint 4
+
+**Tipo:** Feature
+
+**Escopo:** Backend e Frontend
+
+**Estado da issue:** fechada como concluída
+
+### Descrição
+
+O carrossel e a frase da faixa preta da página inicial eram fixos no código. A tarefa permite ao administrador cadastrar, editar, remover e reordenar banners, além de editar a frase pelo painel, para atualizar a loja sem publicar uma nova versão do site.
+
+### Critérios de Aceitação
+
+- O administrador adiciona, remove e reordena banners, com imagem para computador, imagem opcional para celular, texto alternativo e link opcional.
+- O administrador edita a frase da faixa preta.
+- O banner com link leva ao destino escolhido.
+- A página inicial reflete as alterações após recarregar.
+- Sem banners cadastrados, a loja mostra os banners padrão.
+- Usuários sem login ou sem a permissão necessária não acessam a tela nem a API.
+- Imagens acima do limite ou em formato inválido são recusadas com mensagem.
+
+#### Evidências
+
+- [Página de evidências](sprints/sprint_4/squad_3/edicao-banners-pagina-inicial-evidencias.md), com prints do painel, da loja e vídeo do carrossel com dois banners. A página distingue os critérios demonstrados daqueles sem comprovação nos arquivos fornecidos.
+
+### Fora do escopo
+
+- Edição de outras seções da página inicial.
+- Agendamento de banners por data.
+
+---
+
 ## Galeria de miniaturas da página do produto
 
 **Issue:** [#84 — [Melhoria] Ajustar a galeria de miniaturas da página do produto](https://github.com/Shio-Enterprise/Documentacao/issues/84)  
