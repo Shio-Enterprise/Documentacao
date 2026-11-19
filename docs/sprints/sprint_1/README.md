@@ -34,6 +34,6 @@
 ## Resumo <!-- {docsify-ignore} -->
 
 - **Líder da Apresentação**: Ian Costa
-- **Total de Tarefas concluídas:** 10
+- **Total de Tarefas concluídas:** 14
 - **Início da Sprint:** 01/09/2026
 - **Fim da Sprint:** 16/09/2026

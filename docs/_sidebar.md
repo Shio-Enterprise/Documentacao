@@ -85,3 +85,6 @@
             - [Edição dos banners da página inicial — Evidências](sprints/sprint_4/squad_3/edicao-banners-pagina-inicial-evidencias.md)
             - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)
             - [E-mail de recuperação de pedido — Evidências](sprints/sprint_4/squad_3/email-recuperacao-pedido-evidencias.md)
+        - Squad 4
+            - [Registro do consentimento de navegação — Evidências](sprints/sprint_4/squad_4/consentimento-navegacao-evidencias.md)
+- [Resumo Final](resumo-final.md)
