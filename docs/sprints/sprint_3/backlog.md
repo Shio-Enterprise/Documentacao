@@ -241,3 +241,59 @@ Permite que o cliente logado se inscreva e cancele sua participação na lista d
 
 ---
 
+## Dashboard de navegação dos clientes
+
+**Issue:** [#68 — [Feature] Dashboard administrativo da navegação dos clientes](https://github.com/Shio-Enterprise/Documentacao/issues/68)  
+**Responsável:** [Pedro Siqueira](https://github.com/PedroSiq)  
+**Sprint:** Sprint 3  
+**Tipo:** Feature  
+**Prioridade:** P1  
+**Escopo:** Frontend e Backend  
+**Estado da issue:** fechada como concluída  
+
+### Descrição
+
+A navegação da loja já era gravada na tabela `SiteEvent`, com API em `/api/analytics/`, mas o frontend não enviava os eventos e não havia tela para consultá-los. A atividade faz a loja registrar a navegação e cria a página `/admin/navigation`, separada do dashboard de vendas, onde o admin vê o resumo do período, os produtos que geram interesse e a linha do tempo de cada conta, buscada pelo e-mail.
+
+### Regras
+
+- A loja grava visão de página, visão de produto, adicionar e remover do carrinho e abertura do pagamento. Rotas `/admin` não geram evento.
+- Visitante sem conta usa um `anonymous_id` estável no navegador (`shio_anonymous_id`) e entra só nos totais. Sem esse identificador o front não chama a API.
+- No login, a navegação anônima daquele navegador passa para a conta. Evento que já pertence a outra conta permanece nela.
+- Compra é pagamento confirmado (`PAID`) no período, um sinal por item do pedido. Abrir o pagamento não conta como compra, e pagamento reembolsado sai da conta.
+- O período segue o calendário de São Paulo, com filtro de mês e ano.
+- No interesse por produto, cada conta aparece uma vez, com a ação mais forte, e o produto só entra com pelo menos duas contas acessando.
+- A página exige a permissão `access_admin_dashboard`. O dashboard de vendas (`/admin/dashboard`) permanece como está.
+- Falha no envio de um evento não interrompe carrinho, login nem checkout.
+
+### Critérios de Aceitação
+
+- Navegar na loja, ver um produto, alterar o carrinho e abrir o checkout gera os eventos correspondentes.
+- Visitante anônimo entra só nos totais; depois do login, os eventos daquele navegador aparecem na conta.
+- Compra confirmada aparece na linha do tempo.
+- A página alterna entre Mensal e Anual e mostra resumo e produtos mais vistos.
+- A busca pelo e-mail lista a conta e, ao escolhê-la, mostra os eventos dela no período.
+- Acesso sem permissão de admin é bloqueado na página e nas rotas de leitura.
+- Período sem dados mostra estado vazio.
+
+#### Testes
+
+- Evento anônimo sem `anonymous_id` é recusado com 400.
+- Login vincula só os eventos daquele `anonymous_id` ainda sem conta.
+- Usuário sem permissão de admin recebe 403 no resumo e na linha do tempo.
+- Caminhos `/admin` ficam fora das métricas gerais.
+- Compra entra com pagamento `PAID` e ignora pagamento `PENDING` e linha `PURCHASE` solta em `SiteEvent`.
+- Busca exige ao menos 2 caracteres e devolve no máximo 10 contas.
+- Testes de frontend da captura (id anônimo, rotas admin ignoradas, vínculo após o login) e da página (troca Mensal/Anual, estado vazio, nova tentativa após falha, busca por e-mail e bloqueio de quem não é admin).
+
+#### Evidências
+
+- PRs [backend #41](https://github.com/Shio-Enterprise/backend/pull/41) e [frontend #37](https://github.com/Shio-Enterprise/frontend/pull/37).
+- ![Título e Filtro Temporal](../../../assets/evidencias-squad4/evidencias-navegacao/tempo.png)
+- ![Acesso por Produto](../../../assets/evidencias-squad4/evidencias-navegacao/produto.png)
+- ![Acesso por Usuário](../../../assets/evidencias-squad4/evidencias-navegacao/usuario.png)
+- ![Interesse em Comum](../../../assets/evidencias-squad4/evidencias-navegacao/interesse.png)
+- ![Visitantes e Eventos por Tipo](../../../assets/evidencias-squad4/evidencias-navegacao/visitantes-eventos.png)
+- ![Eventos por Data](../../../assets/evidencias-squad4/evidencias-navegacao/eventos-data.png)
+
+---

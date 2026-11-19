@@ -325,3 +325,62 @@ O checkout tinha uma etapa "Pagamento" que só mostrava PIX e cartão, sem deixa
 ### Fora do escopo
 
 - Mudanças no backend ou na integração com a InfinitePay.
+
+## Registro e validação do consentimento de navegação
+
+**Issue:** [#113 — [Melhoria] Registro do consentimento de navegação no backend](https://github.com/Shio-Enterprise/Documentacao/issues/113)  
+**Responsável:** [Pedro Siqueira](https://github.com/PedroSiq)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Prioridade:** P2  
+**Escopo:** Frontend e Backend  
+**Estado da issue:** fechada como concluída  
+
+### Descrição
+
+O banner "Sua privacidade" pedia o consentimento para registrar a navegação, mas a escolha ficava só no navegador. A loja não tinha como provar quem aceitou, quando e para qual texto, e limpar o navegador ou trocar de dispositivo apagava a escolha. A atividade registra a escolha no backend, com histórico e versão do texto do banner, leva essa escolha para a conta no login e anonimiza os eventos de quem recusa.
+
+### Regras
+
+- Cada escolha do banner (aceitar ou recusar) é registrada no backend com: conta ou identificador anônimo do navegador, escolha, versão do texto do banner e data.
+- O histórico é mantido: uma mudança de escolha cria um novo registro, sem apagar o anterior. A escolha vigente é a mais recente.
+- Um aceite só vale para a versão atual do texto do banner (ANALYTICS_CONSENT_VERSION). Se a versão mudar, o banner volta a aparecer.
+POST /api/analytics/consent/ registra a escolha; GET /api/analytics/consent/ consulta a escolha vigente da conta ou do navegador.
+- Ao recusar, os eventos já gravados da conta e do navegador se tornam anônimos (deixam de ter conta e identificador), sem alterar os totais do dashboard.
+- No login, o histórico de consentimento do navegador passa para a conta junto com os eventos anônimos.
+- A verificação no servidor (eventos e vínculo recusados sem aceite) fica atrás da flag ANALYTICS_CONSENT_ENFORCED, desligada por padrão. Com ela desligada, o comportamento é o mesmo de antes.
+- No front, o banner registra a escolha no backend antes de enviar a página atual. Após o login, o front adota a escolha salva no backend; se não houver registro, envia a escolha local.
+- Falhas na comunicação com o backend não aparecem para o usuário.
+
+
+### Critérios de Aceitação
+
+- Aceitar ou recusar no banner cria um registro no backend com versão e data.
+- Mudanças de escolha mantêm o histórico; a consulta retorna a mais recente.
+- Recusar anonimiza os eventos já gravados da pessoa, sem afetar eventos de outras pessoas.
+- Após o login, a escolha salva na conta é aplicada no navegador e o banner não reaparece.
+- O histórico aparece no admin do Django, sem edição.
+
+#### Testes
+
+- Registro de aceite e recusa, de visitante e de conta logada; identificador ausente recusado.
+- Histórico com a escolha mais recente; consulta por conta e por navegador.
+- Aceite de versão anterior não vale.
+- Anonimização na recusa sem afetar outras pessoas.
+- Flag desligada mantém o comportamento anterior; flag ligada recusa eventos e vínculo sem aceite.
+- Testes de frontend do banner (registro antes do envio da página, falha do backend sem impedir a navegação, recusa registrada) e da sincronização no login antes do vínculo dos eventos.
+
+#### Evidências
+
+- PRs [backend #62](https://github.com/Shio-Enterprise/backend/pull/62) e [frontend #73](https://github.com/Shio-Enterprise/frontend/pull/73), com CI aprovada.
+- ![Registro e Consulta do Consentimento na API](../../../assets/evidencias-squad4/evidencias-consentimento/02-api-consentimento.png)
+- ![Histórico de Consentimento no Admin](../../../assets/evidencias-squad4/evidencias-consentimento/03-admin-historico.png)
+- ![CI dos PRs de Backend e Frontend](../../../assets/evidencias-squad4/evidencias-consentimento/04-ci.png)
+
+### Fora do escopo
+
+- Página de Política de Privacidade e Termos de uso.
+- Revogar ou alterar a escolha pela Minha Conta.
+- Banner por categorias de cookies (essenciais, analíticos, marketing).
+
+---
