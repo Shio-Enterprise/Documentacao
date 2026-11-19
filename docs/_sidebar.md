@@ -80,5 +80,6 @@
         - Squad 3
             - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)
             - [Envio de newsletter — Evidências](sprints/sprint_4/squad_3/envio-newsletter-evidencias.md)
+            - [Edição dos banners da página inicial — Evidências](sprints/sprint_4/squad_3/edicao-banners-pagina-inicial-evidencias.md)
             - [Galeria de fotos do produto — Evidências](sprints/sprint_4/squad_3/galeria-produto-evidencias.md)
             - [E-mail de recuperação de pedido — Evidências](sprints/sprint_4/squad_3/email-recuperacao-pedido-evidencias.md)
