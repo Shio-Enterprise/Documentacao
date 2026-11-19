@@ -33,54 +33,28 @@ A migração `authentication.0010_normalize_profile_phone` padroniza os telefone
 
 ### Máscaras em Meus Dados
 
-_Descrever: campos de telefone (celular) e CPF em Meus Dados com a máscara aplicada durante a digitação._
+Meus Dados com a máscara aplicada durante a digitação: celular `(61) 99999-8888` e CPF `529.982.247-25`:
 
-> **Imagem pendente:** `assets/evidencias-mascaras/01-meus-dados-mascaras.png`
+![Telefone e CPF com máscara em Meus Dados](../../../assets/evidencias-mascaras/01-meus-dados-mascaras.png)
 
-<!-- ![Telefone e CPF com máscara em Meus Dados](../../../assets/evidencias-mascaras/01-meus-dados-mascaras.png) -->
+Telefone fixo digitado como `6133334444` vira `(61) 3333-4444`. Ao colar `+55 61 99999-8888`, o prefixo é removido e fica `(61) 99999-8888`:
 
-_Descrever: telefone fixo formatado como `(61) 3333-4444` e número colado com `+55`, com o prefixo removido._
-
-> **Imagem pendente:** `assets/evidencias-mascaras/02-fixo-e-mais55.png`
-
-<!-- ![Telefone fixo e número colado com +55](../../../assets/evidencias-mascaras/02-fixo-e-mais55.png) -->
+![Telefone fixo e número colado com +55](../../../assets/evidencias-mascaras/02-fixo-e-mais55.png)
 
 ### Telefone inválido recusado
 
-_Descrever: mensagem de erro ao salvar um telefone inválido e a mensagem específica de celular sem o 9._
+Ao salvar um telefone incompleto, aparece "Telefone inválido. Informe DDD e número.". Para celular sem o 9, a mensagem pede para conferir se falta o 9 no começo. Nada é salvo:
 
-> **Imagem pendente:** `assets/evidencias-mascaras/03-telefone-invalido.png`
-
-<!-- ![Mensagem de telefone inválido e de celular sem o 9](../../../assets/evidencias-mascaras/03-telefone-invalido.png) -->
+![Mensagem de telefone inválido e de celular sem o 9](../../../assets/evidencias-mascaras/03-telefone-invalido.png)
 
 ### Telefone salvo só com dígitos
 
-_Descrever: perfil no banco (ou admin do Django) com o telefone gravado só com dígitos e a resposta da API devolvendo o valor formatado._
+Depois de salvar `+55 (61) 99999-8888`, a API (`GET /api/auth/me/`) devolve o telefone formatado. A conferência no banco (só dígitos) ainda depende de um print do admin do Django:
 
-> **Imagem pendente:** `assets/evidencias-mascaras/04-telefone-gravado-digitos.png`
-
-<!-- ![Telefone gravado só com dígitos e devolvido formatado](../../../assets/evidencias-mascaras/04-telefone-gravado-digitos.png) -->
+![Telefone gravado só com dígitos e devolvido formatado](../../../assets/evidencias-mascaras/04-telefone-gravado-digitos.png)
 
 ### Checkout bloqueado com telefone inválido
 
-_Descrever: página de pagamento com o aviso de telefone incompleto ou inválido, o link para Meus Dados e o botão de pagamento desabilitado._
+Checkout com telefone ausente: o aviso "Complete seu perfil para finalizar a compra" leva a Meus Dados, a revisão pede "Cadastre seu telefone em Meus Dados para continuar" e o botão "Finalizar compra" fica desabilitado:
 
-> **Imagem pendente:** `assets/evidencias-mascaras/05-checkout-telefone-invalido.png`
-
-<!-- ![Checkout bloqueado por telefone inválido](../../../assets/evidencias-mascaras/05-checkout-telefone-invalido.png) -->
-
-### Telefone enviado à InfinitePay com +55
-
-_Descrever: payload enviado à InfinitePay com o telefone no formato `+55DDDNÚMERO`._
-
-> **Imagem pendente:** `assets/evidencias-mascaras/06-payload-infinitepay.png`
-
-<!-- ![Payload da InfinitePay com o telefone no formato +55](../../../assets/evidencias-mascaras/06-payload-infinitepay.png) -->
-
-### Migração dos telefones antigos
-
-_Descrever: saída do `migrate` com o log `[Telefone]` listando e-mail e id dos perfis fora do padrão, sem exibir o número._
-
-> **Imagem pendente:** `assets/evidencias-mascaras/07-migracao-log-telefone.png`
-
-<!-- ![Log da migração de telefones antigos](../../../assets/evidencias-mascaras/07-migracao-log-telefone.png) -->
+![Checkout bloqueado por telefone inválido](../../../assets/evidencias-mascaras/05-checkout-telefone-invalido.png)

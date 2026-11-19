@@ -77,6 +77,7 @@
             - [Cadastro de administradores — Evidências](sprints/sprint_4/squad_2/cadastro-administradores-evidencias.md)
             - [Quantidade em estoque oculta — Evidências](sprints/sprint_4/squad_2/estoque-oculto-evidencias.md)
             - [Máscaras de telefone e CPF — Evidências](sprints/sprint_4/squad_2/mascaras-telefone-cpf-evidencias.md)
+            - [Etapa de métodos de pagamento removida — Evidências](sprints/sprint_4/squad_2/metodos-pagamento-evidencias.md)
         - Squad 3
             - [Responsividade e acessibilidade — Evidências](sprints/sprint_4/squad_3/acessibilidade-evidencias.md)
             - [Envio de newsletter — Evidências](sprints/sprint_4/squad_3/envio-newsletter-evidencias.md)

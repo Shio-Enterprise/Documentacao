@@ -36,62 +36,36 @@ A tela **Permissões**, entregue na Sprint 2, deixava alterar o que cada adminis
 
 ### Botão "Novo administrador" na tela Permissões
 
-_Descrever: tela Permissões com o botão "Novo administrador", visível apenas para quem tem a permissão Permissões._
+Tela Permissões com o botão "Novo administrador", visível para quem tem a permissão Permissões:
 
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/01-permissoes-botao-novo-admin.png`
-
-<!-- ![Tela Permissões com o botão Novo administrador](../../../assets/evidencias-cadastro-admin/01-permissoes-botao-novo-admin.png) -->
+![Tela Permissões com o botão Novo administrador](../../../assets/evidencias-cadastro-admin/01-permissoes-botao-novo-admin.png)
 
 ### Promoção de um cliente existente
 
-_Descrever: modal após informar o e-mail de um cliente, mostrando a conta encontrada, as permissões escolhidas e a confirmação da promoção._
+Ao informar o e-mail de uma cliente (conta de teste `cliente.troca@shio.test`), o modal mostra a conta encontrada, as permissões escolhidas e o botão "Promover a administrador":
 
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/02-modal-promover-cliente.png`
-
-<!-- ![Modal de promoção de cliente existente](../../../assets/evidencias-cadastro-admin/02-modal-promover-cliente.png) -->
+![Modal de promoção de cliente existente](../../../assets/evidencias-cadastro-admin/02-modal-promover-cliente.png)
 
 ### Cadastro de uma conta nova
 
-_Descrever: modal com e-mail novo, pedindo o nome, com o aviso de que a pessoa vai receber um e-mail para criar a senha, e as permissões escolhidas._
+Com um e-mail sem conta (`admin-teste@example.com`), o modal pede o nome, avisa que a pessoa vai receber um e-mail para criar a senha e mostra as permissões escolhidas:
 
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/03-modal-nova-conta.png`
-
-<!-- ![Modal de cadastro de nova conta de administrador](../../../assets/evidencias-cadastro-admin/03-modal-nova-conta.png) -->
-
-_Descrever: e-mail de convite recebido pela nova conta, com o link para criar a senha e o nome de quem convidou._
-
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/04-email-convite.png`
-
-<!-- ![E-mail de convite para o painel](../../../assets/evidencias-cadastro-admin/04-email-convite.png) -->
+![Modal de cadastro de nova conta de administrador](../../../assets/evidencias-cadastro-admin/03-modal-nova-conta.png)
 
 ### E-mail que não pode ser promovido
 
-_Descrever: modal informando que o e-mail já pertence a um administrador (ou a um superusuário, ou a uma conta desativada), sem permitir continuar._
+E-mail de quem já é administrador: o modal mostra "Este e-mail já pertence a um administrador." e não avança. Para superusuário, a mensagem é "Superusuários não podem ser alterados pelo painel.":
 
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/05-modal-email-ja-admin.png`
-
-<!-- ![Modal recusando e-mail que já é administrador](../../../assets/evidencias-cadastro-admin/05-modal-email-ja-admin.png) -->
-
-### Primeiro login com as permissões escolhidas
-
-_Descrever: painel da nova conta após definir a senha, com a sidebar exibindo apenas as áreas escolhidas na criação._
-
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/06-primeiro-login-permissoes.png`
-
-<!-- ![Primeiro login com apenas as áreas permitidas](../../../assets/evidencias-cadastro-admin/06-primeiro-login-permissoes.png) -->
+![Modal recusando e-mail que já é administrador](../../../assets/evidencias-cadastro-admin/05-modal-email-ja-admin.png)
 
 ### Remoção de acesso
 
-_Descrever: confirmação de "Remover acesso" de outro administrador e a lista atualizada, com a conta de volta a cliente._
+Em cima, a confirmação de "Remover acesso" da conta de teste, que volta a ser cliente comum. Embaixo, a lista atualizada, já sem a conta:
 
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/07-remover-acesso.png`
-
-<!-- ![Confirmação de remoção do acesso administrativo](../../../assets/evidencias-cadastro-admin/07-remover-acesso.png) -->
+![Confirmação de remoção do acesso administrativo](../../../assets/evidencias-cadastro-admin/07-remover-acesso.png)
 
 ### Sidebar do painel com rolagem corrigida
 
-_Descrever: sidebar do painel em tela baixa, com a lista de seções rolando e a conta e o botão "Sair" fixos embaixo._
+Sidebar em tela baixa (simulada com zoom de 180%): a lista de seções rola, com a barra de rolagem visível, e a conta, "Voltar para loja" e "Sair" ficam fixos embaixo:
 
-> **Imagem pendente:** `assets/evidencias-cadastro-admin/08-sidebar-rolagem.png`
-
-<!-- ![Sidebar do painel com conta e Sair fixos](../../../assets/evidencias-cadastro-admin/08-sidebar-rolagem.png) -->
+![Sidebar do painel com conta e Sair fixos](../../../assets/evidencias-cadastro-admin/08-sidebar-rolagem.png)

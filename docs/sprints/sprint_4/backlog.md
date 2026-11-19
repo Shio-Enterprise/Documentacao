@@ -259,3 +259,36 @@ Telefone e CPF eram digitados em Meus Dados sem formato definido, e o telefone s
 
 - Validação e normalização do CPF no backend (tratadas na issue #91).
 - Telefones de outros países.
+
+---
+
+## Remover a etapa de métodos de pagamento do checkout
+
+**Issue:** sem issue  
+**Responsáveis:** [Amanda Cruz](https://github.com/mandicrz), [Felipe Motta](https://github.com/M0tt1nh4), [Cauã Araujo](https://github.com/caua08)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Escopo:** Frontend  
+**Status no quadro:** Done  
+
+### Descrição
+
+O checkout tinha uma etapa "Pagamento" que só mostrava PIX e cartão, sem deixar escolher, porque a escolha é feita na página da InfinitePay. A atividade remove essa etapa, deixa o checkout com Entrega e Revisão e informa as duas formas de pagamento na Revisão.
+
+### Critérios de Aceitação
+
+- O checkout tem só as etapas Entrega e Revisão.
+- A Revisão informa PIX e cartão em até 12x como formas de pagamento.
+- A Revisão avisa que a escolha é feita na InfinitePay, depois de finalizar a compra.
+- O foco e a contagem de etapas para leitores de tela seguem corretos.
+- Finalizar a compra continua levando à InfinitePay.
+
+#### Testes e Evidências
+
+- Checkout em duas etapas; bloco de formas de pagamento na Revisão; foco no título da Revisão ao avançar; `vitest-axe` sem violações.
+- PR do frontend: pendente.
+- [Página de evidências](sprints/sprint_4/squad_2/metodos-pagamento-evidencias.md).
+
+### Fora do escopo
+
+- Mudanças no backend ou na integração com a InfinitePay.

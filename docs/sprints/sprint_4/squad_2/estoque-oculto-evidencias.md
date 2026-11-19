@@ -27,40 +27,26 @@ A página pública do produto mostrava quantas unidades existiam de cada tamanho
 
 **Evidências (prints):**
 
-### Página do produto antes e depois
+### Página do produto depois
 
-_Descrever: página do produto antes da mudança, exibindo "N unidades em estoque" abaixo da seleção de tamanho._
+Página do produto depois da mudança: não há quantidade em estoque, o tamanho P aparece como "(esgotado)", com "Sem estoque para este tamanho" e o botão "Avise-me quando chegar":
 
-> **Imagem pendente:** `assets/evidencias-estoque-oculto/01-produto-antes.png`
-
-<!-- ![Página do produto exibindo a quantidade em estoque](../../../assets/evidencias-estoque-oculto/01-produto-antes.png) -->
-
-_Descrever: a mesma página depois da mudança, sem a quantidade, com o tamanho esgotado marcado como "(esgotado)" e o "Avise-me quando chegar"._
-
-> **Imagem pendente:** `assets/evidencias-estoque-oculto/02-produto-depois.png`
-
-<!-- ![Página do produto sem a quantidade e com tamanho esgotado](../../../assets/evidencias-estoque-oculto/02-produto-depois.png) -->
+![Página do produto sem a quantidade e com tamanho esgotado](../../../assets/evidencias-estoque-oculto/02-produto-depois.png)
 
 ### Resposta da API pública
 
-_Descrever: resposta da API pública do produto (aba Rede do navegador ou cliente HTTP), com `in_stock` em cada variação e sem `stock_quantity`._
+Resposta pública de `GET /api/catalog/products/<id>/`: cada variação traz `in_stock` (`false` no tamanho P) e nenhuma traz `stock_quantity`:
 
-> **Imagem pendente:** `assets/evidencias-estoque-oculto/03-api-publica-in-stock.png`
-
-<!-- ![Resposta pública da API com in_stock e sem stock_quantity](../../../assets/evidencias-estoque-oculto/03-api-publica-in-stock.png) -->
+![Resposta pública da API com in_stock e sem stock_quantity](../../../assets/evidencias-estoque-oculto/03-api-publica-in-stock.png)
 
 ### Painel administrativo com as quantidades
 
-_Descrever: tela de produtos do painel administrativo, que continua mostrando a quantidade de cada variação._
+Painel administrativo: a lista de produtos mostra o total (12 un.) e o painel "Gerenciar estoque" mostra a quantidade de cada variação (M 9, G 3, P 0):
 
-> **Imagem pendente:** `assets/evidencias-estoque-oculto/04-admin-quantidades.png`
-
-<!-- ![Painel administrativo com a quantidade em estoque](../../../assets/evidencias-estoque-oculto/04-admin-quantidades.png) -->
+![Painel administrativo com a quantidade em estoque](../../../assets/evidencias-estoque-oculto/04-admin-quantidades.png)
 
 ### Carrinho recusando quantidade acima do estoque
 
-_Descrever: tentativa de adicionar ao carrinho mais unidades do que há em estoque, recusada com "Estoque insuficiente", sem mostrar o número disponível._
+Tentativa de adicionar 10 unidades do tamanho M, que tem 9: a compra é recusada com "Estoque insuficiente para Camiseta Shio Oversized.", sem mostrar quantas unidades existem:
 
-> **Imagem pendente:** `assets/evidencias-estoque-oculto/05-carrinho-estoque-insuficiente.png`
-
-<!-- ![Carrinho recusando quantidade acima do estoque](../../../assets/evidencias-estoque-oculto/05-carrinho-estoque-insuficiente.png) -->
+![Carrinho recusando quantidade acima do estoque](../../../assets/evidencias-estoque-oculto/05-carrinho-estoque-insuficiente.png)
