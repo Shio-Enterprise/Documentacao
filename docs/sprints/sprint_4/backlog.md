@@ -319,7 +319,7 @@ O checkout tinha uma etapa "Pagamento" que só mostrava PIX e cartão, sem deixa
 #### Testes e Evidências
 
 - Checkout em duas etapas; bloco de formas de pagamento na Revisão; foco no título da Revisão ao avançar; `vitest-axe` sem violações.
-- PR do frontend: pendente.
+- PR do frontend: [[Fix] Retirando método de pagamento](https://github.com/Shio-Enterprise/frontend/pull/72).
 - [Página de evidências](sprints/sprint_4/squad_2/metodos-pagamento-evidencias.md).
 
 ### Fora do escopo
