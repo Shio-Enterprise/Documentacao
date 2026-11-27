@@ -10,7 +10,7 @@
 | :---------------------------: | :--------------:| :------:| :-----------------: |
 | Matheus de Alcântara / Vilmar Fagundes | 3 | [#91](https://github.com/Shio-Enterprise/Documentacao/issues/91), [#83](https://github.com/Shio-Enterprise/Documentacao/issues/83), [#79](https://github.com/Shio-Enterprise/Documentacao/issues/79) | Validação e padronização de CPF; páginas institucionais e ajuda integradas, com evidências locais e conteúdo oficial da Shio pendente (#83: entrega parcial); edição completa do produto no painel admin, com imagens, tamanhos e estoque pela quantidade final registrada no histórico |
 | Ian Costa / Arthur Sousa / Danilo Naves | 5 | [#64](https://github.com/Shio-Enterprise/Documentacao/issues/64), [#65](https://github.com/Shio-Enterprise/Documentacao/issues/65), [#82](https://github.com/Shio-Enterprise/Documentacao/issues/82), [#84](https://github.com/Shio-Enterprise/Documentacao/issues/84), [#102](https://github.com/Shio-Enterprise/Documentacao/issues/102) | Responsividade e acessibilidade (WCAG 2.1 AA) no sistema inteiro; envio de newsletter pelo painel administrativo; edição dos banners e da frase da página inicial; galeria de fotos da página do produto quadrada, alinhada e com setas, em qualquer quantidade de fotos; e-mail de recuperação para pedidos aguardando pagamento ou cancelados |
-| João Gabriel / João Lucas Ramos dos Reis / Pedro Siqueira | 3 | [#113](https://github.com/Shio-Enterprise/Documentacao/issues/113), [#80](https://github.com/Shio-Enterprise/Documentacao/issues/80), [#78](https://github.com/Shio-Enterprise/Documentacao/issues/78) | Registro do consentimento de navegação no backend, com histórico, versão do texto do banner e anonimização dos eventos de quem recusa; vários guias de medidas, com escolha do guia em cada produto e o guia da categoria como padrão; faixa de 10% de desconto do topo clicável por inteiro |
+| João Gabriel / João Lucas Ramos dos Reis | 2 | [#80](https://github.com/Shio-Enterprise/Documentacao/issues/80), [#78](https://github.com/Shio-Enterprise/Documentacao/issues/78) | Vários guias de medidas, com escolha do guia em cada produto e o guia da categoria como padrão; faixa de 10% de desconto do topo clicável por inteiro |
 | Amanda Cruz / Felipe Motta / Cauã Araujo | 4 | [#81](https://github.com/Shio-Enterprise/Documentacao/issues/81), [#85](https://github.com/Shio-Enterprise/Documentacao/issues/85), [#111](https://github.com/Shio-Enterprise/Documentacao/issues/111), sem issue | Criação, promoção e remoção de administradores pelo painel, com convite por e-mail; quantidade em estoque oculta para o cliente, mantendo só a disponibilidade; máscaras de telefone e CPF em Meus Dados, com telefone validado, padronizado e enviado à InfinitePay com +55; checkout sem a etapa de métodos de pagamento, com PIX e cartão informados na revisão |
 
 ### Evidências
@@ -29,17 +29,26 @@
 | [Edição dos banners da página inicial - Evidência](sprints/sprint_4/squad_3/edicao-banners-pagina-inicial-evidencias.md) | [#82](https://github.com/Shio-Enterprise/Documentacao/issues/82) |
 | [Galeria de fotos do produto - Evidência](sprints/sprint_4/squad_3/galeria-produto-evidencias.md) | [#84](https://github.com/Shio-Enterprise/Documentacao/issues/84) |
 | [E-mail de recuperação de pedido - Evidência](sprints/sprint_4/squad_3/email-recuperacao-pedido-evidencias.md) | [#102](https://github.com/Shio-Enterprise/Documentacao/issues/102) |
-| [Registro do consentimento de navegação - Evidência](sprints/sprint_4/squad_4/consentimento-navegacao-evidencias.md) | [#113](https://github.com/Shio-Enterprise/Documentacao/issues/113) |
+| [Registro do consentimento de navegação - Evidência](sprints/sprint_4/squad_4/consentimento-navegacao-evidencias.md) | [#113](https://github.com/Shio-Enterprise/Documentacao/issues/113) — PRs não integrados |
 | [Guias de medidas por produto - Evidência](sprints/sprint_4/squad_4/guias-por-produto-evidencias.md) | [#80](https://github.com/Shio-Enterprise/Documentacao/issues/80) |
 | [Faixa de desconto clicável - Evidência](sprints/sprint_4/squad_4/faixa-desconto-evidencias.md) | [#78](https://github.com/Shio-Enterprise/Documentacao/issues/78) |
+
+
+### Contribuições não integradas
+
+Tarefas com código enviado em pull request, mas que não foram integradas à `dev` nem à `main` até o fim da sprint. Por isso, não entram no total de tarefas concluídas.
+
+| Desenvolvedor | Tarefa | Pull Requests | Situação |
+| :-----------: | :----: | :-----------: | :------- |
+| Pedro Siqueira (Squad 4) | [#113](https://github.com/Shio-Enterprise/Documentacao/issues/113): registro do consentimento de navegação no backend, com histórico, versão do texto do banner e anonimização dos eventos de quem recusa | [backend #62](https://github.com/Shio-Enterprise/backend/pull/62), [frontend #73](https://github.com/Shio-Enterprise/frontend/pull/73) | Issue criada e fechada em 19/11/2026, último dia da sprint. Os dois PRs foram abertos no mesmo dia, passaram no CI e continuam abertos, sem revisão e sem merge. Correções foram enviadas em 26/11/2026, depois do fim da sprint. |
 
 ---
 
 ## Resumo <!-- {docsify-ignore} -->
 
 - **Líder da Apresentação**: Vilmar Fagundes
-- **Total de Tarefas concluídas:** 15
+- **Total de Tarefas concluídas:** 14
 - **Início da Sprint:** 03/11/2026
 - **Fim da Sprint:** 19/11/2026
 
-O total soma as 15 tarefas documentadas com evidências. A #83 entra na conta como entrega parcial: a implementação está feita, mas o conteúdo oficial ainda depende da Shio.
+O total soma as 14 tarefas documentadas com evidências. A #83 entra na conta como entrega parcial: a implementação está feita, mas o conteúdo oficial ainda depende da Shio. A #113 não entra na conta, porque os PRs dela não foram integrados (ver "Contribuições não integradas").

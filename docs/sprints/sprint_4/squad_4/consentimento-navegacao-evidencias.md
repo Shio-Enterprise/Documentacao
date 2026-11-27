@@ -2,6 +2,8 @@
 
 **Responsável:** Pedro Siqueira
 
+> **Situação da integração:** os PRs desta tarefa ([backend #62](https://github.com/Shio-Enterprise/backend/pull/62) e [frontend #73](https://github.com/Shio-Enterprise/frontend/pull/73)) foram abertos em 19/11/2026, último dia da Sprint 4, e não foram integrados à `dev` nem à `main` até o fim da sprint. Por isso, a tarefa aparece em "Contribuições não integradas" no README da Sprint 4 e não entra no total de tarefas concluídas.
+
 **Origem:**
 - [Issue #113](https://github.com/Shio-Enterprise/Documentacao/issues/113): registro e validação do consentimento de navegação no backend.
 

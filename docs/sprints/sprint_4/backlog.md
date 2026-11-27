@@ -334,7 +334,8 @@ O checkout tinha uma etapa "Pagamento" que só mostrava PIX e cartão, sem deixa
 **Tipo:** Melhoria  
 **Prioridade:** P2  
 **Escopo:** Frontend e Backend  
-**Estado da issue:** fechada como concluída  
+**Estado da issue:** fechada em 19/11/2026  
+**Integração:** PRs abertos, não integrados à `dev` nem à `main` até o fim da sprint  
 
 ### Descrição
 
@@ -372,7 +373,7 @@ POST /api/analytics/consent/ registra a escolha; GET /api/analytics/consent/ con
 
 #### Evidências
 
-- PRs [backend #62](https://github.com/Shio-Enterprise/backend/pull/62) e [frontend #73](https://github.com/Shio-Enterprise/frontend/pull/73), com CI aprovada.
+- PRs [backend #62](https://github.com/Shio-Enterprise/backend/pull/62) e [frontend #73](https://github.com/Shio-Enterprise/frontend/pull/73), com CI aprovada, ainda abertos e sem revisão.
 - ![Registro e Consulta do Consentimento na API](../../../assets/evidencias-squad4/evidencias-consentimento/02-api-consentimento.png)
 - ![Histórico de Consentimento no Admin](../../../assets/evidencias-squad4/evidencias-consentimento/03-admin-historico.png)
 - ![CI dos PRs de Backend e Frontend](../../../assets/evidencias-squad4/evidencias-consentimento/04-ci.png)
