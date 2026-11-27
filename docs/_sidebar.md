@@ -87,4 +87,6 @@
             - [E-mail de recuperação de pedido — Evidências](sprints/sprint_4/squad_3/email-recuperacao-pedido-evidencias.md)
         - Squad 4
             - [Registro do consentimento de navegação — Evidências](sprints/sprint_4/squad_4/consentimento-navegacao-evidencias.md)
+            - [Guias de medidas por produto — Evidências](sprints/sprint_4/squad_4/guias-por-produto-evidencias.md)
+            - [Faixa de desconto clicável — Evidências](sprints/sprint_4/squad_4/faixa-desconto-evidencias.md)
 - [Resumo Final](resumo-final.md)

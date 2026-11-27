@@ -384,3 +384,75 @@ POST /api/analytics/consent/ registra a escolha; GET /api/analytics/consent/ con
 - Banner por categorias de cookies (essenciais, analíticos, marketing).
 
 ---
+## Vários guias de medidas e escolha do guia por produto
+
+**Issue:** [#80 — [Feature] Vários guias de medidas e escolha do guia por produto](https://github.com/Shio-Enterprise/Documentacao/issues/80)  
+**Responsável:** [João Gabriel](https://github.com/JoaoComTil)  
+**Sprint:** Sprint 4  
+**Tipo:** Feature  
+**Escopo:** Backend e Frontend  
+**Estado da issue:** fechada como concluída  
+
+### Descrição
+
+O guia de medidas era ligado à categoria (#74, #75), então todos os produtos de uma categoria usavam a mesma tabela. Dentro da mesma categoria, porém, existem modelagens diferentes, como uma camiseta normal e uma oversized. A atividade permite criar vários guias e escolher, em cada produto, qual guia ele usa, mantendo o guia da categoria como padrão.
+
+### Regras
+
+- O admin cria quantos guias quiser.
+- No cadastro e na edição do produto, o admin escolhe o guia daquele produto numa lista.
+- Sem guia escolhido, vale o guia da categoria; sem nenhum dos dois, a página fica como antes.
+- Excluir um guia em uso deixa esses produtos sem guia próprio, e eles voltam a usar o da categoria.
+
+### Critérios de Aceitação
+
+- Admin cria mais de um guia para o mesmo tipo de roupa.
+- Admin escolhe o guia no cadastro e na edição do produto.
+- Dois produtos da mesma categoria mostram guias diferentes na loja.
+- Produto sem guia escolhido continua mostrando o guia da categoria.
+- A sugestão de tamanho usa o guia que está sendo mostrado.
+
+#### Testes e Evidências
+
+- Produto com guia próprio mostra o próprio; sem guia próprio, mostra o da categoria; excluir um guia em uso não gera erro e volta ao guia da categoria; o admin escolhe e remove o guia pela API; a tela de guias mostra quantos produtos usam cada um.
+- PRs [backend #47](https://github.com/Shio-Enterprise/backend/pull/47) e [frontend #55](https://github.com/Shio-Enterprise/frontend/pull/55), com CI aprovada.
+- [Página de evidências](sprints/sprint_4/squad_4/guias-por-produto-evidencias.md).
+
+### Fora do escopo
+
+- Medidas da peça (comprimento, manga), além das medidas do corpo.
+- Guia diferente por cor ou variação do produto.
+
+---
+
+## Faixa de 10% de desconto clicável por inteiro
+
+**Issue:** [#78 — [Melhoria] Faixa de cadastro com 10% de desconto clicável por inteiro](https://github.com/Shio-Enterprise/Documentacao/issues/78)  
+**Responsáveis:** [João Gabriel](https://github.com/JoaoComTil), [João Lucas Ramos](https://github.com/Joaolramos)  
+**Sprint:** Sprint 4  
+**Tipo:** Melhoria  
+**Escopo:** Frontend  
+**Estado da issue:** fechada como concluída  
+
+### Descrição
+
+A faixa preta do topo só levava ao cadastro quando o cliente clicava exatamente em "Cadastre-se agora"; o resto da faixa não fazia nada. A pedido do cliente, a faixa inteira passou a levar à página de cadastro.
+
+### Critérios de Aceitação
+
+- Clicar em qualquer lugar da faixa abre a página de cadastro.
+- Clicar no X fecha a faixa sem abrir o cadastro.
+- A faixa pode ser ativada pelo teclado (Tab e Enter), como um link normal.
+- Funciona no celular e no computador.
+
+#### Testes e Evidências
+
+- Clique na faixa navega para o cadastro; clique no X fecha a faixa e não navega; teste de acessibilidade (axe) da Navbar sem violações.
+- PR [frontend #64](https://github.com/Shio-Enterprise/frontend/pull/64), com CI aprovada.
+- [Página de evidências](sprints/sprint_4/squad_4/faixa-desconto-evidencias.md).
+
+### Fora do escopo
+
+- Mudar texto, cor ou o valor do desconto da faixa.
+
+---
