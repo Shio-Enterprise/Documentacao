@@ -457,3 +457,30 @@ A faixa preta do topo só levava ao cadastro quando o cliente clicava exatamente
 - Mudar texto, cor ou o valor do desconto da faixa.
 
 ---
+
+## Modal de boas-vindas em toda visita de usuário deslogado
+
+**Issue:** [#114 — fix: modal de boas-vindas aparece a cada visita para usuário deslogado](https://github.com/Shio-Enterprise/Documentacao/issues/114)  
+**Responsável:** [João Lucas Ramos](https://github.com/Joaolramos)  
+**Sprint:** Sprint 4  
+**Tipo:** Correção de bug  
+**Escopo:** Frontend  
+
+### Descrição
+
+O modal de boas-vindas com 10% de desconto só voltava a aparecer um dia depois de ser fechado, porque a data do fechamento ficava salva no navegador. O visitante via a oferta uma vez e não a via mais. A correção remove essa espera, e o modal passa a aparecer em toda visita de quem não está logado.
+
+### Critérios de Aceitação
+
+- O modal aparece 3 segundos depois de abrir o site, para quem não está logado.
+- Depois de fechado, o modal aparece de novo ao recarregar a página.
+- Fechar o modal não salva nada no navegador.
+- Usuário logado não vê o modal.
+
+#### Testes e Evidências
+
+- 4 testes do `WelcomeModal` ajustados para o novo comportamento; 9 de 9 passando.
+- PR [frontend #74](https://github.com/Shio-Enterprise/frontend/pull/74), com CI aprovada.
+- [Página de evidências](sprints/sprint_4/squad_4/modal-boas-vindas-evidencias.md).
+
+---
