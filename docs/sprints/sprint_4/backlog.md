@@ -465,6 +465,7 @@ A faixa preta do topo só levava ao cadastro quando o cliente clicava exatamente
 **Sprint:** Sprint 4  
 **Tipo:** Correção de bug  
 **Escopo:** Frontend  
+**Estado da issue:** fechada como concluída  
 
 ### Descrição
 
